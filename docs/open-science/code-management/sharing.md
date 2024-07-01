@@ -19,6 +19,7 @@ Documenting your code is a favor you do to yourself and any other potential user
 - Provide explanations for lines of code that might have some criticalities, or some peculiarity that might be hard to figure out only by reading the code.
 
 **README file:** Create a README file as markdown, it is one of the most common way to document your code. It should include:
+
 - A brief introduction explaining the scope of your code.
 - Installation procedure, if needed, dependencies (libraries needed by your code to run) and requirements (e.g. specific version of the programming language).
 - A simple description of the code structure, especially if your code contains different interconnected parts.
