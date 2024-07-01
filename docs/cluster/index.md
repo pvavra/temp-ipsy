@@ -40,5 +40,5 @@ A computational cluster is a collection of interconnected computers (see image b
 
 At ipsy we currently have two clusters: the new one, [**Cecile**], named after the **French neurologist Cécile Vogt**, and the old one, [**Medusa**], named after the **Greek mythological figure**.
 
-[Cecile]: cecile/access
-[Medusa]: medusa/access
+[Cecile]: cecile/#access
+[Medusa]: medusa/#access
