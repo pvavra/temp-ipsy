@@ -13,7 +13,7 @@
     ssh <username>@cecile.ovgu.de
     ```
 
-    If you want to use any software with a Graphical User Interface (GUI) in Cecile (e.g. Matlab), please use the following command. Keep in mind that this usage mode is very sensitive to latency, thus outside the OvGU network you will likely experience a poor performance in softwares with GUI.
+    If you want to use any software with a Graphical User Interface (GUI) in Cecile (e.g. Matlab), please use the following command known as **X fowarding**. Keep in mind that this usage mode is very sensitive to latency, thus outside the OvGU network you will likely experience a poor performance in softwares with GUI. 
 
     ```bash
     ssh -X <username>@cecile.ovgu.de
@@ -29,7 +29,11 @@
     ssh <username>@cecile.ovgu.de
     ```
 
-    If you want to use any software with a Graphical User Interface (GUI) in Cecile (e.g. Matlab), please use the following command. Keep in mind that this usage mode is very sensitive to latency, thus outside the OvGU network you will likely experience a poor performance in softwares with GUI.
+    If you want to use any software with a Graphical User Interface (GUI) in Cecile (e.g. Matlab), please use the following command known as **X fowarding**. Keep in mind that this usage mode is very sensitive to latency, thus outside the OvGU network you will likely experience a poor performance in softwares with GUI. 
+
+    !!! Warning "Issues with macOS"
+        X fowarding might not work with macOS        
+
 
     ```bash
     ssh -X <username>@cecile.ovgu.de
@@ -49,7 +53,7 @@
 
     For further information about the SSH client, please take a look at the [official page](https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh) 
 
-    If you want to use any software with a Graphical User Interface (GUI) in Cecile (e.g. Matlab), please use the following command. Keep in mind that this usage mode is very sensitive to latency, thus outside the OvGU network you will likely experience a poor performance in softwares with GUI.
+    If you want to use any software with a Graphical User Interface (GUI) in Cecile (e.g. Matlab), please use the following command known as **X fowarding**. Keep in mind that this usage mode is very sensitive to latency, thus outside the OvGU network you will likely experience a poor performance in softwares with GUI.
 
     ```bash
     ssh -X <username>@cecile.ovgu.de
@@ -62,7 +66,7 @@
 
     Once you have installed the WSL on your pc, you can easily access Cecile via SSH as we explained above.
 
-    Using a WSL provides many advantages: it allows you to use a Linux environment like Cecile, without giving up your Windows operating system. Interacting with Cecile via WSL facilitates many procedures, such as file transferring from and to Cecile. Files transferred via WSL will be directly available to your Windows system. Furthermore working with the command line will surely speed up all your processes, given that you will not need to go through additional tools to interact with Cecile.
+    Using a WSL provides multiple advantages: it allows you to use a Linux environment like Cecile, without giving up your Windows operating system. Interacting with Cecile via WSL facilitates many procedures, such as file transferring from and to Cecile. Files transferred via WSL will be directly available to your Windows system. Furthermore working with the command line will surely speed up all your processes, given that you will not need to go through additional tools to interact with Cecile.
 
 ## Avoid passwords, use SSH keys
 
