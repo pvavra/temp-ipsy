@@ -34,20 +34,20 @@ We recommend you to go through the [BIDS Starter Kit pages](https://bids-standar
 ## How to BIDS 
 
 In the following tabs, we explain how to convert your data into BIDS for different modalities. We focused only on specific tools that are either widely used or provide some advantages for the users.
-If any issue occurs, you need help or have a request for a specific tool that we do not cover here, please contact emanuele.porcu at ovgu.de.
+If any issue occurs, or you have a request for a specific tool that we do not cover here, please contact emanuele.porcu at ovgu.de.
 
 === "fMRI"
 
     ### Using heudiconv to convert fMRI data to BIDS
 
-    [Heudiconv](https://heudiconv.readthedocs.io/en/latest/) is a python library which helps you to convert f/MRI data to BIDS with little effort. You do not need to be very proficient in python to use it. YOu can either follow the following tutorial or use the [tutorials](https://heudiconv.readthedocs.io/en/latest/tutorials.html) provided by the heudiconv developers.
+    [Heudiconv](https://heudiconv.readthedocs.io/en/latest/) is a python library which helps you to convert f/MRI data to BIDS with little effort. You do not need to be very proficient in python to use it. YOu can either follow this brief tutorial or use the [tutorials](https://heudiconv.readthedocs.io/en/latest/tutorials.html) provided by the heudiconv developers and users.
 
     **Step 1**
     
     In order to convert correctly your data, heudiconv leverages on so called heuristics.</b>     
-    Heuristics are rules that you provide to the software to specify which files to convert.
+    Heuristics are rules that you provide to the software to specify which files you would like to convert.
     
-    You must specify these rules within a python script that is then passed to heudiconv. You do not need to create this script from scratch, you can generate a template by running the following line on the terminal:
+    You must specify such rules within a python script that is then passed to heudiconv. You do not need to create this script from scratch, you can generate a template by running the following line on the terminal:
 
     ```bash
     $ heudiconv --files your_dicom_file -o bids_output_dir -f convertall -s number_of_the_subject -c none
@@ -57,7 +57,7 @@ If any issue occurs, you need help or have a request for a specific tool that we
     
     
     !!! note "Check your dicoms"
-        It is a good practice to extract your dicom files and check by yourself the file names and whether they match with the names stored by heudiconv in the `dicominfo.tsv`.
+        It is a good practice to extract your dicom files and check by yourself the file names to assess that they match with the names stored by heudiconv in the `dicominfo.tsv`.
 
 
     !!! Danger "Delete .heudiconv" 
@@ -65,7 +65,7 @@ If any issue occurs, you need help or have a request for a specific tool that we
 
     **Step 2**
     
-    The following example represents a `heuristic.py` script taylored for a specific dataset. You can also use this template and adapt it to your dataset.
+    The following example represents a `heuristic.py` script taylored for a specific dataset. You can also use this template and adapt it to your own dataset.
 
 
     ```python
@@ -86,7 +86,7 @@ If any issue occurs, you need help or have a request for a specific tool that we
         annotation_classes: None = None,
     ) -> tuple[str, tuple[str, ...], None]:
         """
-        This function allowes you to create
+        This function allows you to create
         the keys necessary to extract the files
         that you want to convert.
         """
@@ -171,7 +171,7 @@ If any issue occurs, you need help or have a request for a specific tool that we
     
     The essential parts of the script that you need to modify are the **keys** and the actual **heuristics**:
 
-    - **Keys:** In the `dicominfo.tsv` (you can find it in `.heudiconv`) file you find the exact naming of the dicom files, you need to go through the list of files and decide which of them are important for your analysis. Once you have made your decision, you can create the proper keys by following the naming conventions explained in the [BIDS tutorial](https://bids-standard.github.io/bids-starter-kit/folders_and_files/files.html)
+    - **Keys:** In the `dicominfo.tsv` (you can find it in `.heudiconv`) file you find the exact naming of the dicom files, you need to go through the list of files and decide which of them are important for your analysis. Once you have made your decision, you can create the proper keys by following the naming conventions explained in the [BIDS tutorial](https://bids-standard.github.io/bids-starter-kit/folders_and_files/files.html). The keys create the BIDS compliant file names and the structure.
     
         Assume you have a T1 weighted image, you need to create a proper key for it:
 
@@ -186,10 +186,10 @@ If any issue occurs, you need help or have a request for a specific tool that we
         task = create_key("sub-{subject}/func/sub-{subject}_task-foodchoice_run-{item:01d}_bold")
         ```
 
-        In this example it is important to notice that we follow the same pattern as for the T1 weighted image, but this time we have specified the folder `func`, which as you should know, stands for **functional**. Additionally we have specified the task name
-        `task-taskname`, the runs and the `bold` suffix that indicate the kind of file we are dealing with.
+        In this example it is important to notice that we follow the same pattern as for the T1 weighted image, but this time we have specify the folder `func`, which as you should know, stands for **functional**. Additionally we have specified the task name
+        `task-taskname`, the runs, `_run-` and the `bold` suffix that indicates the type of functional file we are dealing with.
 
-        It is superfluous to say that we need to create as many keys as the types of files we need to include in our BIDS convertion.
+        We need to create as many keys as the number of types of files we want to include in our BIDS convertion.
 
     - **Heuristics:** Now we need to create a few basic rules to tell heudiconv which files to extract.
     
@@ -218,7 +218,7 @@ If any issue occurs, you need help or have a request for a specific tool that we
     $ heudiconv --files <file_containing_dicoms> -o <directory_for_bids/> -f <heuristic.py> -s <subject_number> -c dcm2niix -b --overwrite
     ```
 
-    Note that heudiconv creates the whole BIDS structure, the sidecar as `.json` files, and the events files as `.tsv`.</b>   `events.tsv` are just tabular files containing the header: `onset	duration	trial_type	response_time	stim_file`. Your task is to complete these files according to the bids conventions.
+    Note that heudiconv creates the whole BIDS structure, the sidecars as `.json` files, and the events files as `.tsv`.</b>   `events.tsv` are just tabular files containing the header: `onset	duration	trial_type	response_time	stim_file`. Your task is to complete these files according to the bids conventions.
 
 === "EEG/MEG"
 
