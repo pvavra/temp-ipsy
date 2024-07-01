@@ -44,7 +44,7 @@ At Ipsy, we strive for open and reproducible science, to achieve this goal we ha
 
 In order to follow the project workflow we suggest you to use the **cluster** for data analysis and data storage. The project workflow consists of three simple steps:
 
-1. Fill in a brief **questionnaire** that help us to create some intial metadata for your project. Further information about the questionnaire can be found [here] 
+1. Fill in a brief **questionnaire** that helps us to create some intial metadata for your project. Further information about the questionnaire can be found [here] 
 [here]: ../../../cluster/cecile/data/#how-to-create-a-project-on-cecile
 
 2. Once the questionnaire is properly filled in, we create a dedicated **project** which comes with a predefined folder structure (to have detailed information about the structure, please refer to the specific [project structure section].
