@@ -36,20 +36,26 @@ The following schema represents how data are structured on Cecile. Please take a
 ## Explaining Cecile data structure
 
 
-- `/home/<username>`: *Your personal home folder*, as a rule of thumb this folder **must not** contain your main data and your main analysis. In `home` it is allowed a maximum storage space of **1GB**, see the section on data storage quotas for more information. <br>
-- `/home/<username>/scratch`: *Your personal scratch folder*. `scratch` is a folder that does not get backed up, it is useful for testing and dumping temporary processed data that need to be delete soon. For a proper introduction on how to use `scratch` read the dedicated [paragraph]. 
+- `/home/<username>`: *Your personal home folder*, this folder **must not** contain your data and your analysis. In `home` it is allowed a maximum storage space of **1GB**, see the section on data storage [quotas]. <br> 
+[quotas]: #data-storage-quotas
+- `/home/<username>/scratch`: *Your personal scratch folder*. `scratch` is a folder that does not get backed up, it is useful for testing and dumping temporary processed data that can be deleted soon. For a proper introduction on how to use `scratch` read the dedicated [paragraph]. 
 - `/software`: *Stores the software stack*<br>  
 - `/data/archive`: *Archived projects*. This folder is dedicated to archived projects.<br>  
-- `/data/groups`: *Group folders*. These folders are dedicated to each group, for example `/data/groups/biopsy`. As for `home`, there is a maximum amount of storage allowed. See the section on data storage quotas for more information. <br>  
-- `/data/groups/archive`: This folder contains **symlinks** (symbolic link), special files that refers to other files (see the tab below), that allow you to access archived projects directly from the group folder<br>
+- `/data/groups`: *Group folders*. These folders are dedicated to each group, for example `/data/groups/biopsy`. As for `home`, there is a maximum amount of storage allowed. See the section on data storage [quotas]. <br>  
+  [quotas]: #data-storage-quotas
+- `/data/groups/archive`: This folder contains **symlinks**, special files that refers to other files (see the tab below), that allow you to access archived projects directly from the group folder<br>
 - `/data/groups/projects`: As for the `data/groups/archive`, this folder contains symlinks to access the projects from the group folder. </br>  
 - `/data/projects`: *Projects folder*. The actual storage of all ongoing projects, which can be comfortably accessed and worked on from the `data/groups/projects` folder<br>
-- `/data/projects/scratch`: *Project scratch folder*. There is a `scratch` folder also in each single `project`, please refer to the dedicated [paragraph]. 
+- `/data/projects/scratch`: *Project scratch folder*. A `scratch` folder is also available in each single `project`, please refer to the dedicated [paragraph]. 
 
 [paragraph]: #scratch-what-it-is-and-how-to-use-it
 
 
 ??? note "What is a symlink?"
+
+    In a nutshell, a symbolic link, also known as symlink, is a file or a folder that points to another file or folder, known as target.
+    A symbolic link deletion does not affect the target, while when a target is deleted the symbolic link continues to point to the original location, but it now broken.
+    An example of how a symbolic link works:
 
     ```bash
     # create an empty file
