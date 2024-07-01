@@ -17,18 +17,24 @@ To avoid mistakes and to waste time deciphering our data structure, we recommend
 5. You should have a general pipeline script that combines all the macro-steps together.
 
 ```bash
-my_analysis/
-├── general_pipeline_script.py
+
+code/
+├── general_pipeline
+│   ├── README
+│   └── general_pipeline_script.py
 ├── preprocessing
+│   ├── README
 │   ├── preprocessing_pipeline.py
 │   ├── preproc_step_1.py
 │   ├── preproc_step_2.py
 │   └── preproc_step_3.py
 ├── signal_analysis
+│   ├── README
 │   ├── signal_analysis_pipeline.py
 │   ├── signal_step_1.py
 │   └── signal_step_2.py
 └── statistics
+    ├── README
     └── stats.py
 
 ```
