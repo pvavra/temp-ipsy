@@ -1,8 +1,8 @@
 # Plan your data management
 
 Planning a research project can be at times overwelming especially if it is your first time approacing a similar task. 
-While designing a project you need to consider several aspects about the data you would like to produce, such as: the most suitable kind of data for your research question, the amount of data you need and the best way to organize your data.
-These are only a few essential aspects you might consider, there are of course many more, but one fundamental aspect that you should always keep in mind is **how to efficienty manage your data** in a way that the future you and other researchers can understand the development of your data, from conception to publication.
+While designing a project you need to consider several aspects about the data you would like to produce, such as: the most suitable type of data for your research question, the amount of data you need and the best way to organize your data.
+These are only a few essential aspects you might consider, there are of course many more, but one fundamental aspect that you should always keep in mind is **how to manage efficiently your data** in such a way that the future you and other researchers can understand the development of your data, from conception to publication.
 
 A good starting point would be to build a **Data Management Plan.**
 
