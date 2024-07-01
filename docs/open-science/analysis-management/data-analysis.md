@@ -1,7 +1,7 @@
 
 !!! Warning "Coding is a prerequisite"
-    Data analysis is inextricably linked to coding, therefore if you are new to coding we recommend you to start reading the section about [good coding practices] before continuing with the current section." 
-    [good coding practices]: open-science/code-management/good-practices/good-coding-practices
+    Data analysis is inextricably linked to coding, therefore if you are new to coding we recommend you to start reading the section about [good coding practices] before continuing with the current section.
+    [good coding practices]: ../../code-management/good-practices/#good-coding-practices
  
 Data analysis constitutes one of the core aspects of your research and also the phase of your research that requires the most intense management. 
 
