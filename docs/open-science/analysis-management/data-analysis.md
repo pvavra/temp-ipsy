@@ -207,5 +207,5 @@ You can create a pipeline in many ways, we suggest you a few options with exampl
 
 ## Why do I want to adopt this workflow?
 
-This approach, besides being very intuitive, provides a modular and logical structure. Each micro-step can create intermediate outputs that can be systematically checked for correcteness, it thus allows to identify more easily potential mistakes and to keep track of inputs and outputs.
+This approach, besides being very intuitive, provides a modular and logical structure. Each micro-step can create intermediate outputs that can be systematically checked for correcteness, allowing to identify more easily potential mistakes and to keep track of inputs and outputs.
 
