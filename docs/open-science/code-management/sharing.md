@@ -23,11 +23,11 @@ Documenting your code is a favor you do to yourself and any other potential user
 - Installation procedure, if needed, dependencies (libraries needed by your code to run) and requirements (e.g. specific version of the programming language).
 - A simple description of the code structure, especially if your code contains different interconnected parts.
 - A description on how to run the code and a working example.
-- Do not forget to cite your sources.
+- Cite your sources.
 
 ## Github and other similar platforms
 
-Github and Gitlab are just a few of the platforms that allow code sharing, such platforms, however, are not just public storages for hosting your code, but they are tools for collaborative projects. The advantage of using such platforms during your research are diverse.
+Github and Gitlab are just a few of the platforms that allow code sharing, such platforms, however, are not just public storages for code hosting, but they are tools for collaborative projects. The advantage of using such platforms during your research are diverse.
 
 - They allow to share and document your code whith your publication.
 - They rely on `git`, meaning that you can modify and keep track of your code locally through git and transfer (`push`) your changes to the version of your code hosted on Github or other platforms.
