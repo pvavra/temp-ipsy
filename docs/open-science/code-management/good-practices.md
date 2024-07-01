@@ -86,14 +86,14 @@ Style conventions are not the result of a pure aestethic choice, but they aim at
 **Styles and conventions of the major languages used in cognitive neuroscience:**
 As a rule of thumb, you do not need to memorize all the language conventions, but it would be a good starting point to read the main guidelines and to start including them immediately in your code. With time you will be able to include more and more conventions into your code, but keep in mind that following some of them will be, at times, tedious and it might not come naturally, but stick to them and it will pay off.
 
-- **Python:** https://peps.python.org/pep-0008/#introduction
-- **Matlab:** https://www.mathworks.com/matlabcentral/fileexchange/45047-matlab-style-guidelines-cheat-sheet
-- **R:** https://google.github.io/styleguide/Rguide.html
-- **List of style guides for different programming languages:** https://google.github.io/styleguide/
+- **Python:** [https://peps.python.org/pep-0008/#introduction](https://peps.python.org/pep-0008/#introduction)
+- **Matlab:** [https://www.mathworks.com/matlabcentral/fileexchange/45047-matlab-style-guidelines-cheat-sheet](https://www.mathworks.com/matlabcentral/fileexchange/45047-matlab-style-guidelines-cheat-sheet)
+- **R:** [https://google.github.io/styleguide/Rguide.html](https://google.github.io/styleguide/Rguide.html)
+- **List of style guides for different programming languages:** [https://google.github.io/styleguide/](https://google.github.io/styleguide/)
 
 ## Version control: git
 
-When coding your experiment or your analysis you will inevitably make multiple changes to your code, and create multiple versions of the same code, therefore running the risk to pollute your folders and to produce avoidable bugs.
+When coding your experiment or your analysis you will inevitably make multiple changes to your code and create multiple versions of the same code, therefore running the risk to pollute your folders and to produce avoidable bugs.
 In order to prevent such potential issues, we recommend to use a version control software.</b> 
 
 A version control softwares keeps track of your code changes for you and allows you to revert your code to previous versions at any time without creating extra files. Furthermore, it allows you to modify your code while keeping intact a working version and then merging the modified version with the old one.
