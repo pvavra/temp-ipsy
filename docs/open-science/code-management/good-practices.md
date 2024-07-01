@@ -96,6 +96,6 @@ As a rule of thumb, you do not need to memorize all the language conventions, bu
 When coding your experiment or your analysis you will inevitably make multiple changes to your code and create multiple versions of the same code, therefore running the risk to pollute your folders and to produce avoidable bugs.
 In order to prevent such potential issues, we recommend to use a version control software.</b> 
 
-A version control softwares keeps track of your code changes for you and allows you to revert your code to previous versions at any time without creating extra files. Furthermore, it allows you to modify your code while keeping intact a working version and then merging the modified version with the old one.
+A version control software keeps track of your code changes for you and allows you to revert your code to previous versions at any time without creating extra files. Furthermore, it allows you to modify your code while keeping intact a working version and then merging the modified version with the old one.
 The most common version control software is [**git**](https://git-scm.com/), a lightweight and very powerful tool. We are not going to cover it here, but we suggest you to go through this [tutorial](https://book.the-turing-way.org/reproducible-research/vcs/vcs-git-general) or any other online tutorial.
 
