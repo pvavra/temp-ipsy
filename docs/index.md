@@ -13,9 +13,4 @@ Ipsy docs is a work in progress collection of resources, tutorials and guideline
 !!! note "Before starting"
     These pages require little prior knowledge from the user, but even if you are an experienced researcher, we recommend you to go through them, and especially to read carefully the sections dedicated to the cluster, data and backups.
 
-## How to contribute
-
-Contributions in various forms are welcome, you can contribute reporting issues, errors, suggesting or producing new sections, tutorials, examples etc. 
-
-You can contribute via **Github**
 
