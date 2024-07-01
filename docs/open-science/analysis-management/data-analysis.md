@@ -40,13 +40,13 @@ code/
 ```
 
 ### How to build a pipeline
-*******
-At its core an analysis pipeline is nothing else than a collection of steps executable in a logical sequence. In this instance, we explicitly mean a script that combines all the steps in a very clear and intelligible way. 
-You can create a pipeline in many ways, we will suggest you a few options with examples that you might use. Keep in mind that often analysis libraries or toolboxes offer the option of creating a pipeline (Nilearn, SPM), if this is the case, we suggest to use them.
+
+At its core an analysis pipeline is nothing else than a collection of steps executable in a logical sequence. In this instance, we explicitly mean a script in its simplest form that combines all the steps in a very clear and intelligible way.
+You can create a pipeline in many ways, we suggest you a few options with examples that you might use. Keep in mind that often analysis libraries or toolboxes offer the option of creating a pipeline (Nilearn, SPM), if this is the case, we recommend to use them.
 
 === "nypipe"
 
-    [Nypipe](https://nipype.readthedocs.io/en/latest/index.html) is the most sophisticated and powerful tool to create a pipeline for cognitive neuroscience. Nypipe is a python library that enables you to create an analysis pipeline by combining different external tools (e.g. SPM, FSL) and/or custom scripts from different languages such as Python, Matlab and shell.
+    [Nypipe](https://nipype.readthedocs.io/en/latest/index.html) is the most sophisticated and powerful tool to create a pipeline for cognitive neuroscience. It is a python library that enables you to create an analysis pipeline by combining different external tools (e.g. SPM, FSL) and/or custom scripts from different languages such as Python, Matlab and shell.
 
     ```python
         Coming soon...
@@ -58,8 +58,7 @@ You can create a pipeline in many ways, we will suggest you a few options with e
 
     ```python
     """
-    Import all the necessary steps
-    from your other scripts. Imagine that
+    Import all the necessary steps. Imagine that
     the script preproc_step_1.py contains 
     a function or a class called step_1 and
     so on for the other steps.
@@ -72,7 +71,7 @@ You can create a pipeline in many ways, we will suggest you a few options with e
 
     class Pipeline:
         """
-        Toy preprocessing Pipeline scaffolding.
+        Toy Pipeline scaffolding.
         It can be used and modified to accomodate
         different kinds of analyses.
 
@@ -87,7 +86,7 @@ You can create a pipeline in many ways, we will suggest you a few options with e
 
         def _load_data(self):
             """
-            This method simply load your starting data,
+            This method simply loads your data,
             in this toy example just loading a (1xn) numpy array
             """
             return np.load(self.input)
@@ -208,6 +207,5 @@ You can create a pipeline in many ways, we will suggest you a few options with e
 
 ## Why do I want to adopt this workflow?
 
-This approach, besides being very intuitive, provides a modular and logical structure. Each micro-step can create temporary outputs that can be systematically checked for correcteness, it thus allows to identify more easily potential mistakes.
-The adoption of a pipeline helps you to keep track of inputs and outputs.
+This approach, besides being very intuitive, provides a modular and logical structure. Each micro-step can create intermediate outputs that can be systematically checked for correcteness, it thus allows to identify more easily potential mistakes and to keep track of inputs and outputs.
 
