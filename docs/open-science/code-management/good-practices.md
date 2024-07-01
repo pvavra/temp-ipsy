@@ -9,7 +9,7 @@ As a starting point, you should make sure to gain a few principles of good codin
 
 ## Good coding practices:
 
-- **Use meaningful variables:** Use variable names that reflect the role of a given variable. 
+- **Use meaningful variables:** Assign variable names that reflect the role of a given variable. 
 
       *Bad*
       ```python
@@ -23,7 +23,7 @@ As a starting point, you should make sure to gain a few principles of good codin
       pi = 3.14
       ```
       
-- **Avoid hard coding (at any cost)**: Hard coding is the dangerous habit of using throughout your code a plain value instead of using a variable as an alias.</b>  Hard coding makes your code extremely unclear (e.g. it is difficult to identify what a numerical value means) and very unflexible (e.g. changing hard coded values throughout your code is the best way to create bugs that you might not even be aware of).
+- **Avoid hard coding (at any cost)**: Hard coding is the dangerous habit of using throughout your code a plain value instead of assigning a variable name as an alias.</b>  Hard coding makes your code extremely unclear (e.g. it is difficult to identify what a numerical value means) and very unflexible (e.g. changing hard coded values throughout your code increases the chance of bugs that you might not even be aware of).
 
       *Bad*
       ```python
@@ -37,9 +37,9 @@ As a starting point, you should make sure to gain a few principles of good codin
       circle_area = pi * radius**2
       ```
 
-- **Keep it simple:** if you have the choice between a clever, but convoluted solution, and a simpler, less clever solution (which achieves the same goal), **choose the simplest solution**. It will probably be the easiest version to read and understand in the future.
+- **Keep it simple:** if you have the choice between a clever, but convoluted solution, and less clever, but simpler solution, **choose the simplest solution**. It is probably the easiest version to read and understand in the future.
 
-- **Comment your code:** Although code should be understood only by reading code, other users and (the future) you will benefit from helpful comments to get into your logic of the code and to get the gist of what you have done. The following is an example of commented python code. Each programming language has its own peculiar way of writing comments, please refer to the section 
+- **Comment your code:** Although code can be understood only by reading code, other users and the future you will benefit from helpful comments to understand the logic you used and to get the gist of what you have done. The following is an example of commented python code. Each programming language has its own peculiar way of writing comments, please refer to the section about language specific styles.  
 
     ```python
     def square_me(num): 
@@ -60,11 +60,11 @@ As a starting point, you should make sure to gain a few principles of good codin
 
 - **Chunk your code:** Chunk your code in small modular parts when possible (pretty much always). By using **functions** or **methods** of a class you will be able to divide your long and complicated code in small parts that are easier to handle and to test. If you have the chance restrict a function or a method to just one task, this will drastically reduce the error space.
 
-- **Do not repeat yourself:** If you need to use multiple times throughout your code a piece of code that achieves a specific goal, create a function out of it and call it when necessary. It make your code more readable and reduce the chance of creating bugs.
+- **Do not repeat yourself:** If you need to use multiple times throughout your code a piece of code that achieves a specific goal, create a function out of it and call it when necessary. It makes your code more readable and reduces the chance of creating bugs.
 
-- **Make it readable:** Code can easily become convoluted and hard to read, try to make it readable by following style and guidelines of your language of choice and adopting the previous points.
+- **Make it readable:** Code can easily become convoluted and hard to read, try to make it readable by following style and guidelines of your language of choice and adopting the previous points of this list.
 
-- **Read other people code:** Reading other people code teaches you how more advance coders approach a problem and write their own code. At the same time you are also going to encounter a huge amount of bad code, this will help you understand what not to do. 
+- **Read other people code:** Reading other people code teaches you how more advance coders approach a problem and write their own code. At the same time you are also going to encounter a huge amount of bad code, this will help you understand what not to do (see also antipatterns in [python](https://docs.quantifiedcode.com/python-anti-patterns/) and [R](https://www.burns-stat.com/pages/Tutor/R_inferno.pdf) to know what bad habits to avoid). 
 
 - **Use helpful tools**: Use [linters](https://en.wikipedia.org/wiki/Lint_(software)) and other softwares that can help you identify issues in your code, from bugs to from style. 
     - **Matlab:** [codeIssues](https://www.mathworks.com/help/matlab/ref/codeissues.html)
@@ -80,13 +80,11 @@ As a starting point, you should make sure to gain a few principles of good codin
 
 ## Language specific styles and principles:
 
-Although the previous principles apply to most of the programming languages you will encounter, each language follows its own specific conventions.
-Style conventions are not the result of a pure aestethic choice, but they aim at specific practical goals, such as increasing readibility and reducing the chance to produce bugs.
+Although the previous principles apply to most of the programming languages you will encounter, each language follows its own peculiar conventions.
+Style conventions are not the result of a pure aestethic choice, but they aim at specific practical goals, such as increasing readibility and reducing the chance to produce bugs. 
 
-The main languages used in cognitive neuroscience research are Python, Matlab and R. You might have encountered or will encounter, of course, other languages, but these three are the most used by the community. 
-
-**Styles and conventions of each language:**
-As a rule of thumb, you do not need to memorize all the language conventions, but it would a good starting point to read the main guidelines and to start including them immediately in your code. With time you will be able to include more and more conventions into your code, but keep in mind that following some of them will be, at times, tedious and it might not come naturally, but stick to them and it will pay off.
+**Styles and conventions of the major languages used in cognitive neuroscience:**
+As a rule of thumb, you do not need to memorize all the language conventions, but it would be a good starting point to read the main guidelines and to start including them immediately in your code. With time you will be able to include more and more conventions into your code, but keep in mind that following some of them will be, at times, tedious and it might not come naturally, but stick to them and it will pay off.
 
 - **Python:** https://peps.python.org/pep-0008/#introduction
 - **Matlab:** https://www.mathworks.com/matlabcentral/fileexchange/45047-matlab-style-guidelines-cheat-sheet
@@ -95,9 +93,9 @@ As a rule of thumb, you do not need to memorize all the language conventions, bu
 
 ## Version control: git
 
-When coding your experiment or your analysis you will inevitably make multiple changes to your code, and you will might create many different versions of the same code, therefore running the risk to pollute your folders and to produce avoidable bugs.
-In order to prevent such potential issues, we advise to use a version control software.</b> 
+When coding your experiment or your analysis you will inevitably make multiple changes to your code, and create multiple versions of the same code, therefore running the risk to pollute your folders and to produce avoidable bugs.
+In order to prevent such potential issues, we recommend to use a version control software.</b> 
 
-A version control softwares keep track of your code changes for you and allows you to go back to previous versions at any time without creating extra files. Furthermore, it allows you to modify your code while keeping intact a working version and then merging the modified version with the working one.
+A version control softwares keeps track of your code changes for you and allows you to revert your code to previous versions at any time without creating extra files. Furthermore, it allows you to modify your code while keeping intact a working version and then merging the modified version with the old one.
 The most common version control software is [**git**](https://git-scm.com/), a lightweight and very powerful tool. We are not going to cover it here, but we suggest you to go through this [tutorial](https://book.the-turing-way.org/reproducible-research/vcs/vcs-git-general) or any other online tutorial.
 
