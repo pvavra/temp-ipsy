@@ -26,19 +26,23 @@ There are different types of jobs in slurm, you just need to choose the most sui
     ??? note "Making file exacutable"
     
             Add the so called **shebang** on top of your bash script, it will tell the system to use the bash interpreter to run the code:
+            
             ```bash
             #!/bin/bash
 
             ```
             Once you have done that, run the following command to make your script exacutable:
+            
             ```bash
             $ chmod +x <script.sh>
             ``` 
             For python use the following shebang in the first line of your script:
+            
             ```python
             #!/usr/bin/env python3
             ```
             And then make it exacutable from the command line:
+            
             ```bash
             $ chmod +x <script.py>
             ```
@@ -379,7 +383,9 @@ If you run `seff` when your job is still ongoing, it will give you an unreliable
 ## Job restrictions and defaults
 
 As for data storage, also jobs need some restrictions in order to guarantee a fair usage for everybody.
-- **Time requested:** One job can have a **miximum duration of 24 hours**. This time duration could be extended by the clutser administrator upon reasonable request. Keep in mind that slurm will stop your job as soons as it reach the maximum time duration requested.
+
+- **Time requested:** One job can have a **miximum duration of 24 hours**. This time duration could be extended by the clutser administrator upon reasonable request. Keep in mind that slurm will stop your job as soon as it exceeds the maximum time duration requested.
+  
 - **Maximum number of array jobs:** The maximum number of array jobs you can set are **10000**
 
 
