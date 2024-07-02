@@ -23,13 +23,12 @@ There are different types of jobs in slurm, you just need to choose the most sui
    [software stack]: ../software/##how-to-use-the-stacks
 3. Make sure your scripts (e.g. in bash) are executable.
    
-    ??? note "Making file exacutable"
+    ??? note "Making file executable"
 
         Add the so called **shebang** on top of your bash script, it will tell the system to use the bash interpreter to run the code:
         
         ```bash
         #!/bin/bash
-
         ```
         Once you have done that, run the following command to make your script exacutable:
         
