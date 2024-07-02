@@ -242,8 +242,8 @@ If any issue occurs, or you have a request for a specific tool that we do not co
 
 === "Behavioral"
 
-    BIDS for behavioral data follow conventions similar to those of the events files for neuroimaging data. 
-    We recommand to read carefully the [description](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/behavioral-experiments.html#behavioral-experiments-with-no-neural-recordings) in the BIDS website and to try to adopt the BIDS conventions when creating the log files during data acquisition. We do not provide any example due to the large variety of structures and formats that researchers use for their experiments.
+    BIDS for behavioral data follows conventions similar to those of the events files for neuroimaging data. 
+    We recommend to read carefully the [description](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/behavioral-experiments.html#behavioral-experiments-with-no-neural-recordings) in the BIDS website and to try to adopt the BIDS conventions when creating the log files during data acquisition. We do not provide any example due to the large variety of structures and formats that researchers use for their experiments.
 
 === "Eye-tracking"
 
