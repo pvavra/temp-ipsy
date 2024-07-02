@@ -39,7 +39,7 @@ A computational cluster is a collection of interconnected computers (see image b
 ## How to make a fair usage of the cluster
 
 !!! Warning "The cluster is a small community"
-  When you work in the cluster you share space and resources with other users, behave accordingly.
+    When you work in the cluster you share space and resources with other users, behave accordingly.
 
 - Always remember that, once you access the cluster you are in the `head node` which is a shared space/resource. If you run a heavy computation you could either slow down or prevent others from doing regular activities on the cluster. 
 - Use the `head node` as an entry point where you can run light tasks and if you need to run heavy computations, like fMRI analyses, use the job scheduler (e.g. **Slurm**).
