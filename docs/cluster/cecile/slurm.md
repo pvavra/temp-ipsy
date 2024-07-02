@@ -24,28 +24,28 @@ There are different types of jobs in slurm, you just need to choose the most sui
 3. Make sure your scripts (e.g. in bash) are executable.
    
     ??? note "Making file exacutable"
-    
-            Add the so called **shebang** on top of your bash script, it will tell the system to use the bash interpreter to run the code:
-            
-            ```bash
-            #!/bin/bash
 
-            ```
-            Once you have done that, run the following command to make your script exacutable:
-            
-            ```bash
-            $ chmod +x <script.sh>
-            ``` 
-            For python use the following shebang in the first line of your script:
-            
-            ```python
-            #!/usr/bin/env python3
-            ```
-            And then make it exacutable from the command line:
-            
-            ```bash
-            $ chmod +x <script.py>
-            ```
+        Add the so called **shebang** on top of your bash script, it will tell the system to use the bash interpreter to run the code:
+        
+        ```bash
+        #!/bin/bash
+
+        ```
+        Once you have done that, run the following command to make your script exacutable:
+        
+        ```bash
+        $ chmod +x <script.sh>
+        ``` 
+        For python use the following shebang in the first line of your script:
+        
+        ```python
+        #!/usr/bin/env python3
+        ```
+        And then make it exacutable from the command line:
+        
+        ```bash
+        $ chmod +x <script.py>
+        ```
 
 4. Create a folder called `slurm_logs` (or you can give it another meaningful name), in the same directory as the scripts are. Slurm will use it to dump the logs reporting error files and outputs, if you specify it in the initial parameters (see below) 
 
