@@ -36,6 +36,16 @@ A computational cluster is a collection of interconnected computers (see image b
 
 - **An editor:** Choose the editor you prefer among the available ones: [**Nano**](https://www.nano-editor.org/) (the most user friendly), [**Vim**](https://www.vim.org/), [**Emacs**](https://www.gnu.org/software/emacs/).
 
+## How to make a fair usage of the cluster
+
+!!! Warning "The cluster is a small community"
+  When you work in the cluster you share space and resources with other users, behave accordingly.
+
+- Always remember that, once you access the cluster you are in the `head node` which is a shared space/resource. If you run a heavy computation you could either slow down or prevent others from doing regular activities on the cluster. 
+- Use the `head node` as an entry point where you can run light tasks and if you need to run heavy computations, like fMRI analyses, use the job scheduler (e.g. **Slurm**).
+- If you need to run computationally heavy tests/analyses in an interactive fashion, use **interactive jobs** in the scheduler. By doing so you will be assigned a specific resource and you will not interfere with any other users. 
+- Always think before polluting a shared space like the `group` folder with your data or other unecessary files. Do not store data or analyses in `groups/<group_name>/`, `project` is the right place to store them.
+
 ## Clusters at Ipsy:
 
 At ipsy we currently have two clusters: the new one, [Cecile], named after the **French neurologist Cécile Vogt**, and the old one, [Medusa], named after the **Greek mythological figure**.
