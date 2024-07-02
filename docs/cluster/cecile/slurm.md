@@ -2,45 +2,47 @@
 
 Let's start from the beginning, as you already know a cluster is made up of multiple resources which can be exploited to run several tasks at the same time. In order to achieve this goal, you need to use a so called job scheduler, in our case is [Slurm](https://slurm.schedmd.com/quickstart.html), an open source cluster management and job scheduler system.
 
-The job scheduler allows you to specify computational tasks, known as **jobs**, that are going to be automatically distributed across the available and most suitable resources. A job can be whatever task you want it to be as long as it respects specific [restrictions], for example it could be a specific section of your preprocessing analysis, or the whole analysis of a single subject.
+The job scheduler allows you to specify computational tasks, known as **jobs**, that are going to be automatically distributed across the available and most suitable resources. A job can be any computational task as long as it respects specific [restrictions], for example it could be a specific section of your preprocessing analysis, or the whole analysis of a single subject.
 
 [restrictions]: #job-restrictions-and-defaults
 
 ## How to think about jobs
 
-If you are using Cecile, you would most likely need to run multiple parallel jobs, the key to achieve that is to create tasks that are suitable for a job. This means that your code should be written with jobs in mind. 
+If you are using Cecile, you would most likely need to run multiple similar jobs at the same time, the key to achieve that is to code your analysis with the objective of making it parallelizable.
 
 - Create parallelizable scripts, for example: a script for a given step of your analysis should take as input only one subject, in this way you can run this step for each subject in parallel, thus having as many jobs as the number of your subjects. 
 - Chunk your analysis in steps, in this way, especially if you are new to slurm, you have more control on your analysis and you avoid running extremely long job. This does not prevent you from running all the steps together as long as you are running one subject per job.
 
 ## How to run a job in Slurm
 
-There are different types of jobs in slurm, you just need to choose the most suitable for your case. But before running your jobs there are a few things your need to do:
+There are different types of jobs in slurm, you just need to choose the most suitable for your case. But before running your jobs there are a few things your need to take care of:
 
-1. Activate the [software stack] environment or load the module that you need for your code.
+
+1. Make sure that the code you want to use for your jobs works properly. Especially at the beginning it might difficult to identify the reason why a job is failing, thus by making sure that your scripts run as intended you can restrict your error space.
+2. Activate the [software stack] environment or load the module that you need for your code.
    [software stack]: ../software/##how-to-use-the-stacks
-2. Make sure that the code you would like to use for your jobs works properly. Especially at the beginning it might difficult to identify the reason why a job is failing, thus by making sure that your scripts runs as intended you can restrict your error space.
-3. Make sure your scripts (e.g. in bash) are executable. If you have never done that make sure to do the following:
+3. Make sure your scripts (e.g. in bash) are executable.
    
-   Add the so called **shebang** on top of your bash script, it will tell the system to use the bash interpreter to run the code:
-   ```bash
-   #!/bin/bash
+   ??? note "Making file exacutable" 
+        Add the so called **shebang** on top of your bash script, it will tell the system to use the bash interpreter to run the code:
+        ```bash
+        #!/bin/bash
 
-   ```
-   Once you have done that, run the following command to make your script exacutable:
-   ```bash
-   $ chmod +x <script.sh>
-   ``` 
-   For python use the following shebang in the first line of your script:
-   ```python
-   #!/usr/bin/env python3
-   ```
-   And then make it exacutable from the command line:
-   ```bash
-   $ chmod +x <script.py>
-   ```
+        ```
+        Once you have done that, run the following command to make your script exacutable:
+        ```bash
+        $ chmod +x <script.sh>
+        ``` 
+        For python use the following shebang in the first line of your script:
+        ```python
+        #!/usr/bin/env python3
+        ```
+        And then make it exacutable from the command line:
+        ```bash
+        $ chmod +x <script.py>
+        ```
 
-4. Create, if you do not have it yet, a folder called `slurm_logs` (or you can give it another meaningful name), in the same directory as the scripts are, where slurm can dump the logs reporting error files and logs. 
+4. Create a folder called `slurm_logs` (or you can give it another meaningful name), in the same directory as the scripts are. Slurm will use it to dump the logs reporting error files and outputs, if you specify it in the initial parameters (see below) 
 
 In order to specify a job in Slurm, you need to make a few decisions and provide a few essential information to the system beforehand. 
 
@@ -51,8 +53,6 @@ In order to specify a job in Slurm, you need to make a few decisions and provide
     3. How much memory does your job need?</b>  
     4. Does your job require any special hardware feature?
 
-
-
 The following parameters are not all mandatory, but we **strongly recommend** to define all of them. If you do not define them properly your job might not run as expected, might stop or even fail and you might involuntarily take resources away from other users.
 
 Here it is how you turn the previous questions in parameters for slurm.
@@ -60,16 +60,28 @@ Here it is how you turn the previous questions in parameters for slurm.
 ```bash
 #!/bin/sh
 
-NOTE: Keep in mind that for your slurm script the # before slurm commands is not interpreted as a shell comment 
+#### NOTE: Keep in mind that for your slurm script the # before slurm commands is not interpreted as a shell comment 
 
+#SBATCH --mail-user=<name.lastname>@ovgu.de   # your email address in case you want to receive a job feedback by mail
+#SBATCH --mail-type=BEGIN,END,FAIL            # mail it is send at the beginning, end and failing of a job
 #SBATCH --cpus-per-task=1                     # number of cpu you request for a task
 #SBATCH --nodes=1                             # number of requested nodes, keep it to 1, it is fine for our kind of analyses
 #SBATCH --mem-per-cpu=1g                      # amount of memory you require per cpu
 #SBATCH --time=01:00:00                       # maximum duration you assign to a job (D-HH:MM:SS)
-#SBATCH --output=slurm_logs/output-%A-%a.out  # job printed output
-#SBATCH --error=slurm_logs/error-%A-%a.err    # job related errors 
+#SBATCH --output=slurm_logs/output-%A-%a.out  # here you specify where job printed output should be saved
+#SBATCH --error=slurm_logs/error-%A-%a.err    # here your specify where job related errors should be saved 
 
 ```
+
+Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amount of RAM you request in a node.
+
+!!! Warning "Be aware of memory and time"
+    - If your job exceeds the requested memory, your job will be aborted.
+    - If your job exceeds the requested time, your job will be aborted.
+
+
+!!! note "Job ID"
+    The job ID is the identification number relative to a job that can use it to acquire information about your job, or to abort your job. It might look something like this `217379_5`, where the prefix number before the underscore indicates the general job session, while the number after the underscore indicates the specific number of a job. You might have multiple jobs sharing the session number.   
 
 === "Single job"
 
@@ -78,10 +90,7 @@ NOTE: Keep in mind that for your slurm script the # before slurm commands is not
 
     ```bash
     #!/bin/sh
-
-
-    #SBATCH --mail-user=<name.lastname>@ovgu.de
-    #SBATCH --mail-type=BEGIN,END,FAIL
+ 
     #SBATCH --job-name=my_job
     #SBATCH --cpus-per-task=1
     #SBATCH --nodes=1
@@ -187,9 +196,6 @@ NOTE: Keep in mind that for your slurm script the # before slurm commands is not
     ```bash
     #!/bin/sh
 
-
-    #SBATCH --mail-user=<name.lastname>@ovgu.de
-    #SBATCH --mail-type=BEGIN,END,FAIL
     #SBATCH --job-name=my_job
     #SBATCH --cpus-per-task=1
     #SBATCH --nodes=1
@@ -208,9 +214,6 @@ NOTE: Keep in mind that for your slurm script the # before slurm commands is not
     ```bash
     #!/bin/sh
 
-
-    #SBATCH --mail-user=<name.lastname>@ovgu.de
-    #SBATCH --mail-type=BEGIN,END,FAIL
     #SBATCH --job-name=my_job
     #SBATCH --cpus-per-task=1
     #SBATCH --nodes=1
