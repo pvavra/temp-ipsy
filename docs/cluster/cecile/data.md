@@ -117,10 +117,10 @@ The project structure follows a specific BIDS structure (see examples in the tab
 !!! note "Mirroring derivatives and code structure"
     We **strongly recommend** to mirror the sub-folder names between `derivatives` and `code` to keep an intuitive relationship between code and data.
 
-!!! tip "Naming good practices"
-    Regarding naming good practices, we suggest you to look into this very helpful [page](https://book.the-turing-way.org/project-design/filenaming) 
+!!! tip "Good naming practices"
+    As you know files and folders naming is an essential aspect of BIDS and the FAIR principles, we suggest you to look into this very helpful [page](https://book.the-turing-way.org/project-design/filenaming) to learn about good naming practices and machine readable names.  
 
-For modalities, such as **eye-tracking**, for which there is not yet a consensus for BIDS, we recommend to use the same structure as for the other modalities and to convert the data into BIDS format anyway. [Here](https://github.com/bids-standard/bids-specification/pull/1128) you can follow (or even contribute to) the discussion around BIDS for eye-tracking 
+For modalities, such as **eye-tracking**, for which there is not yet a consensus for BIDS, we recommend to use the same structure as for the other modalities and to convert the data into BIDS format anyway. [Here](https://github.com/bids-standard/bids-specification/pull/1128) you can follow the discussion around BIDS for eye-tracking.
 
 !!! Danger "Sides effects of using a different structure"
     Failing to mantain this structure might create future issues for assigning less canonical permissions. Not adopting BIDS would make your dataset not easily interoperable and ultimately it would not be following the FAIR principles.
@@ -136,7 +136,7 @@ For modalities, such as **eye-tracking**, for which there is not yet a consensus
     - `sourcedata`: It comprises the raw data (unprocessed data), in this case raw dicom files.</b>  
     - `rawdata`: It comprises the BIDS converted niftis, the relative `.json` files and `.tsv` files.</b>  
     - `derivatives`: It comprises different sub-folders which represent the macro-steps of you analysis, e.g. preprocessing, first_level  etc. These folders should follow the BIDS convention as well, and **must contain only data and no code**.</b>  
-    - `code`: It includes sub-folders that **mirror** the `derivatives` sub-folder names. They **must contain only the code relative to each step, and no data at all**. It must also include a sub-folder that contains the code for the BIDS convertion.</b>   
+    - `code`: It includes sub-folders that **mirror** the `derivatives` sub-folder names. They **must contain only the code relative to each step, and no data at all**. It must also include a sub-folder containing the code for the BIDS convertion.</b>   
     - `stimuli`: It includes a subfolder for the experimental code and the stimuli (e.g. images), if any.</b>  
 
     ```
@@ -179,7 +179,7 @@ For modalities, such as **eye-tracking**, for which there is not yet a consensus
     `sourcedata`: It comprises the raw data (unprocessed data), for example .bdf files.</b>  
     `rawdata`: It comprises the BIDS converted data, the relative `.json` files and `.tsv` files.</b>  
     `derivatives`: It comprises different sub-folders which represent the macro-steps of you analysis, e.g. preprocessing, erp etc. These folders should follow the BIDS convention as well, and **must contain only processed data and no code**.</b>  
-    `code`: It includes sub-folders that **mirror** the `derivatives` sub-folder names. They **must contain only the code relative to each step, and no data at all**. It must also include a sub-folder that contains the code for the BIDS convertion.</b>   
+    `code`: It includes sub-folders that **mirror** the `derivatives` sub-folder names. They **must contain only the code relative to each step, and no data at all**. It must also include a sub-folder containing the code for the BIDS convertion.</b>   
     `stimuli`: It includes a subfolder for the experimental code and the stimuli (e.g. images), if any.</b>  
 
     ```
@@ -218,8 +218,8 @@ For modalities, such as **eye-tracking**, for which there is not yet a consensus
     `project-metadata.json`: This file is created by the cluster admin, it contains general metadata about the project.</b>  
     `sourcedata`: It comprises the raw data (unprocessed data) in whatever file type you have acquired them.</b>  
     `rawdata`: It comprises the BIDS converted data, the relative `.json` files.</b>  
-    `derivatives`: It comprises different sub-folders which represent the macro-steps of you analysis, e.g. preprocessing, erp etc. These folders should follow the BIDS convention as well, and **must contain only processed data and no code**.</b>  
-    `code`: It includes sub-folders that **mirror** the `derivatives` sub-folder names. They **must contain only the code relative to each step, and no data at all**. It must also include a sub-folder that contains the code for the BIDS convertion.</b>   
+    `derivatives`: It comprises different sub-folders which represent the macro-steps of you analysis, e.g. reaction_times, curve_fitting etc. These folders should follow the BIDS convention as well, and **must contain only processed data and no code**.</b>  
+    `code`: It includes sub-folders that **mirror** the `derivatives` sub-folder names. They **must contain only the code relative to each step, and no data at all**. It must also include a sub-folder containing the code for the BIDS convertion.</b>   
     `stimuli`: It includes a sub-folder for the experimental code and the stimuli (e.g. images), if any.</b>  
 
     ```
@@ -249,7 +249,7 @@ For modalities, such as **eye-tracking**, for which there is not yet a consensus
 
 ## How related projects are handled
 
-In case you want to create a project that is related to an existing project, for example projects that are part of the same grant, project names will share a **common prefix** that is decided by the project owner upon project creation (see example below).
+In case you want to create a project that is related to an existing one, for example projects that are part of the same grant, project names will share a **common prefix** decided by the project owner upon project creation.
 
 ```
 data/
@@ -270,6 +270,8 @@ data/
 
 
 ## How to transfer data from/to Cecile
+
+We recommend to use `rsync` to transfer files from/to Cecile. `rsync` is a powerful tool for data synchronization, it minimizes the data transfer by copying only data that have changed, meaning that if the files you want to transfer already exist in the new location, `rsync` will only copy files that have been modified or that are not present in the new location. In order to work, `rsync` must be installed in both machines, the source machine and the destination machine. Please refer to the `rsync -man` or `rsync --help` for further usage infomation.
 
 === "Linux"
 
