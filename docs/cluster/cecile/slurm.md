@@ -210,7 +210,7 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
     #### Example of an array job
 
     After setting up all the parameters you can simply provide the analysis script as in the example below.
-    In case you need to pass some parameters to your script, you must use the slurm variable `SLURM_ARRAY_TASK_ID` which keeps track of the job number. As we do in the example, you can use `SLURM_ARRAY_TASK_ID` as an index, `idx`, to access the single parameters specified in `parameters` and then pass them to `my_script.sh`. As you might notice, we subtract `-1` from `SLURM_ARRAY_TASK_ID`, this is because the array starts counting from 1, `--array 1-5`, but many programming languages, like bash in this case, start counting from 0.
+    In case you need to pass some parameters to your script, you must use the slurm variable `SLURM_ARRAY_TASK_ID` which keeps track of the job number. As we do in the example, you can use `SLURM_ARRAY_TASK_ID` as an index, `idx`, to access the single parameters specified in `parameters` and then pass them to `my_script.sh`.
 
     ```bash
     #!/bin/sh
@@ -289,7 +289,7 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
     #SBATCH --time=00:01:00          # max amount of time (D:HH:MM:SS)
     #SBATCH --output=slurm_logs/output-%A-%a.out   # printed output
     #SBATCH --error=slurm_logs/error-%A-%a.err     # errors
-    #SBATCH --array 0-4
+    #SBATCH --array 1-4
 
     ## you need to load matlab even if you have loaded already all the modules
     ## from the software stack 
@@ -302,6 +302,9 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
     ## run matlab: you pass just the name of the script without .m in my case matlab_script
     matlab -singleCompThread -nodisplay -nosplash -r "matlab_script(${subjects[idx]})"
     ```
+
+    !!! note "Matlab array jobs should start with 1"
+        As Matlab counts from 1, it is a good idea to make your array job starting with 1 as well.
 
     #### Job array with python
 
