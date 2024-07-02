@@ -36,25 +36,25 @@ The following schema represents how data are structured on Cecile. Please take a
 ## Explaining Cecile data structure
 
 
-- `/home/<username>`: *Your personal home folder*, this folder **must not** contain your data and your analysis. In `home` it is allowed a maximum storage space of **1GB**, see the section on data storage [quotas]. <br> 
+- `/home/<username>`: *Your personal home folder*, this folder **must not** contain your data and your analysis. In `home` it is allowed a maximum storage space of 1GB, see the section on data storage [quotas] for further details. <br> 
 [quotas]: #data-storage-quotas
-- `/home/<username>/scratch`: *Your personal scratch folder*. `scratch` is a folder that does not get backed up, it is useful for testing and dumping temporary processed data that can be deleted soon. For a proper introduction on how to use `scratch` read the dedicated [paragraph]. 
-- `/software`: *Stores the software stack*<br>  
-- `/data/archive`: *Archived projects*. This folder is dedicated to archived projects.<br>  
+- `/home/<username>/scratch`: *Your personal scratch folder*. `scratch` is a folder that does not get backed up, it is useful for testing and dumping temporary processed data that can be deleted. For a proper introduction on how to use `scratch` read the dedicated [paragraph]. 
+- `/software`: *Stores the software stack* To understand how the software stack works refer to the [software stack page].<br>  
+  [software stack page]: ../cecile/software
+- `/data/archive`: *Archived projects*. This folder contains archived projects.<br>  
 - `/data/groups`: *Group folders*. These folders are dedicated to each group, for example `/data/groups/biopsy`. As for `home`, there is a maximum amount of storage allowed. See the section on data storage [quotas]. <br>  
   [quotas]: #data-storage-quotas
-- `/data/groups/archive`: This folder contains **symlinks**, special files that refers to other files (see the tab below), that allow you to access archived projects directly from the group folder<br>
+- `/data/groups/archive`: This folder contains **symlinks** (see the tab below), that allow you to access archived projects directly from the group folder<br>
 - `/data/groups/projects`: As for the `data/groups/archive`, this folder contains symlinks to access the projects from the group folder. </br>  
 - `/data/projects`: *Projects folder*. The actual storage of all ongoing projects, which can be comfortably accessed and worked on from the `data/groups/projects` folder<br>
 - `/data/projects/scratch`: *Project scratch folder*. A `scratch` folder is also available in each single `project`, please refer to the dedicated [paragraph]. 
-
 [paragraph]: #scratch-what-it-is-and-how-to-use-it
 
 
 ??? note "What is a symlink?"
 
     In a nutshell, a symbolic link, also known as symlink, is a file or a folder that points to another file or folder, known as target.
-    A symbolic link deletion does not affect the target, while when a target is deleted the symbolic link continues to point to the original location, but it now broken.
+    Once a symlink is in place, you can work on it as if it was the original file or folder. The deletion of a symlink does not affect the target, however if a target is deleted, moved to a different location or renamed, the symbolic link does not get updated, it continues to point to the original file, but it is now broken.
     An example of how a symbolic link works:
 
     ```bash
@@ -103,9 +103,9 @@ As mentioned in the research planning section, we adopt a specific project workf
   
   - Go to your `home` on Cecile, on the command line type the following command and then press ENTER:
    
-  ```bash
-  $ ./run_quest
-  ```
+        ```bash
+        $ ./run_quest
+        ```
   - This command starts an interactive questionnaire on the terminal, if you need more information about the usage of the questionnare prompt, please refer to the [documentation](https://github.com/ipsy-md/Quest/blob/main/README.md).</b>  
   Please try to answer all the questions, even if you do not know the exact answer to some questions, for example: `Indicate the size of your raw data`, you should provide a reasonable estimate and your answer can be updated later. In case you are not able to answer some questions by yourself, try asking your PI or more expert members of your group, alternatively contact us and we will try to help you.
 
