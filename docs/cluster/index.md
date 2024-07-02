@@ -30,7 +30,7 @@ A computational cluster is a collection of interconnected computers (see image b
     -  How to create and remove folders/files --> `mkdir`, `touch`, `rm`
     -  How to copy folders/files --> `rsync`, `cp`
     -  How to move and rename folders/files --> `mv`
-    -  How simple permissions work and how to modify them --> `chmod`
+    -  How permissions work and how to modify them --> `chmod`
     -  How to write a simple shell script and execute it</b>  
 
 
@@ -38,7 +38,7 @@ A computational cluster is a collection of interconnected computers (see image b
 
 ## Clusters at Ipsy:
 
-At ipsy we currently have two clusters: the new one, [**Cecile**], named after the **French neurologist Cécile Vogt**, and the old one, [**Medusa**], named after the **Greek mythological figure**.
+At ipsy we currently have two clusters: the new one, [Cecile], named after the **French neurologist Cécile Vogt**, and the old one, [Medusa], named after the **Greek mythological figure**.
 
-[Cecile]: cecile/#access
-[Medusa]: medusa/#access
+[Cecile]: cecile/access
+[Medusa]: medusa/access
