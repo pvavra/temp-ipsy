@@ -25,12 +25,12 @@ A computational cluster is a collection of interconnected computers (see image b
 
 - **Shell scripting:** If you prefer to work on the cluster via shell (the canonical way), but you have no experience with shell scripting, we recommend this straighforward [shell tutorial](https://swcarpentry.github.io/shell-novice/). You do not need to master it to use the cluster, but you can use the following list to start learning the basic concepts:
   
-    -  Where you are and how to navigate through the folders --> `pwd`, `cd`
-    -  How to list content (folders/files) --> `ls` 
-    -  How to create and remove folders/files --> `mkdir`, `touch`, `rm`
-    -  How to copy folders/files --> `rsync`, `cp`
-    -  How to move and rename folders/files --> `mv`
-    -  How permissions work and how to modify them --> `chmod`
+    -  Where you are and how to navigate through the folders: `pwd`, `cd`
+    -  How to list content (folders/files): `ls` 
+    -  How to create and remove folders/files: `mkdir`, `touch`, `rm`
+    -  How to copy folders/files: `rsync`, `cp`
+    -  How to move and rename folders/files: `mv`
+    -  How permissions work and how to modify them: `chmod`
     -  How to write a simple shell script and execute it</b>  
 
 
