@@ -112,7 +112,8 @@ If your questionnaire has been properly completed your project will be created.
 
 ### Project structure
 
-The project structure follows a specific BIDS structure (see examples in the tabs below). Such a structure will be generated upon project creation. In the following examples, `derivatives` and `code` are populated with potential sub-folders, these are just examples, the naming of such sub-folders are up to you and entirely project dependent, nonetheless keep the general structure as we suggest it.</b>  
+The project structure follows a specific BIDS structure (see examples in the tabs below). Such a structure will be generated upon project creation. According to BIDS the structure we adopt requires only `rawdata` to be BIDS compliant, however we strongly recommend that also `derivatives` are BIDS compliant. On this note, when naming sub-folders in `derivatives` you should follow the convention `<pipeline>-<variant>`, where `<pipeline>` is the name of the tool you used and `<variant>` is the step of your analysis, for example, assuming your preprocessing is done via `spm`, the sub-folder name would be `spm-preproc/`. See the official BIDS [`derivatives` section](https://bids-specification.readthedocs.io/en/stable/common-principles.html#storage-of-derived-datasets).</b>  
+Keep in mind that, the schemas below are just examples, `derivatives` and `code` are populated with potential sub-folders the naming of such sub-folders are up to you and entirely project dependent, nonetheless keep the general structure as we suggest it.</b>  
 
 !!! note "Mirroring derivatives and code structure"
     We **strongly recommend** to mirror the sub-folder names between `derivatives` and `code` to keep an intuitive relationship between code and data.
@@ -135,7 +136,7 @@ For modalities, such as **eye-tracking**, for which there is not yet a consensus
     - `project-metadata.json`: This file is created by the cluster admin, it contains general metadata about the project.</b>  
     - `sourcedata`: It comprises the raw data (unprocessed data), in this case raw dicom files.</b>  
     - `rawdata`: It comprises the BIDS converted niftis, the relative `.json` files and `.tsv` files.</b>  
-    - `derivatives`: It comprises different sub-folders which represent the macro-steps of you analysis, e.g. preprocessing, first_level  etc. These folders should follow the BIDS convention as well, and **must contain only data and no code**.</b>  
+    - `derivatives`: It comprises different sub-folders which represent the macro-steps of you analysis, e.g. `spm-preproc`, `spm-first_level` etc. These folders should follow the BIDS convention as well, and **must contain only data and no code**.</b>  
     - `code`: It includes sub-folders that **mirror** the `derivatives` sub-folder names. They **must contain only the code relative to each step, and no data at all**. It must also include a sub-folder containing the code for the BIDS convertion.</b>   
     - `stimuli`: It includes a subfolder for the experimental code and the stimuli (e.g. images), if any.</b>  
 
@@ -152,19 +153,15 @@ For modalities, such as **eye-tracking**, for which there is not yet a consensus
         │	├── sub-02/
         │	└── ...
         ├── derivatives/
-        │	├── preprocessing/
-        │	├── first_level/
-        │	├── second_level/
-        │   ├── classification/
-        │   ├── rsa/
+        │	├── spm-preproc/
+        │	├── spm-first_level/
+        │   ├── nilearn-decoding/
         │   └── ...
         ├── code/
-        |   ├── bids_convertion/
-        │	├── preprocessing/
-        │	├── first_level/
-        │	├── second_level/
-        │   ├── classification/
-        │   ├── rsa/
+        |   ├── bids-convertion/
+        │	├── spm-preproc/
+        │	├── spm-first_level/
+        │   ├── nilearn-decoding/
         │   └── ...
         └── stimuli/
             ├── experiment
@@ -178,7 +175,7 @@ For modalities, such as **eye-tracking**, for which there is not yet a consensus
     `project-metadata.json`: This file is created by the cluster admin, it contains general metadata about the project.</b>  
     `sourcedata`: It comprises the raw data (unprocessed data), for example .bdf files.</b>  
     `rawdata`: It comprises the BIDS converted data, the relative `.json` files and `.tsv` files.</b>  
-    `derivatives`: It comprises different sub-folders which represent the macro-steps of you analysis, e.g. preprocessing, erp etc. These folders should follow the BIDS convention as well, and **must contain only processed data and no code**.</b>  
+    `derivatives`: It comprises different sub-folders which represent the macro-steps of you analysis, e.g. eeglab-preproc, eeglab-erp etc. These folders should follow the BIDS convention as well, and **must contain only processed data and no code**.</b>  
     `code`: It includes sub-folders that **mirror** the `derivatives` sub-folder names. They **must contain only the code relative to each step, and no data at all**. It must also include a sub-folder containing the code for the BIDS convertion.</b>   
     `stimuli`: It includes a subfolder for the experimental code and the stimuli (e.g. images), if any.</b>  
 
@@ -195,17 +192,15 @@ For modalities, such as **eye-tracking**, for which there is not yet a consensus
         │	├── sub-02/
         │	└── ...
         ├── derivatives/
-        │	├── preprocessing/
-        │	├── erp/
-        │	├── time_frequency/
-        │   ├── classification/
+        │	├── eeglab-preproc/
+        │	├── eeglab-erp/
+        │	├── fieldtrip-time_frequency/
         │   └── ...
         ├── code/
-        |   ├── bids_convertion/
-        │	├── preprocessing/
-        │	├── erp/
-        │	├── time_frequency/
-        │   ├── classification/
+        |   ├── bids-convertion/
+        │	├── eeglab-preproc/
+        │	├── eeglab-erp/
+        │	├── fieldtrip-time_frequency/
         │   └── ...
         └── stimuli/
             └── experiment
