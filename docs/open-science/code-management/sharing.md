@@ -4,14 +4,15 @@ Sharing your code is essential for making your research open and reproducible, i
 
 ## Why you should use open source tools
 
-There are several reasons why people choose a programming language or an analysis tool: semplicity, familiarity with the tool, lab usage and many others, however if you want to ensure that your research is open and transparent, you should care also about whether a tool or a language is **open source**.
-The vast majority of programming languages are open source, that means that you have access to their source code and that they are free to use.</b>  
-This entails that you can create and share code and that virtually anyone else can use it freely. On the contrary proprietary programming languages and softwares require the user to buy a license or to use a license from their institution, thus contravening to the fundamental openess principle of science.
+There are several reasons why people choose a programming language or an analysis software: semplicity, familiarity with the tool and many others, however to ensure that your research is open and transparent, you should also consider whether a software or a language is **open source**. 
+Open source means that you have access to the source code and that you are free to use it, modify it and distribute it.  
+This entails that if you create and share code with an open source language anyone else can use it freely. On the contrary proprietary programming languages and softwares require the user to buy a license or to use a license from their institution, thus contravening to the fundamental openess principle of science.
 
 ## Document your code
 
-Code documentation is an essential prerequisite to make your research open, transparent and replicable. Without a decent documentation other researchers will be unable to use your code or they will need to spend long time to figure out how to make it work.
-Documenting your code is not only a favor you do to other potential users, but also to the future you. It happens often to forget how a piece of code you wrote sometimes ago worked and why you made certain decisions while writing that code, by providing good documentation you can avoid to waste time decyphering your code. 
+Code documentation is an essential prerequisite to make your research transparent and replicable. Without a decent documentation other researchers might be unable to use your code or might need to spend long time to figure out how to make it work.
+
+Documenting your code is not only a favor you do to other potential users, but also to the future you. It happens often to forget how a piece of code you wrote sometimes ago works, by providing good documentation you are going to be able to use that code with no extra effort. 
 
 **Comment your code:** The best way to start documenting your code is to comment each essential piece of it while your are still writing the code:
 
@@ -22,14 +23,14 @@ Documenting your code is not only a favor you do to other potential users, but a
 **README file:** A README file (as Markdown) is one of the most common way to document your code. It should include:
 
 - A brief introduction explaining the scope of your code.
-- An installation procedure, if needed, the list of dependencies (libraries needed by your code) and requirements (e.g. specific version of the programming language).
+- An installation procedure, the list of dependencies (libraries needed by your code) and requirements (e.g. specific version of the programming language).
 - A simple description of the code structure, especially if your code contains different interconnected parts.
-- A description on how to run the code and a working example.
+- A usage description and a working example.
 - Acknowledgements.
 
-## Github and other similar platforms
+## Where to share your code
 
-Github and Gitlab are just a few of the platforms that allow code sharing, such platforms, however, are not just public storages for code hosting, but they are tools for collaborative projects. The advantage of using such platforms during your research are diverse.
+[Github](https://github.com/) and [Gitlab](https://gitlab.com/gitlab-org/gitlab) are just a few of the platforms that allow code sharing, such platforms, however, are not just public storages for code hosting, but they are tools for collaborative projects. The advantage of using such platforms during your research are diverse.
 
 - They allow to share and document your code with your publication.
 - They rely on `git`, meaning that you can modify and keep track of your code locally through git and transfer (`push`) your changes to the version of your code hosted on Github or other platforms.
@@ -37,7 +38,6 @@ Github and Gitlab are just a few of the platforms that allow code sharing, such 
 - They give you a free and safe backup for your code.
 - They allow you to have private projects that only you and your collaborators can access.
 - If your repository is public they allow other people to use your code and help you to find potential issues.
-  
 
 ## Licenses
 
