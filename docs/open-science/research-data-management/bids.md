@@ -240,13 +240,44 @@ If any issue occurs, or you have a request for a specific tool that we do not co
 
     ### EEG conversion with MNE (python)
 
-=== "Behavioral"
+=== "Behavioral/Physiological"
 
-    BIDS for behavioral data follows conventions similar to those of the events files for neuroimaging data. 
-    We recommend to read carefully the [description](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/behavioral-experiments.html#behavioral-experiments-with-no-neural-recordings) in the BIDS website and to try to adopt the BIDS conventions when creating the log files during data acquisition. We do not provide any example due to the large variety of structures and formats that researchers use for their experiments.
+    **Behavioral data:**
 
+    BIDS for behavioral data follows conventions similar to those used for the `events.tsv` files with neural recordings. 
+    We recommend to read carefully the [description](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/behavioral-experiments.html#behavioral-experiments-with-no-neural-recordings) provided in the BIDS website.
+
+    !!! note "Behavioral data general rules"
+
+       - **What kynd of data:** Any behavioral measures (with no concurrent neural recordings).
+       - **File types:** Tabular data as `.tsv` with the following header `trial response response_time stim_file` (further entries can be added please refer to the BIDS page above). Metadata as `.json` files.  
+       - **Where:** Data must go under the `<beh>/` folder.
+       - **How:** Data must have the following format:
+                       <matches>[_recording-<label>]_beh.tsv
+                       <matches>[_recording-<label>]_beh.json
+                   where <matches> can be `sub-012_task-mytaskname-beh.tsv` and the relative `json` would be `sub-012_task-mytaskname-beh.json`. In case you have multiple sessions and runs: `sub-012_ses-1_task-mytaskname_run-1-beh.tsv`
+    
+    
+    !!! note "Save your behavioral data already in BIDS" 
+        When coding your behavioral experiment it is convenient to adopt the BIDS conventions to save your raw behavioral files in the correct format. 
+    
+    Given the large variety of structures and formats that researchers use for their behavioral experiments, we do not provide an example.
+
+    **Physiological data:**
+
+    We recommend to read the [dedicated page](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/physiological-and-other-continuous-recordings.html) in the BIDS website. 
+
+    !!! note "Physio data general rules"
+
+        - **What kynd of data:** Cardiac, respiratory and other continuous recordings
+        - **File types:** Continuous recordings as compressed files `.tsv.gz` (no header). Metadata as `.json` files.  
+        - **Where:** Data can go under different `<datatype>/` folders, such as `func`, `anat`, `dwi`, `meg`, `eeg`, `ieeg`, or `beh`
+        - **How:** Data must have the following format:
+                        <matches>[_recording-<label>]_physio.tsv.gz
+                        <matches>[_recording-<label>]_physio.json
+                    where <matches> can be `sub-012_task-mytaskname-breathing_physio.tsv.gz` and the relative `json` would be `sub-012_task-mytaskname-breathing_physio.json`. In case you have multiple sessions and runs: `sub-012_ses-1_task-mytaskname_run-1-breathing_physio.tsv.gz`
+    
 === "Eye-tracking"
-
     Coming soon...
 
 ## Data Version Control
