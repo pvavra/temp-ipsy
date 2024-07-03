@@ -22,7 +22,9 @@ There are multiple platforms to make your data public, here just a few of the mo
 - [Zenodo](https://zenodo.org/)
 - [RDC at ZPID](https://rdc-psychology.org/)
 
-Your code can be additionally hosted in platforms such as Github, Gitlab or Bitbucket if you expect and want other people have a more interactive and collaborative approach to your code.
+If you expect and whish other people to have a more interactive and collaborative approach to your code
+consider to share it also in other platforms such as Github, Gitlab or Bitbucket. Refer to the section about [code sharing].
+[code sharing]: ../../code-management/sharing
 
 ## Pre-registration
 
