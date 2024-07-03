@@ -242,7 +242,7 @@ If any issue occurs, or you have a request for a specific tool that we do not co
 
 === "Behavioral/Physiological"
 
-    **Behavioral data:**
+    ### Behavioral data
 
     BIDS for behavioral data follows conventions similar to those used for the `events.tsv` files with neural recordings. 
     We recommend to read carefully the [description](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/behavioral-experiments.html#behavioral-experiments-with-no-neural-recordings) provided in the BIDS website.
@@ -263,7 +263,7 @@ If any issue occurs, or you have a request for a specific tool that we do not co
     
     Given the large variety of structures and formats that researchers use for their behavioral experiments, we do not provide an example.
 
-    **Physiological data:**
+    ### Physiological data
 
     We recommend to read the [dedicated page](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/physiological-and-other-continuous-recordings.html) in the BIDS website. 
 
