@@ -226,13 +226,10 @@ If any issue occurs, or you have a request for a specific tool that we do not co
 
     Given the variety of EEG data formats, BIDS recommends two main formats (we also strongly suggest to use these two formats):
 
-    1. European format: `.edf`
-    2. BrainVision format: `.vhdr, .vmrk, .eeg`
+    - European format: `.edf`
+    - BrainVision format: `.vhdr, .vmrk, .eeg`
 
-    Other BIDS accepted formats, although not recommended, are:
-
-    3. Biosemi: `.bdf`
-    4. EEGLAB: `.fdt .set`
+    Other BIDS accepted formats, although not recommended, are: Biosemi `.bdf` and EEGLAB: `.fdt .set`
 
     ### EEG conversion with Fieldtrip (Matlab)
 
