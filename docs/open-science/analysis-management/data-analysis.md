@@ -8,7 +8,7 @@ Data analysis constitutes one of the core aspects of your research and also the 
 ## How to build a well structured analysis
 
 Analyses can easily become cumbersome and difficult to mantain in ways that we have not predicted.
-To avoid mistakes and to waste time deciphering our data structure, we recommend a simple and intuitive workflow that you might have already adopted before (keep in mind that we follow BIDS conventions which requires the following name `<pipeline>-<variant>` in the example: `mne-preproc`):
+To avoid mistakes and to waste time deciphering our data structure, we recommend a simple and intuitive workflow that you might have already adopted before:
 
 1. Chunk your analysis according to sensible, logical macro-steps (e.g. preprocessing, time_frequency analysis etc.). 
 2. Create folders for each macro-step and store in there all the scripts relative to each micro-step (in the example below, the `mne-preproc` folder constitutes a macro-step and the scripts, `preproc_step_1.py`, `preproc_step_2.py` etc., are micro-steps).
