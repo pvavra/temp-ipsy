@@ -1,6 +1,6 @@
 # Publish your data
 
-Sharing your data with the scientific community is for sure a milestone for your research, for this reason the best way to share your data and your findings with others is to make them open, transparent and especially interoperable.
+Sharing your data with the scientific community is a milestone for your research, for this reason the best way to share your data and your findings with others is to make them open, transparent and especially interoperable.
 
 If you have followed the previous recommendations up to now, your data should be almost ready to be shared.
 
