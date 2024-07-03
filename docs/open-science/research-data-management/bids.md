@@ -248,14 +248,14 @@ If any issue occurs, or you have a request for a specific tool that we do not co
     We recommend to read carefully the [description](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/behavioral-experiments.html#behavioral-experiments-with-no-neural-recordings) provided in the BIDS website.
 
     !!! note "Behavioral data general rules"
-    
-       - **What kind of data:** Any behavioral measures (with no concurrent neural recordings).
-       - **File types:** Tabular data as `.tsv` with the following header `trial response response_time stim_file` (further entries can be added please refer to the BIDS page above). Metadata as `.json` files.  
-       - **Where:** Data must go under the `<beh>/` folder.
-       - **How:** Data must have the following format:</b>  
-                       `<matches>[_recording-<label>]_beh.tsv`</b>  
-                       `<matches>[_recording-<label>]_beh.json`</b>  
-                   where `<matches>` can be `sub-012_task-mytaskname-beh.tsv` and the relative `json` would be `sub-012_task-mytaskname-beh.json`. In case you have multiple sessions and runs: `sub-012_ses-1_task-mytaskname_run-1-beh.tsv`
+
+          - **What kind of data:** Any behavioral measures (with no concurrent neural recordings).
+          - **File types:** Tabular data as `.tsv` with the following header `trial response response_time stim_file` (further entries can be added please refer to the BIDS page above). Metadata as `.json` files.  
+          - **Where:** Data must go under the `<beh>/` folder.
+          - **How:** Data must have the following format:</b>  
+                          `<matches>_beh.tsv`</b>  
+                          `<matches>_beh.json`</b>  
+                      where `<matches>` can be `sub-012_task-mytaskname`. In case you have multiple sessions and runs your file might be:`sub-012_ses-1_task-mytaskname_run-1-beh.tsv` and  the relative metadata `sub-012_ses-1_task-mytaskname_run-1-beh.json`.
     
     
     !!! note "Save your behavioral data already in BIDS" 
@@ -275,7 +275,7 @@ If any issue occurs, or you have a request for a specific tool that we do not co
         - **How:** Data must have the following format:</b>  
                         `<matches>[_recording-<label>]_physio.tsv.gz`
                         `<matches>[_recording-<label>]_physio.json`
-                    where `<matches>` can be `sub-012_task-mytaskname-breathing_physio.tsv.gz` and the relative `json` would be `sub-012_task-mytaskname-breathing_physio.json`. In case you have multiple sessions and runs: `sub-012_ses-1_task-mytaskname_run-1-breathing_physio.tsv.gz`
+                    where `<matches>` can be `sub-012_task-mytaskname` and `_recoding-<label>` can be used to distinguish between two or more type of recording e.g. `recording-breathing` and `recording-eyetracking`. In case you have multiple sessions and runs your file might be: `sub-012_ses-1_task-mytaskname_run-1-breathing_physio.tsv.gz` and the relative metadata `sub-012_ses-1_task-mytaskname_run-1-breathing_physio.json`. 
     
 === "Eye-tracking"
     Coming soon...
