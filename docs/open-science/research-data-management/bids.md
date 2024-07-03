@@ -4,7 +4,7 @@ If you are following the project workflow, by now you should have a project set 
 
 [**BIDS**](https://bids.neuroimaging.io/get_started.html) is an acronym that stands for **Brain Imaging Data Structure**. It is a standardized format to organize and describe neuroscientific data (see the schema below).</b>  
 In a nutshell, BIDS provides a framework for standardizing file names, folder structures and metadata for different kinds of data such as neuroimaging, behavioral, physiological etc.  
-We recommend you to go through the [BIDS Starter Kit pages](https://bids-standard.github.io/bids-starter-kit/) to understand more in depth the concepts and the phylosophy behind BIDS.
+We recommend you to go through the [BIDS specification page](https://bids-specification.readthedocs.io/en/stable/) and [BIDS Starter Kit pages](https://bids-standard.github.io/bids-starter-kit/) to understand more in depth the concepts and the phylosophy behind BIDS.
 
 ```bash
 .
@@ -34,6 +34,9 @@ We recommend you to go through the [BIDS Starter Kit pages](https://bids-standar
 ## How to BIDS 
 
 In the following tabs, we explain how to convert your data into BIDS for different modalities. We focused only on specific tools that are either widely used or provide some advantages for the users.
+
+Before you start converting your data we strongly recommend to go through the [BIDS specification page](https://bids-specification.readthedocs.io/en/stable/) relative to the modality of interest.
+
 If any issue occurs, or you have a request for a specific tool that we do not cover here, please contact emanuele.porcu at ovgu.de.
 
 === "fMRI"
