@@ -304,21 +304,24 @@ We recommend to use `rsync` to transfer files from/to Cecile. `rsync` is a power
 
 === "Windows"
 
-  - If you are using a [WSL](/cluster/cecile/accessing-cecile/#windows-subsystem-for-linux-wsl-option") on your Windows machine you can simply transfer data by using `rsync`:
-  ```bash
-  $ rsync -rltoDvh --progress </my_computer/some_data> <user@cecile.ovgu.de:~/target_directory/>
+    - If you are using a [WSL](/cluster/cecile/accessing-cecile/#windows-subsystem-for-linux-wsl-option") on your Windows machine you can simply transfer data by using `rsync`:
+    
+    **From your computer to Cecile:**
+    
+    ```bash
+    $ rsync -rltoDvh --progress </my_computer/some_data> <user@cecile.ovgu.de:~/target_directory/>
 
-  ```
+    ```
 
-  **From Cecile to your computer:**
-  Also in this case the following command should be typed on your machine.
+    **From Cecile to your computer:**
+    Also in this case the following command should be typed on your machine.
 
-  ```bash
-  $ rsync -rltoDvh --progress <~/some_directory_on_cecile/some_data> <~/my_computer/>
-  ```
+    ```bash
+    $ rsync -rltoDvh --progress <~/some_directory_on_cecile/some_data> <~/my_computer/>
+    ```
 
-  - In case you feel more comfortable with a GUI you may use the following SFTP clients:
-    [Winscp](https://winscp.net/eng/index.php) and [cyberduck](https://cyberduck.io/) are GUI based applications, please refer to their documentation for proper usage. 
+    - In case you feel more comfortable with a GUI you may use the following SFTP clients:
+        [Winscp](https://winscp.net/eng/index.php) and [cyberduck](https://cyberduck.io/) are GUI based applications, please refer to their documentation for proper usage. 
 
 
 ## How to retrieve lost data
