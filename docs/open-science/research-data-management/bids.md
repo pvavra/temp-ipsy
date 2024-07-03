@@ -33,11 +33,10 @@ We recommend you to go through the [BIDS specification page](https://bids-specif
   
 ## How to BIDS 
 
-In the following tabs, we explain how to convert your data into BIDS for different modalities. We focused only on specific tools that are either widely used or provide some advantages for the users.
+In the following tabs, we explain how to convert your **unprocessed raw data** into BIDS for different modalities. We focus only on specific tools that are either widely used or provide some advantages for the users.
 
-Before you start converting your data we strongly recommend to go through the [BIDS specification page](https://bids-specification.readthedocs.io/en/stable/) relative to the modality of interest.
+Before you start converting your data we strongly recommend to go through the [BIDS specification page](https://bids-specification.readthedocs.io/en/stable/) relative to your modalities of interest.
 
-If any issue occurs, or you have a request for a specific tool that we do not cover here, please contact emanuele.porcu at ovgu.de.
 
 === "fMRI"
 
@@ -280,3 +279,6 @@ If any issue occurs, or you have a request for a specific tool that we do not co
 === "Eye-tracking"
     Coming soon...
 
+## BIDS beyond rawdata
+
+TODO: Your data are not limited to your raw data, but include also so called `derivatives`, meaning the results of data processing.
