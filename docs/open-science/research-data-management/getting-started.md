@@ -55,4 +55,4 @@ Such principles have been codified by [Wilkinson et al. (2016)](https://www.natu
 
 - R1.3. (Meta)data meet domain-relevant community standards
 
-FAIR principles should guide your data management through all the phases of the life-cycle of your data.
+Throughout the following pages we will try to provide guidelines and tools to comply to the FAIR principles. We will do that by giving you suggestions that can guide you through the main phases  of the data life cycle, additionally we will provide technical recommendations to facilitate and speed your work.
