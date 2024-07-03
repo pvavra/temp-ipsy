@@ -44,6 +44,9 @@ As a starting point, you should make sure to gain a few principles of good codin
     ```python
     def square_me(num): 
         """
+        This function takes a number as 
+        input and returns its square.
+
         Parameters
         ----------
         num : int/float
@@ -52,7 +55,7 @@ As a starting point, you should make sure to gain a few principles of good codin
         Returns
         -------
         int/float
-            Power of the input number
+            Square of the input number
         """
         return num**2
 
