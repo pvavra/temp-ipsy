@@ -113,7 +113,7 @@ If your questionnaire has been properly completed your project will be created.
 ### Project structure
 
 The project structure follows a specific BIDS structure (see examples in the tabs below). Such a structure will be generated upon project creation. According to BIDS the structure we adopt requires only `rawdata` to be BIDS compliant, however we strongly recommend that also `derivatives` are BIDS compliant. On this note, when naming sub-folders in `derivatives` you should follow the convention `<pipeline>-<variant>`, where `<pipeline>` is the name of the tool you used and `<variant>` is the step of your analysis, for example, assuming your preprocessing is done via `spm`, the sub-folder name would be `spm-preproc/`. See the official BIDS [`derivatives` section](https://bids-specification.readthedocs.io/en/stable/common-principles.html#storage-of-derived-datasets).</b>  
-Keep in mind that, the schemas below are just examples, `derivatives` and `code` are populated with potential sub-folders the naming of such sub-folders are up to you and entirely project dependent, nonetheless keep the general structure as we suggest it.</b>  
+Keep in mind that, the schemas below are just examples, `derivatives` and `code` are populated with potential sub-folders, the choice and the naming of such sub-folders are up to you and entirely project dependent, nonetheless keep the general structure as we suggest it.</b>  
 
 !!! note "Mirroring derivatives and code structure"
     We **strongly recommend** to mirror the sub-folder names between `derivatives` and `code` to keep an intuitive relationship between code and data.
@@ -307,7 +307,7 @@ We recommend to use `rsync` to transfer files from/to Cecile. `rsync` is a power
     - If you are using a [WSL](/cluster/cecile/accessing-cecile/#windows-subsystem-for-linux-wsl-option") on your Windows machine you can simply transfer data by using `rsync`:
     
     **From your computer to Cecile:**
-    
+
     ```bash
     $ rsync -rltoDvh --progress </my_computer/some_data> <user@cecile.ovgu.de:~/target_directory/>
 
