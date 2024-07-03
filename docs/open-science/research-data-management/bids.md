@@ -275,7 +275,7 @@ If any issue occurs, or you have a request for a specific tool that we do not co
         - **How:** Data must have the following format:</b>  
                         `<matches>[_recording-<label>]_physio.tsv.gz`
                         `<matches>[_recording-<label>]_physio.json`
-                    where `<matches>` can be `sub-012_task-mytaskname` and `_recoding-<label>` can be used to distinguish between two or more type of recording e.g. `recording-breathing` and `recording-eyetracking`. In case you have multiple sessions and runs your file might be: `sub-012_ses-1_task-mytaskname_run-1-breathing_physio.tsv.gz` and the relative metadata `sub-012_ses-1_task-mytaskname_run-1-breathing_physio.json`. 
+                    where `<matches>` can be `sub-012_task-mytaskname` and `_recoding-<label>` can be used to distinguish between two or more type of recordings e.g. `recording-breathing` and `recording-eyetracking`. In case you have multiple sessions and runs your file might be: `sub-012_ses-1_task-mytaskname_run-1-breathing_physio.tsv.gz` and the relative metadata `sub-012_ses-1_task-mytaskname_run-1-breathing_physio.json`. 
     
 === "Eye-tracking"
     Coming soon...
