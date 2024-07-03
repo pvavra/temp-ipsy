@@ -248,8 +248,8 @@ If any issue occurs, or you have a request for a specific tool that we do not co
     We recommend to read carefully the [description](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/behavioral-experiments.html#behavioral-experiments-with-no-neural-recordings) provided in the BIDS website.
 
     !!! note "Behavioral data general rules"
-
-       - **What kynd of data:** Any behavioral measures (with no concurrent neural recordings).
+    
+       - **What kind of data:** Any behavioral measures (with no concurrent neural recordings).
        - **File types:** Tabular data as `.tsv` with the following header `trial response response_time stim_file` (further entries can be added please refer to the BIDS page above). Metadata as `.json` files.  
        - **Where:** Data must go under the `<beh>/` folder.
        - **How:** Data must have the following format:</b>  
@@ -259,7 +259,7 @@ If any issue occurs, or you have a request for a specific tool that we do not co
     
     
     !!! note "Save your behavioral data already in BIDS" 
-        When coding your behavioral experiment it is convenient to adopt the BIDS conventions to save your raw behavioral files in the correct format. 
+        It is convenient to save your raw behavioral files as BIDS compliant. 
     
     Given the large variety of structures and formats that researchers use for their behavioral experiments, we do not provide an example.
 
@@ -269,7 +269,7 @@ If any issue occurs, or you have a request for a specific tool that we do not co
 
     !!! note "Physio data general rules"
 
-        - **What kynd of data:** Cardiac, respiratory and other continuous recordings
+        - **What kind of data:** Cardiac, respiratory and other continuous recordings
         - **File types:** Continuous recordings as compressed files `.tsv.gz` (no header). Metadata as `.json` files.  
         - **Where:** Data can go under different `<datatype>/` folders, such as `func`, `anat`, `dwi`, `meg`, `eeg`, `ieeg`, or `beh`
         - **How:** Data must have the following format:</b>  
