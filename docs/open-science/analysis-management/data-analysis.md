@@ -8,34 +8,34 @@ Data analysis constitutes one of the core aspects of your research and also the 
 ## How to build a well structured analysis
 
 Analyses can easily become cumbersome and difficult to mantain in ways that we have not predicted.
-To avoid mistakes and to waste time deciphering our data structure, we recommend a simple and intuitive workflow that you might have already adopted before:
+To avoid mistakes and to waste time deciphering our data structure, we recommend a simple and intuitive workflow that you might have already adopted before (keep in mind that we follow BIDS conventions which requires the following name `<pipeline>-<variant>` in the example: `mne-preproc`):
 
-1. Chunk your analysis according to sensible, logical macro-steps (e.g. preprocessing, first-level, second-level etc.). 
-2. Create folders for each macro-step and store in there all the scripts relative to each micro-step (in the example below, the preprocessing folder constitutes a macro-step and the scripts, `preproc_step_1.py`, `preproc_step_2.py` etc., are micro-steps).
-3. Each macro-step folder should also contain a pipeline script, `preprocessing_pipeline.py` in the example, that is used to combine the micro-steps allowing to run those steps all at once.
+1. Chunk your analysis according to sensible, logical macro-steps (e.g. preprocessing, time_frequency analysis etc.). 
+2. Create folders for each macro-step and store in there all the scripts relative to each micro-step (in the example below, the `mne-preproc` folder constitutes a macro-step and the scripts, `preproc_step_1.py`, `preproc_step_2.py` etc., are micro-steps).
+3. Each macro-step folder should also contain a pipeline script, `mne-preproc.py` in the example, that is used to combine the micro-steps allowing to run those steps all at once.
 4. Each micro and macro-step should be implemented to run one subject/instance at the time. This enables you to run all the subjects in parallel in the cluster.
 5. You should have a general pipeline script that combines all the macro-steps together.
 
 ```bash
 
 code/
-├── general_pipeline
+├── mne-main_pipeline/
 │   ├── README
-│   └── general_pipeline_script.py
-├── preprocessing
+│   └── main_pipeline_script.py
+├── mne-preproc/
 │   ├── README
-│   ├── preprocessing_pipeline.py
+│   ├── mne-preproc.py
 │   ├── preproc_step_1.py
 │   ├── preproc_step_2.py
 │   └── preproc_step_3.py
-├── signal_analysis
+├── mne-time_freq/
 │   ├── README
-│   ├── signal_analysis_pipeline.py
-│   ├── signal_step_1.py
-│   └── signal_step_2.py
-└── statistics
+│   ├── mne-time_freq.py
+│   ├── time_freq_step_1.py
+│   └── time_freq_step_2.py
+└── mne-stats
     ├── README
-    └── stats.py
+    └── mne-stats.py
 
 ```
 
