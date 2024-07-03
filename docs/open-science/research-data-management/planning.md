@@ -52,3 +52,12 @@ To adopt the project workflow we suggest you to use the **cluster** for data ana
 1. Once your raw data are moved into the predefined structure, your data need to be converted into the **BIDS** format (see [BIDS]) by using the tools available in the cluster.
 [BIDS]: ../research-data-management/bids.md
 
+## Data Version Control
+
+One of the most important aspects of data management is to keep track of the evolution of your data. This task might be particularly error prone if done manually, it is, thus, advisable to use a systematic and automated approach.</b>  
+As for software development also data can be tracked via **version control**. There are not many version control tools dedicated to data, the main one is [Datalad](https://www.datalad.org/), which in the last years has been heavily adopted in cognitive neuroscience research.</b>   
+Datalad does not simply track the changes of your data, but also records their relationships. Beyond that, the datalad ecosystem includes other tools that can help you to make your science reproducible and collaborative.
+
+
+The best way to start with Datalad is to go through the [Datala-handbook](https://handbook.datalad.org/en/latest/).
+Dalalad is natively used through the command line, like [git](https://git-scm.com/), but for those who are less comfortable with the terminal there is also a [**GUI version**](http://docs.datalad.org/projects/gooey/en/latest/). 
