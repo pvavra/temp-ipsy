@@ -252,10 +252,10 @@ If any issue occurs, or you have a request for a specific tool that we do not co
        - **What kynd of data:** Any behavioral measures (with no concurrent neural recordings).
        - **File types:** Tabular data as `.tsv` with the following header `trial response response_time stim_file` (further entries can be added please refer to the BIDS page above). Metadata as `.json` files.  
        - **Where:** Data must go under the `<beh>/` folder.
-       - **How:** Data must have the following format:
-                       <matches>[_recording-<label>]_beh.tsv
-                       <matches>[_recording-<label>]_beh.json
-                   where <matches> can be `sub-012_task-mytaskname-beh.tsv` and the relative `json` would be `sub-012_task-mytaskname-beh.json`. In case you have multiple sessions and runs: `sub-012_ses-1_task-mytaskname_run-1-beh.tsv`
+       - **How:** Data must have the following format:</b>  
+                       `<matches>[_recording-<label>]_beh.tsv`</b>  
+                       `<matches>[_recording-<label>]_beh.json`</b>  
+                   where `<matches>` can be `sub-012_task-mytaskname-beh.tsv` and the relative `json` would be `sub-012_task-mytaskname-beh.json`. In case you have multiple sessions and runs: `sub-012_ses-1_task-mytaskname_run-1-beh.tsv`
     
     
     !!! note "Save your behavioral data already in BIDS" 
@@ -272,10 +272,10 @@ If any issue occurs, or you have a request for a specific tool that we do not co
         - **What kynd of data:** Cardiac, respiratory and other continuous recordings
         - **File types:** Continuous recordings as compressed files `.tsv.gz` (no header). Metadata as `.json` files.  
         - **Where:** Data can go under different `<datatype>/` folders, such as `func`, `anat`, `dwi`, `meg`, `eeg`, `ieeg`, or `beh`
-        - **How:** Data must have the following format:
-                        <matches>[_recording-<label>]_physio.tsv.gz
-                        <matches>[_recording-<label>]_physio.json
-                    where <matches> can be `sub-012_task-mytaskname-breathing_physio.tsv.gz` and the relative `json` would be `sub-012_task-mytaskname-breathing_physio.json`. In case you have multiple sessions and runs: `sub-012_ses-1_task-mytaskname_run-1-breathing_physio.tsv.gz`
+        - **How:** Data must have the following format:</b>  
+                        `<matches>[_recording-<label>]_physio.tsv.gz`
+                        `<matches>[_recording-<label>]_physio.json`
+                    where `<matches>` can be `sub-012_task-mytaskname-breathing_physio.tsv.gz` and the relative `json` would be `sub-012_task-mytaskname-breathing_physio.json`. In case you have multiple sessions and runs: `sub-012_ses-1_task-mytaskname_run-1-breathing_physio.tsv.gz`
     
 === "Eye-tracking"
     Coming soon...
