@@ -360,7 +360,7 @@ As a byproduct, quotas help you to keep your project much more tidy and force yo
 
 ## Scratch: What it is and how to use it
 
-`Scratch` is a particular folder that is never backed up (refer to How backups work for further details). For this reason is meant to be used for temporary data, for example intermediate outputs, that can be deleted with no consequences or code that you are testing. 
+`Scratch` is a particular folder that is never backed up. For this reason is meant to be used for temporary data, for example intermediate outputs, that can be deleted with no consequences or code that you are testing. 
 
 **How to decide which data should go into scratch:**</b>  
 The following are not absolute rules, please use your common sense and domain knowledge when applying them.
