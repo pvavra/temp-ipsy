@@ -19,13 +19,13 @@ Documenting your code is not only a favor you do to other potential users, but a
 - Provide one or more toy examples that the user can easily run.
 - Provide explanations for lines of code that might have some criticalities, or some peculiarities that might be hard to figure out only by reading the code.
 
-**README file:** A README file (as .txt or Markdown) is one of the most common way to document your code. It should include:
+**README file:** A README file (as Markdown) is one of the most common way to document your code. It should include:
 
 - A brief introduction explaining the scope of your code.
 - An installation procedure, if needed, the list of dependencies (libraries needed by your code) and requirements (e.g. specific version of the programming language).
 - A simple description of the code structure, especially if your code contains different interconnected parts.
 - A description on how to run the code and a working example.
-- Cite your sources.
+- Acknowledgements.
 
 ## Github and other similar platforms
 
