@@ -69,7 +69,7 @@ As a starting point, you should make sure to gain a few principles of good codin
 
 - **Read other people code:** Reading other people code teaches you how more advance coders approach a problem and write their own code. At the same time you are also going to encounter a huge amount of bad code, this will help you understand what not to do (see also antipatterns in [python](https://docs.quantifiedcode.com/python-anti-patterns/) and [R](https://www.burns-stat.com/pages/Tutor/R_inferno.pdf) to know what bad habits to avoid). 
 
-- **Use helpful tools**: Use [linters](https://en.wikipedia.org/wiki/Lint_(software)) and other softwares that can help you identify issues in your code, from bugs to from style. 
+- **Use helpful tools**: Use [linters](https://en.wikipedia.org/wiki/Lint_(software)) and other softwares that can help you identify issues in your code. 
     - **Matlab:** [codeIssues](https://www.mathworks.com/help/matlab/ref/codeissues.html)
     - **Python:** [Black](https://black.readthedocs.io/en/stable/), [Pylint](https://pylint.readthedocs.io/en/latest/) and [Flake8](https://flake8.pycqa.org/en/latest/)
     - **R:** [Lintr](https://lintr.r-lib.org/)
