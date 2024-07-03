@@ -33,7 +33,7 @@ One of the fundamental aspects of pre-registration is a clear distinction betwee
 
 For a more comprehensive presentation of pre-registration refer to [Nosek et al, 2018](https://www.pnas.org/doi/10.1073/pnas.1708274114).
 
-You can pre-register your research in the pre-registration page at [center for open science](https://www.cos.io/initiatives/prereg)
+You can pre-register your research in the [center for open science](https://www.cos.io/initiatives/prereg) website.
 
 ## Registered reports
 
