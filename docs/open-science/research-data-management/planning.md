@@ -1,10 +1,9 @@
 # Plan your data management
 
 Planning a research project can be at times overwhelming especially if it is your first time approacing a similar task. 
-While designing a project you need to consider several aspects about the data you would like to produce, such as: the most suitable type of data for your research question, the amount of data you need and the best way to organize your data.
-These are only a few essential aspects you might consider, there are of course many more, but one fundamental aspect that you should always keep in mind is **how to manage efficiently your data** in such a way that the future you and other researchers can understand the development of your data, from conception to publication.
+While designing a project you need to consider multiple aspects concerning the data you would like to produce, such as: which data are the most suitable type for my research question, which amount of data I need etc. These are only a few essential aspects that you might consider, there are of course many more, but one fundamental aspect that we tend to underestimate is **how to manage efficiently our data**. Thinking ahead about the best way to manage our data can be life saving and it will save us a lot of time in the future.
 
-A good starting point would be to build a **Data Management Plan.**
+A good starting point to start thinking about data management is to use a **Data Management Plan.**
 
 ## What is a Data Management Plan (DMP)?
 
@@ -40,16 +39,16 @@ As previously mentioned, a DMP is incresingly becoming mandatory to acquire fund
 
 ## Planning your project at Ipsy
 
-At Ipsy, we strive for open and reproducible science, to achieve this goal we have implemented a basic **research project workflow** that can help you manage your data with very little effort. 
+In order to help you manage your data, we have implemented a basic **research project workflow** that requires very little effort from your side. 
 
-In order to follow the project workflow we suggest you to use the **cluster** for data analysis and data storage. The project workflow consists of three simple steps:
+To adopt the project workflow we suggest you to use the **cluster** for data analysis and data storage. The project workflow consists of three simple steps:
 
 1. Fill in a brief **questionnaire** that helps us to create some intial metadata for your project. Further information about the questionnaire can be found [here] 
 [here]: ../../../cluster/cecile/data/#how-to-create-a-project-on-cecile
 
-2. Once the questionnaire is properly filled in, we create a dedicated **project** which comes with a predefined folder structure (to have detailed information about the structure, please refer to the specific [project structure section].
+1. Once the questionnaire is properly filled in, we create a dedicated **project** which comes with a predefined folder structure (to have detailed information about the structure, please refer to the specific [project structure section].
 [project structure section]: ../../../cluster/cecile/data/#project-structure
 
-3. Once your raw data are moved into the predefined structure, your data need to be converted into the **BIDS** format (see [BIDS]) by using the tools available in the cluster.
+1. Once your raw data are moved into the predefined structure, your data need to be converted into the **BIDS** format (see [BIDS]) by using the tools available in the cluster.
 [BIDS]: ../research-data-management/bids.md
 
