@@ -15,7 +15,7 @@ We recommend you to go through the [BIDS specification page](https://bids-specif
 └── sub-01
     ├── anat
     │   ├── sub-01_T2starw.nii.gz
-    │   └── sub-02_T1W.nii.gz
+    │   └── sub-01_T1W.nii.gz
     ├── func
     │   ├── sub-01_task-mybrillianttask_bold.nii.gz
     │   └── sub-01_task-mybrillianttask_events.tsv
