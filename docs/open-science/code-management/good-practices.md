@@ -37,9 +37,9 @@ As a starting point, you should make sure to gain a few principles of good codin
       circle_area = pi * radius**2
       ```
 
-- **Keep it simple:** if you have the choice between a clever, but convoluted solution, and less clever, but simpler solution, **choose the simplest solution**. It is probably the easiest version to read and understand in the future.
+- **Keep it simple:** if you have the choice between a clever, but convoluted solution, and less clever, but simpler solution, **choose the simplest solution**.
 
-- **Comment your code:** Although code can be understood only by reading code, other users and the future you will benefit from helpful comments to understand the logic you used and to get the gist of what you have done. The following is an example of commented python code. Each programming language has its own peculiar way of writing comments, please refer to the section about language specific styles.  
+- **Comment your code:** Although code can be understood only by reading code, other users and the future you will benefit from helpful comments to understand your logic and to get the gist of what you have done. Each programming language has its own peculiar way of writing comments, please refer to the section about language specific styles. The following is an example of commented python code.
 
     ```python
     def square_me(num): 
@@ -61,9 +61,9 @@ As a starting point, you should make sure to gain a few principles of good codin
 
     ```
 
-- **Chunk your code:** Chunk your code in small modular parts when possible (pretty much always). By using **functions** or **methods** of a class you will be able to divide your long and complicated code in small parts that are easier to handle and to test. If you have the chance restrict a function or a method to just one task, this will drastically reduce the error space.
+- **Chunk your code:** Chunk your code in small modular parts when possible (pretty much always). By using **functions** or class **methods** you will be able to divide a long and complicated code in small parts that are easier to handle and to test. If you have the chance restrict a function or a method to just one task, this will drastically reduce the error space.
 
-- **Do not repeat yourself:** If you need to use multiple times throughout your code a piece of code that achieves a specific goal, create a function out of it and call it when necessary. It makes your code more readable and reduces the chance of creating bugs.
+- **Do not repeat yourself:** If you need to use multiple times a piece of code throughout your code, create a function out of it and call it when necessary. It makes your code more readable and reduces the chance of creating bugs.
 
 - **Make it readable:** Code can easily become convoluted and hard to read, try to make it readable by following style and guidelines of your language of choice and adopting the previous points of this list.
 
@@ -87,7 +87,7 @@ Although the previous principles apply to most of the programming languages you 
 Style conventions are not the result of a pure aestethic choice, but they aim at specific practical goals, such as increasing readibility and reducing the chance to produce bugs. 
 
 **Styles and conventions of the major languages used in cognitive neuroscience:**
-As a rule of thumb, you do not need to memorize all the language conventions, but it would be a good starting point to read the main guidelines and to start including them immediately in your code. With time you will be able to include more and more conventions into your code, but keep in mind that following some of them will be, at times, tedious and it might not come naturally, but stick to them and it will pay off.
+As a rule of thumb, you do not need to memorize all the language conventions, but it would be a good starting point to read the main points and to start including them immediately in your code. With time you will be able to include more and more conventions into your code.
 
 - **Python:** [https://peps.python.org/pep-0008/#introduction](https://peps.python.org/pep-0008/#introduction)
 - **Matlab:** [https://www.mathworks.com/matlabcentral/fileexchange/45047-matlab-style-guidelines-cheat-sheet](https://www.mathworks.com/matlabcentral/fileexchange/45047-matlab-style-guidelines-cheat-sheet)
