@@ -35,14 +35,13 @@ We recommend you to go through the [BIDS specification page](https://bids-specif
 
 In the following tabs, we explain how to convert your **unprocessed raw data** into BIDS for different modalities. We focus only on specific tools that are either widely used or provide some advantages for the users.
 
-Before you start converting your data we strongly recommend to go through the [BIDS specification page](https://bids-specification.readthedocs.io/en/stable/) relative to your modalities of interest.
-
+Before you start converting your data we strongly recommend to go through the [BIDS specification page](https://bids-specification.readthedocs.io/en/stable/) relative to your modalities of interest. Make sure you read the [common principles](https://bids-specification.readthedocs.io/en/stable/common-principles.html) to grasp the jargon used for BIDS.
 
 === "fMRI"
 
     ### Using heudiconv to convert fMRI data to BIDS
 
-    [Heudiconv](https://heudiconv.readthedocs.io/en/latest/) is a python library which helps you to convert f/MRI data to BIDS with little effort. You do not need to be very proficient in python to use it. YOu can either follow this brief tutorial or use the [tutorials](https://heudiconv.readthedocs.io/en/latest/tutorials.html) provided by the heudiconv developers and users.
+    [Heudiconv](https://heudiconv.readthedocs.io/en/latest/) is a python library which helps you to convert f/MRI data to BIDS with little effort. You do not need to be very proficient in python to use it, although some basics would help you. You can either follow this brief tutorial or use the [tutorials](https://heudiconv.readthedocs.io/en/latest/tutorials.html) provided by the heudiconv developers and users.
 
     **Step 1**
     
