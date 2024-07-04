@@ -6,7 +6,7 @@ Ipsy docs is a work in progress collection of resources, tutorials and guideline
 
 #### Objectives of Ipsy Docs
 
-Provide a guide throughout the life cycle of your data to achieve a FAIR data management. 
+Provide a guide for the management of your research data. 
 [:material-file-document-check: Research Data Management](open-science/research-data-management/getting-started/){ .md-button } 
 
 Provide support and documentation for a proper and effective usage of the cluster.
