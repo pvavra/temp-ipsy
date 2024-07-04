@@ -28,7 +28,8 @@ consider to share it also in other platforms such as Github, Gitlab or Bitbucket
  
 ## Pre-registration
 
-Pre-registration is a relatively recent approach to do research, it is based on the assumption that registering in advance, to a dedicated platform, a detailed report of the experimental and analysis procedure one would follow, it would contribute to a more transparent and reproducible science.
+Pre-registration is a relatively recent approach to do research, it is based on the assumption that registering in advance, to a dedicated platform, a detailed plan of the experimental and analysis procedure one would follow, it would contribute to a more transparent and reproducible science.
+
 One of the fundamental aspects of pre-registration is a clear distinction between **confirmatory-hypothesis** and **exploratory-hypothesis**, or in other words the distinction between the hypothesis put forward before data collection, the prediction,  and the exploratory post-hoc hypothesis, the postdiction. Pre-gistration does not favor one or the other hypothesis, as it should be, it considers both fundamental for the advancement of science, but it requires a net distinction when data and results are published.
 
 For a more comprehensive presentation of pre-registration refer to [Nosek et al, 2018](https://www.pnas.org/doi/10.1073/pnas.1708274114).
