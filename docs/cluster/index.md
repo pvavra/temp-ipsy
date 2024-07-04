@@ -13,7 +13,7 @@ A computational cluster is a collection of interconnected computers (see image b
 
 - **Time**: A cluster allows you to perform computationally expensive tasks in a reduced amount of time with respect to your regular work computer.
   
-- **Parallelization**: A typical project for cognitive neuroscience requires the analysis of group of subjects or animals, which can often take long time, by leveraging on the multiple resources, you can perform virtually at the same time the analsys of different subjects.
+- **Parallelization**: A typical cognitive neuroscience project requires the analysis of group of subjects or animals, which can often take long time, by leveraging on the multiple resources, you can perform virtually at the same time the analsys of different subjects.
    
 - **Security and backups**: The cluster ensures that your data are frequently backed up and protected, thus allowing also to store and analyze sensitive data (e.g. patient data).
   
