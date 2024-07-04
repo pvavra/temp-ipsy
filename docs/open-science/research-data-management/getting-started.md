@@ -1,6 +1,10 @@
 # Getting started
 
-## What is FAIR?
+## What is Research Data Management?
+
+Research Data Management (RDM) is the collection of processes (e.g. organization, documentation, publication and archiving) that researchers adopt to govern their data during the data lifecycle. A good way to manage your own data is to comply to the so called FAIR principles. 
+
+## What are the FAIR principles?
 
 Science is an incremental process that builds on prior findings and technical advancements, as such it relies on the correcteness of previous and current results. To contribute responsably with our research, we need to guarantee replicable results and transparency regarding the processes that led to those results. This is not an easy task, it requires time, meticulous work and especially common conventions for sharing and reusing data.</b>  
 In recent years, in order to provide a common ground for an open a transparent research, scientists from different fields have put forward general guidelines known as [**FAIR**](https://www.go-fair.org/fair-principles/) data principles.
