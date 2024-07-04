@@ -33,7 +33,7 @@ The following schema represents how data are structured on Cecile. Please take a
 
 ```
 
-## Explaining Cecile data structure
+## Understanding Cecile data structure
 
 
 - `/home/<username>`: *Your personal home folder*, this folder **must not** contain your data and your analysis. In `home` it is allowed a maximum storage space of 1GB, see the section on data storage [quotas] for further details. <br> 
