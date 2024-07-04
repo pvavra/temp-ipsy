@@ -1,12 +1,14 @@
 # Getting started
 
+Science is an incremental process that builds on prior findings and technical advancements, as such it relies on the correcteness of previous and current results. To contribute responsably with our research, we need to guarantee replicable results and transparency regarding the processes that led to those results. This is not an easy task, it requires meticulous work, time, technical skills and especially common conventions for managing our reasearch data as a community.
+
 ## What is Research Data Management?
 
-Research Data Management (RDM) is the collection of processes (e.g. organization, documentation, publication and archiving) that researchers adopt to govern their data during the data lifecycle. A good way to manage your own data is to comply to the so called FAIR principles. 
+Research Data Management (RDM) is the collection of processes (e.g. organization, documentation, publication and archiving) that researchers adopt to govern their data during the data lifecycle.<b/>  
+Although data differ significantly across disciplines in many aspects, general principles for a open and transparent data management are shared among disciplines and find their definition in the so called FAIR data principles.
 
 ## What are the FAIR principles?
 
-Science is an incremental process that builds on prior findings and technical advancements, as such it relies on the correcteness of previous and current results. To contribute responsably with our research, we need to guarantee replicable results and transparency regarding the processes that led to those results. This is not an easy task, it requires time, meticulous work and especially common conventions for sharing and reusing data.</b>  
 In recent years, in order to provide a common ground for an open a transparent research, scientists from different fields have put forward general guidelines known as [**FAIR**](https://www.go-fair.org/fair-principles/) data principles.
 
 **FAIR** is an acronym that stands for: **F**indable, **A**ccessable, **I**nteroperable and **R**eusable
