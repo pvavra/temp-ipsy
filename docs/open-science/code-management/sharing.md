@@ -6,7 +6,7 @@ Sharing your code is essential for making your research open and reproducible, i
 
 There are several reasons why people choose a programming language or an analysis software: simplicity, familiarity with the tool, it's a lab standard and many others. However to ensure that your research is open and transparent, you should also consider whether a software or a language is **open source**. 
 Open source softwares grant you access to the source code and freedom to use, modify and distribute them.  
-As a consequence, if you create analysis with an open source language and make it publicly available, anyone else is allowed to use it freely. On the contrary, proprietary programming languages and softwares require the user to buy a license or to use a license from their institution, thus contravening to the fundamental openess principle of science.
+As a consequence, if you create some code with an open source language and make it publicly available, anyone else is allowed to use it freely. On the contrary, proprietary programming languages and softwares require the user to buy a license or to use a license from their institution, thus contravening to the fundamental openess principle of science.
 
 ## Document your code
 
