@@ -1,6 +1,6 @@
 # Getting started
 
-Science is an incremental process that builds on prior findings and technical advancements, as such it relies on the correcteness of previous and current results. To contribute responsably with our research, we need to guarantee replicable results and transparency regarding the processes that led to those results. This is not an easy task, it requires meticulous work, time, technical skills and especially common conventions for managing our reasearch data as a community.
+Science is an incremental process that builds on prior findings and technical advancements, as such it relies on the correcteness of previous and current results. To contribute responsably with our research, we need to guarantee replicable results and transparency regarding the processes that led to those results. This is not an easy task, it requires meticulous work, time and especially shared conventions for managing our data within a community.
 
 ## What is Research Data Management?
 
