@@ -192,30 +192,30 @@ Before you start converting your data we strongly recommend to go through the [B
 
         - Set up the functional images, which go into the `func` folder.
 
-          ```python
-          task = create_key("sub-{subject}/func/sub-{subject}_task-foodchoice_run-{item:01d}_bold")
-          ```
+            ```python
+            task = create_key("sub-{subject}/func/sub-{subject}_task-foodchoice_run-{item:01d}_bold")
+            ```
 
-          - As for the anatomical image you need to add the `sub-{subject}/` folder.
-          - The `func` folder is dedicated to the functional images.
-          - The `task-<taskname>` indicates the name of the task.
-          - `_run-` is just a place holder for the run number that heudiconv fills in automatically.
-          - The `bold` suffix indicates the type of functional file we are dealing with.
+            - As for the anatomical image you need to add the `sub-{subject}/` folder.
+            - The `func` folder is dedicated to the functional images.
+            - The `task-<taskname>` indicates the name of the task.
+            - `_run-` is just a place holder for the run number that heudiconv fills in automatically.
+            - The `bold` suffix indicates the type of functional file we are dealing with.
 
         - Set up the field maps images, which go into the `fmap` folder. The previous anatomical and functional images
           are rather standard for fMRI experiments, the field maps can be very different and sometimes absent.
 
-          ```
-          fmap_mag = create_key("sub-{subject}/fmap/sub-{subject}_acq-grefieldmapping_magnitude")
-          fmap_phasediff = create_key("sub-{subject}/fmap/sub-{subject}_acq-grefieldmapping_phasediff")
-          epi = create_key("sub-{subject}/fmap/sub-{subject}_dir-AP-run-{item:01d}_epi")
-          ```
+                ```
+                fmap_mag = create_key("sub-{subject}/fmap/sub-{subject}_acq-grefieldmapping_magnitude")
+                fmap_phasediff = create_key("sub-{subject}/fmap/sub-{subject}_acq-grefieldmapping_phasediff")
+                epi = create_key("sub-{subject}/fmap/sub-{subject}_dir-AP-run-{item:01d}_epi")
+                ```
 
-          - As for the other images you set up the subject folder `sub-{subject}`.
-          - The `fmap` folder is dedicated to the fieldmap related images.
-          - In this particular case for `fmap_mag` and `fmap_phasediff` we specified the `_acq-<label>_` which changes for different cases.
-          - The suffixes `magnitude` and `phasediff` and `epi` are mandatory for these fieldmap images, please refer to the [official page](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/magnetic-resonance-imaging-data.html#fieldmap-data).
-          - The `_dir-AP_` indicates the Phase-Encoding direction in the `EPI` image, refer to the [official page](https://bids-specification.readthedocs.io/en/stable/appendices/entities.html#dir) for further information.
+                - As for the other images you set up the subject folder `sub-{subject}`.
+                - The `fmap` folder is dedicated to the fieldmap related images.
+                - In this particular case for `fmap_mag` and `fmap_phasediff` we specified the `_acq-<label>_` which changes for different cases.
+                - The suffixes `magnitude` and `phasediff` and `epi` are mandatory for these fieldmap images, please refer to the [official page](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/magnetic-resonance-imaging-data.html#fieldmap-data).
+                - The `_dir-AP_` indicates the Phase-Encoding direction in the `EPI` image, refer to the [official page](https://bids-specification.readthedocs.io/en/stable/appendices/entities.html#dir) for further information.
 
     - **Heuristics:** Now we need to create a few basic rules to tell heudiconv which files to extract.
     
