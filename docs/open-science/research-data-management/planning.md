@@ -1,7 +1,7 @@
 # Plan your data management
 
 Planning a research project can be at times overwhelming especially if it is your first time approaching such a task. 
-While designing a project you need to consider multiple aspects concerning the data you would like to produce, such as: which data are the most suitable type for my research question, which amount of data I need etc. These are only a few essential aspects that you might consider, there are many more, but one fundamental aspect that we tend to underestimate is **how to manage efficiently our data**. Thinking ahead about the best way to manage our data can be life saving and it can save us a lot of time in the future.
+While designing a project you need to consider many aspects concerning the data you would like to produce such as: which data are the most suitable for your research question, which amount of data you need etc. These are only a few essential aspects that you might consider, there are many more, but one fundamental aspect that we tend to underestimate is **how to manage efficiently our data**. Thinking ahead about the best way to manage our data can be can save us a lot of time in the future and provide many more advantages.
 
 A good starting point to start thinking about data management is to use a **Data Management Plan.**
 
@@ -9,7 +9,7 @@ A good starting point to start thinking about data management is to use a **Data
 
 A data management plan is a research document, taylored on your project, that, as the name suggests, helps you to organize your current and future data. It simply consists of a questionnaire that guides you through some of the aspects of the data life cycle.
 
-Despite its name, a DMP should be considered as a living document that you can update throughout your project. Keeping your DMP up to date allows you to record essential information relative to your data, such as metadata and other sparse information that you might need in a later stage of the project (e.g. when writing a paper or a report for a funding agency). 
+Despite its name, a DMP should be considered as a living document that you can update throughout your project. Keeping your DMP up to date allows you to record essential information relative to your data, such as sparse information and metadata that you might need in a later stage of the project (e.g. when writing a paper or a report for a funding agency). 
 
 A DMP is increasingly required by funding agencies, since 2021 it is indeed mandatory to provide a DMP for all the [European grants](https://ec.europa.eu/info/funding-tenders/opportunities/docs/2021-2027/common/agr-contr/general-mga_horizon-euratom_en.pdf), here you can find a DMP template by the [ERC](https://erc.europa.eu/sites/default/files/document/file/ERC_info_document-Open_Research_Data_and_Data_Management_Plans.pdf).
 
@@ -33,7 +33,7 @@ As previously mentioned, a DMP is incresingly becoming mandatory to acquire fund
 - It forces you to create documentation and proper metadata at an early stage of your project.
 - If properly updated during the project life, you can publish the DMP together with your data.
 
-!!! Danger "Start writing documentation right now"
+!!! note "Start writing documentation right now"
     Documenting your data only at the end of your project is not advisable. It forces you to rely on your fallible memory, on sparse information and it is extremely error prone and time consuming
 
 
