@@ -182,13 +182,14 @@ Before you start converting your data we strongly recommend to go through the [B
     
         - Start with your anatomical images, which all go into the `anat` folder:
 
-          ```python
-          t1w = create_key("sub-{subject}/anat/sub-{subject}_acq-mprage_T1w")
-          ```
-          - The `sub-{subject}/` folder where `{subject}` is a placeholder that heudiconv fills in with the correct subject ID.
-          - The folder `anat/` is dedicated to all the anatomical images.
-          - In `acq-<label>` you provide the type of acquisition e.g. `mprage` (this is not mandatory). 
-          - The `Tw1` suffix is the standard name for T1 weighted images. Keep in mind that you might have have different anatomical images.   
+            ```python
+            t1w = create_key("sub-{subject}/anat/sub-{subject}_acq-mprage_T1w")
+            ```
+
+            - The `sub-{subject}/` folder where `{subject}` is a placeholder that heudiconv fills in with the correct subject ID.
+            - The folder `anat/` is dedicated to all the anatomical images.
+            - In `acq-<label>` you provide the type of acquisition e.g. `mprage` (this is not mandatory).
+            - The `Tw1` suffix is the standard name for T1 weighted images. Keep in mind that you might have have different anatomical images.  
 
         - Set up the functional images, which go into the `func` folder.
 
@@ -205,17 +206,17 @@ Before you start converting your data we strongly recommend to go through the [B
         - Set up the field maps images, which go into the `fmap` folder. The previous anatomical and functional images
           are rather standard for fMRI experiments, the field maps can be very different and sometimes absent.
 
-                ```
-                fmap_mag = create_key("sub-{subject}/fmap/sub-{subject}_acq-grefieldmapping_magnitude")
-                fmap_phasediff = create_key("sub-{subject}/fmap/sub-{subject}_acq-grefieldmapping_phasediff")
-                epi = create_key("sub-{subject}/fmap/sub-{subject}_dir-AP-run-{item:01d}_epi")
-                ```
-
-                - As for the other images you set up the subject folder `sub-{subject}`.
-                - The `fmap` folder is dedicated to the fieldmap related images.
-                - In this particular case for `fmap_mag` and `fmap_phasediff` we specified the `_acq-<label>_` which changes for different cases.
-                - The suffixes `magnitude` and `phasediff` and `epi` are mandatory for these fieldmap images, please refer to the [official page](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/magnetic-resonance-imaging-data.html#fieldmap-data).
-                - The `_dir-AP_` indicates the Phase-Encoding direction in the `EPI` image, refer to the [official page](https://bids-specification.readthedocs.io/en/stable/appendices/entities.html#dir) for further information.
+            ```python
+            fmap_mag = create_key("sub-{subject}/fmap/sub-{subject}_acq-grefieldmapping_magnitude")
+            fmap_phasediff = create_key("sub-{subject}/fmap/sub-{subject}_acq-grefieldmapping_phasediff")
+            epi = create_key("sub-{subject}/fmap/sub-{subject}_dir-AP-run-{item:01d}_epi")
+            ```
+            
+            - As for the other images you set up the subject folder `sub-{subject}`.
+            - The `fmap` folder is dedicated to the fieldmap related images.
+            - In this particular case for `fmap_mag` and `fmap_phasediff` we specified the `_acq-<label>_` which changes for different cases.
+            - The suffixes `magnitude` and `phasediff` and `epi` are mandatory for these fieldmap images, please refer to the [official page](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/magnetic-resonance-imaging-data.html#fieldmap-data).
+            - The `_dir-AP_` indicates the Phase-Encoding direction in the `EPI` image, refer to the [official page](https://bids-specification.readthedocs.io/en/stable/appendices/entities.html#dir) for further information.
 
     - **Heuristics:** Now we need to create a few basic rules to tell heudiconv which files to extract.
     
