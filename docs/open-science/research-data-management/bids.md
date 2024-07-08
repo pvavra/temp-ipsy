@@ -233,7 +233,7 @@ Before you start converting your data we strongly recommend to go through the [B
             info[task].append(s.series_id)
         ```
 
-        ```
+        ```python
         elif 'field_mapping' in s.protocol_name and s.dim3 == 132:
             info[fmap_mag].append(s.series_id)
         elif 'field_mapping' in s.protocol_name and s.dim3 == 66:
@@ -252,7 +252,7 @@ Before you start converting your data we strongly recommend to go through the [B
     $ heudiconv --files <file_containing_dicoms> -o <directory_for_bids/> -f <heuristic.py> -s <subject_number> -c dcm2niix -b --overwrite
     ```
 
-    The following tree represents the results of the BIDS conversion. 
+    The following tree represents the result of the BIDS conversion. 
 
     ```
         .
