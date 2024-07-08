@@ -196,10 +196,10 @@ Before you start converting your data we strongly recommend to go through the [B
           task = create_key("sub-{subject}/func/sub-{subject}_task-foodchoice_run-{item:01d}_bold")
           ```
 
-          - As for the anatomical image you need to add the `sub-{subject}/` folder
-          - The `func` folder is dedicated to the functional images. 
+          - As for the anatomical image you need to add the `sub-{subject}/` folder.
+          - The `func` folder is dedicated to the functional images.
           - The `task-<taskname>` indicates the name of the task.
-          - `_run-` is just a place holder for the run number that heudiconv fills in automatically
+          - `_run-` is just a place holder for the run number that heudiconv fills in automatically.
           - The `bold` suffix indicates the type of functional file we are dealing with.
 
         - Set up the field maps images, which go into the `fmap` folder. The previous anatomical and functional images
