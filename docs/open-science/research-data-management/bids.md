@@ -175,12 +175,12 @@ Before you start converting your data we strongly recommend to go through the [B
         return info
     ```
     
-    The essential parts of the script that you need to modify are the **keys** and the actual **heuristics**, keep in mind that you have to modify keys and heuristics according to your dataset files:
+    The essential sections of the script that you need to modify are the **keys** and the actual **heuristics**, keep in mind that you have to modify keys and heuristics according to your dataset:
 
     - **Keys:** In the `dicominfo.tsv` (in `.heudiconv`) file you find the exact naming of the dicom files, you need to go through the list of files and decide which of them are important for your analysis.</b>  
     Once you have made your decision, you can create the proper keys by following the naming conventions explained in the [BIDS tutorial](https://bids-standard.github.io/bids-starter-kit/folders_and_files/files.html). Keys create the BIDS compliant file names and structure.
     
-        - Start with your anatomical images, which all go into the `anat` folder:
+        - Start with your anatomical images which all go into the `anat` folder:
 
             ```python
             t1w = create_key("sub-{subject}/anat/sub-{subject}_acq-mprage_T1w")
@@ -191,7 +191,7 @@ Before you start converting your data we strongly recommend to go through the [B
             - In `acq-<label>` you provide the type of acquisition e.g. `mprage` (this is not mandatory).
             - The `Tw1` suffix is the standard name for T1 weighted images. Keep in mind that you might have have different anatomical images.  
 
-        - Set up the functional images, which go into the `func` folder.
+        - Set up the functional images which go into the `func` folder.
 
             ```python
             task = create_key("sub-{subject}/func/sub-{subject}_task-foodchoice_run-{item:01d}_bold")
@@ -203,8 +203,8 @@ Before you start converting your data we strongly recommend to go through the [B
             - `_run-` is just a place holder for the run number that heudiconv fills in automatically.
             - The `bold` suffix indicates the type of functional file we are dealing with.
 
-        - Set up the field maps images, which go into the `fmap` folder. The previous anatomical and functional images
-          are rather standard for fMRI experiments, the field maps can be very different and sometimes absent.
+        - Set up the field maps images which go into the `fmap` folder. The previous anatomical and functional images
+          are rather standard for fMRI experiments, the field maps can be different and sometimes absent.
 
             ```python
             fmap_mag = create_key("sub-{subject}/fmap/sub-{subject}_acq-grefieldmapping_magnitude")
@@ -215,8 +215,8 @@ Before you start converting your data we strongly recommend to go through the [B
             - As for the other images you set up the subject folder `sub-{subject}`.
             - The `fmap` folder is dedicated to the fieldmap related images.
             - In this particular case for `fmap_mag` and `fmap_phasediff` we specified the `_acq-<label>_` which changes for different cases.
-            - The suffixes `magnitude` and `phasediff` and `epi` are mandatory for these fieldmap images, please refer to the [official page](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/magnetic-resonance-imaging-data.html#fieldmap-data).
-            - The `_dir-AP_` indicates the Phase-Encoding direction in the `EPI` image, refer to the [official page](https://bids-specification.readthedocs.io/en/stable/appendices/entities.html#dir) for further information.
+            - The suffixes `magnitude` and `phasediff` and `epi` are mandatory for these types of fieldmap images, please refer to the [official page](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/magnetic-resonance-imaging-data.html#fieldmap-data) for all the possible cases.
+            - The `_dir-AP_` indicates the **Phase-Encoding direction** of the `EPI` image, please refer to the [official page](https://bids-specification.readthedocs.io/en/stable/appendices/entities.html#dir) for further information.
 
     - **Heuristics:** Now we need to create a few basic rules to tell heudiconv which files to extract.
     
@@ -296,7 +296,8 @@ Before you start converting your data we strongly recommend to go through the [B
 
     ```
 
-    Note that heudiconv creates the whole BIDS structure, the sidecars as `.json` files, and the events files as `.tsv`.</b>   `events.tsv` are just tabular files containing the header: `onset	duration	trial_type	response_time	stim_file`. Your task is to complete these files according to the bids conventions.
+    Note that heudiconv creates also `events.tsv`, tabular files containing the header: `onset	duration trial_type	response_time	stim_file`. Your task is to complete these files with your log file acquired during the experiement according to the bids conventions.
+    Additionally you should create `events.json` files which contain the description of each column in `events.tsv`.
 
 === "EEG/MEG"
 
