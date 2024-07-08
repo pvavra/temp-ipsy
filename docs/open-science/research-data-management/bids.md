@@ -113,10 +113,12 @@ Before you start converting your data we strongly recommend to go through the [B
         # Create keys: This section is specific to each project
         # you need to create your own keys and the info dictionary
 
-        t1w = create_key("sub-{subject}/anat/sub-{subject}_t1w")
+        t1w = create_key("sub-{subject}/anat/sub-{subject}_acq-mprage_T1w")
         task = create_key("sub-{subject}/func/sub-{subject}_task-foodchoice_run-{item:01d}_bold")
-        fmap = create_key("sub-{subject}/fmap/sub-{subject}_fieldmap")
-        epi = create_key("sub-{subject}/fmap/sub-{subject}_epi")
+        fmap_mag = create_key("sub-{subject}/fmap/sub-{subject}_acq-grefieldmapping_magnitude")
+        fmap_phasediff = create_key("sub-{subject}/fmap/sub-{subject}_acq-grefieldmapping_phasediff")
+        epi = create_key("sub-{subject}/fmap/sub-{subject}_dir-AP-run-{item:01d}_epi")
+
 
         # the dictionary info must contain your keys
         info: dict[tuple[str, tuple[str, ...], None], list[str]] = { 
@@ -158,39 +160,62 @@ Before you start converting your data we strongly recommend to go through the [B
             # other features (like data size) that 
             # can help select the correct files
 
-            if "t1_mpr" in s.protocol_name:
-                info[t1w].append(s.series_id)
-            elif 'fMRI_SMS2_2.2iso_66sl_TR2_run' in s.protocol_name and s.dim4 == 200:
-                info[task].append(s.series_id)
-            elif 'field_mapping' in s.protocol_name:
-                info[fmap].append(s.series_id)
-            elif 'EPI' in s.protocol_name:
-                info[epi].append(s.series_id)
+        if "t1_mpr" in s.protocol_name:
+            info[t1w].append(s.series_id)
+        elif 'fMRI_SMS2_2.2iso_66sl_TR2_run' in s.protocol_name and s.dim4 == 200:
+            info[task].append(s.series_id)
+        elif 'field_mapping' in s.protocol_name and s.dim3 == 132:
+            info[fmap_mag].append(s.series_id)
+        elif 'field_mapping' in s.protocol_name and s.dim3 == 66:
+            info[fmap_phasediff].append(s.series_id)
+        elif 'EPI' in s.protocol_name:
+            info[epi].append(s.series_id)
+
             
         return info
     ```
     
-    The essential parts of the script that you need to modify are the **keys** and the actual **heuristics**:
+    The essential parts of the script that you need to modify are the **keys** and the actual **heuristics**, keep in mind that you have to modify keys and heuristics according to your dataset files:
 
-    - **Keys:** In the `dicominfo.tsv` (you can find it in `.heudiconv`) file you find the exact naming of the dicom files, you need to go through the list of files and decide which of them are important for your analysis. Once you have made your decision, you can create the proper keys by following the naming conventions explained in the [BIDS tutorial](https://bids-standard.github.io/bids-starter-kit/folders_and_files/files.html). The keys create the BIDS compliant file names and the structure.
+    - **Keys:** In the `dicominfo.tsv` (in `.heudiconv`) file you find the exact naming of the dicom files, you need to go through the list of files and decide which of them are important for your analysis.</b>  
+    Once you have made your decision, you can create the proper keys by following the naming conventions explained in the [BIDS tutorial](https://bids-standard.github.io/bids-starter-kit/folders_and_files/files.html). Keys create the BIDS compliant file names and structure.
     
-        Assume you have a T1 weighted image, you need to create a proper key for it:
+      - Start with your anatomical images, which all go into the `anat` folder:
 
         ```python
-        t1w = create_key("sub-{subject}/anat/sub-{subject}_t1w")
+        t1w = create_key("sub-{subject}/anat/sub-{subject}_acq-mprage_T1w")
         ```
-        Note that we have specified the subject folder `sub-{subject}/` where `{subject}` is a placeholder that heudiconv fills in with the correct subject ID. We have specified the folder `anat/` dedicated to all the anatomical images and we have specified `tw1` which is the standard name for T1 weighted images. Keep in mind that you might have have different anatomical images, please refer to the BIDS main website.   
+        - The `sub-{subject}/` folder where `{subject}` is a placeholder that heudiconv fills in with the correct subject ID.
+        - The folder `anat/` is dedicated to all the anatomical images.
+        - In `acq-<label>` you provide the type of acquisition e.g. `mprage` (this is not mandatory). 
+        - The `Tw1` suffix is the standard name for T1 weighted images. Keep in mind that you might have have different anatomical images.   
 
-        Let's create another key for the bold images, one per run:
+      - Set up the functional images, which go into the `func` folder.
 
         ```python
         task = create_key("sub-{subject}/func/sub-{subject}_task-foodchoice_run-{item:01d}_bold")
         ```
 
-        In this example it is important to notice that we follow the same pattern as for the T1 weighted image, but this time we have specify the folder `func`, which as you should know, stands for **functional**. Additionally we have specified the task name
-        `task-taskname`, the runs, `_run-` and the `bold` suffix that indicates the type of functional file we are dealing with.
+        - As for the anatomical image you need to add the `sub-{subject}/` folder
+        - The `func` folder is dedicated to the functional images. 
+        - The `task-<taskname>` indicates the name of the task.
+        - `_run-` is just a place holder for the run number that heudiconv fills in automatically
+        - The `bold` suffix indicates the type of functional file we are dealing with.
 
-        We need to create as many keys as the number of types of files we want to include in our BIDS convertion.
+      - Set up the field maps images, which go into the `fmap` folder. The previous anatomical and functional images
+        are rather standard for fMRI experiments, the field maps can be very different and sometimes absent.
+
+        ```
+        fmap_mag = create_key("sub-{subject}/fmap/sub-{subject}_acq-grefieldmapping_magnitude")
+        fmap_phasediff = create_key("sub-{subject}/fmap/sub-{subject}_acq-grefieldmapping_phasediff")
+        epi = create_key("sub-{subject}/fmap/sub-{subject}_dir-AP-run-{item:01d}_epi")
+        ```
+
+        - As for the other images you set up the subject folder `sub-{subject}`.
+        - The `fmap` folder is dedicated to the fieldmap related images.
+        - In this particular case for `fmap_mag` and `fmap_phasediff` we specified the `_acq-<label>_` which changes for different cases.
+        - The suffixes `magnitude` and `phasediff` and `epi` are mandatory for these fieldmap images, please refer to the [official page](https://bids-specification.readthedocs.io/en/stable/modality-specific-files/magnetic-resonance-imaging-data.html#fieldmap-data).
+        - The `_dir-AP_` indicates the Phase-Encoding direction in the `EPI` image, refer to the [official page](https://bids-specification.readthedocs.io/en/stable/appendices/entities.html#dir) for further information.
 
     - **Heuristics:** Now we need to create a few basic rules to tell heudiconv which files to extract.
     
@@ -200,11 +225,18 @@ Before you start converting your data we strongly recommend to go through the [B
         if "t1_mpr" in s.protocol_name: # name matching
             info[t1w].append(s.series_id) # append to the dictionary
         ```
-        Sometimes a file name matching is not enough to extract a the correct file, so we can combine more rules like the following one, in which we match the file name and the file size.
+        Sometimes a file name matching is not enough to extract a the correct file, so we can combine more rules like the following cases, in which we match the file name and the file size.
 
         ```python
         elif 'fMRI_SMS2_2.2iso_66sl_TR2_run' in s.protocol_name and s.dim4 == 200:
             info[task].append(s.series_id)
+        ```
+
+        ```
+        elif 'field_mapping' in s.protocol_name and s.dim3 == 132:
+            info[fmap_mag].append(s.series_id)
+        elif 'field_mapping' in s.protocol_name and s.dim3 == 66:
+            info[fmap_phasediff].append(s.series_id)
         ```
 
         As you might guess you need to create rules on a case by case basis.
@@ -217,6 +249,50 @@ Before you start converting your data we strongly recommend to go through the [B
 
     ```bash
     $ heudiconv --files <file_containing_dicoms> -o <directory_for_bids/> -f <heuristic.py> -s <subject_number> -c dcm2niix -b --overwrite
+    ```
+
+    The following tree represents the results of the BIDS conversion. 
+
+    ```
+        .
+        ├── CHANGES
+        ├── dataset_description.json
+        ├── participants.json
+        ├── participants.tsv
+        ├── README
+        ├── scans.json
+        ├── sub-01
+        │   ├── anat
+        │   │   ├── sub-01_acq-mprage_T1w.json
+        │   │   └── sub-01_acq-mprage_T1w.nii.gz
+        │   ├── fmap
+        │   │   ├── sub-01_acq-grefieldmapping_magnitude1.json
+        │   │   ├── sub-01_acq-grefieldmapping_magnitude1.nii.gz
+        │   │   ├── sub-01_acq-grefieldmapping_magnitude2.json
+        │   │   ├── sub-01_acq-grefieldmapping_magnitude2.nii.gz
+        │   │   ├── sub-01_acq-grefieldmapping_phasediff.json
+        │   │   ├── sub-01_acq-grefieldmapping_phasediff.nii.gz
+        │   │   ├── sub-01_dir-AP_run-1_epi.json
+        │   │   └── sub-01_dir-AP_run-1_epi.nii.gz
+        │   ├── func
+        │   │   ├── sub-01_task-foodchoice_run-1_bold.json
+        │   │   ├── sub-01_task-foodchoice_run-1_bold.nii.gz
+        │   │   ├── sub-01_task-foodchoice_run-1_events.tsv
+        │   │   ├── sub-01_task-foodchoice_run-2_bold.json
+        │   │   ├── sub-01_task-foodchoice_run-2_bold.nii.gz
+        │   │   ├── sub-01_task-foodchoice_run-2_events.tsv
+        │   │   ├── sub-01_task-foodchoice_run-3_bold.json
+        │   │   ├── sub-01_task-foodchoice_run-3_bold.nii.gz
+        │   │   ├── sub-01_task-foodchoice_run-3_events.tsv
+        │   │   ├── sub-01_task-foodchoice_run-4_bold.json
+        │   │   ├── sub-01_task-foodchoice_run-4_bold.nii.gz
+        │   │   ├── sub-01_task-foodchoice_run-4_events.tsv
+        │   │   ├── sub-01_task-foodchoice_run-5_bold.json
+        │   │   ├── sub-01_task-foodchoice_run-5_bold.nii.gz
+        │   │   └── sub-01_task-foodchoice_run-5_events.tsv
+        │   └── sub-01_scans.tsv
+        └── task-foodchoice_bold.json
+
     ```
 
     Note that heudiconv creates the whole BIDS structure, the sidecars as `.json` files, and the events files as `.tsv`.</b>   `events.tsv` are just tabular files containing the header: `onset	duration	trial_type	response_time	stim_file`. Your task is to complete these files according to the bids conventions.
