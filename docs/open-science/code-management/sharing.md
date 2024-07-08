@@ -12,13 +12,13 @@ As a consequence, if you create some code with an open source language and make 
 
 Code documentation is an essential prerequisite to make your research transparent and replicable. Without a decent documentation other researchers might be unable to use your code or might need to spend long time to figure out how to make it work.
 
-Documenting your code is not only a favor you do to other potential users, but also to the future you. It happens often to forget how a piece of code you wrote sometimes ago works, by providing good documentation you are going to be able to use that code with no extra effort. 
+Documenting your code is not only advantageous for other potential users, but also for you. It happens often to forget how a piece of code you wrote works, by providing good documentation you will be able to use that code with no extra effort. 
 
 **Comment your code:** The best way to start documenting your code is to comment each essential piece of it while your are still writing the code:
 
-- Provide explanations about inputs and outputs and required types for functions and classes according to the language style.
+- Provide explanations about inputs, outputs and types for functions and classes according to the language style.
 - Provide one or more toy examples that the user can easily run.
-- Provide explanations for lines of code that might have some criticalities, or some peculiarities that might be hard to figure out only by reading the code.
+- Provide explanations for lines of code that might have some criticalities, or some peculiarities that might be hard to figure out.
 
 **README file:** A README file (as Markdown) is one of the most common way to document your code. It should include:
 
