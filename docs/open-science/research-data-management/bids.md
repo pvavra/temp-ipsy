@@ -317,11 +317,11 @@ Before you start converting your data we strongly recommend to go through the [B
     - Inputs: `sub` is subject number as integer, `runs` is a vector containing the run numbers.
     - `cfg`: It is the general `struct` used by fieldtrip to provide the information to `data2bids` that is the actual fieldtrip converter.
     there are many fields that you can fill in please check the official documentation.
-    - `cfg.method`: This field defines the kind of action you want to take with the converter. In case your data type is not recommdended by BIDS, meaning is neither BrainVision nor '.edf', then it is set to `'convert'` and the data will be converted also in BrainVision format. Otherwise is just sufficient to set it to `'copy'`.
+    - `cfg.method`: This field defines the kind of action you want to take with the converter. In case your data type is not recommdended by BIDS, meaning is neither the BrainVision nor the Europena format, then it is set to `'convert'` and the data will be converted to the BrainVision format. Otherwise is just sufficient to set it to `'copy'`.
 
     
-    !!! note "About this script"
-        This is just an example of how a conversion script might look like, you are free to use your own script and approach. In this case the script is a function to facilitate the usage on Cecile with Slurm. Additionally it consider the case of multiple runs, which is not always the case.
+    !!! note "About this example"
+        This is just an example of how a conversion script might look like, you are free to use your own script and your own approach. In this case the script is a function to facilitate the usage with Slurm. Additionally, it considers the option with multiple runs, which is not always the case.
   
     
     ```matlab
