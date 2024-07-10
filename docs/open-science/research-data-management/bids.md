@@ -69,7 +69,7 @@ Before you start converting your data we strongly recommend to go through the [B
     The following example represents a `heuristic.py` script taylored for a specific dataset. You can also use this template and adapt it to your own dataset.
 
 
-    ```python
+    ```python title="Heudiconv heuristics"
 
     from __future__ import annotations
 
@@ -324,7 +324,7 @@ Before you start converting your data we strongly recommend to go through the [B
         This is just an example of how a conversion script might look like, you are free to use your own script and your own approach. In this case the script is a function to facilitate the usage with Slurm. Additionally, it considers the option with multiple runs, which is not always the case.
   
     
-    ```matlab
+    ```matlab title="Fieldtrip bids conversion"
     function [] = eeg2bids(sub, runs, datadir, ext)
     %EEG2BIDS bids fieldtrip convertion 
     %   sub  = integer 
