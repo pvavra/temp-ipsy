@@ -7,6 +7,8 @@ theme:
     - content.tooltips
     - content.tabs.link
     - navigation.top
+    - content.code.copy
+    - content.code.select
 
 plugins:
   - tags
