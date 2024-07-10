@@ -308,13 +308,13 @@ Before you start converting your data we strongly recommend to go through the [B
     - European format: `.edf`
     - BrainVision format: `.vhdr`, `.vmrk`, `.eeg`
 
-    Other BIDS accepted formats, although not recommended by BIDS, are **Biosemi:** `.bdf` and **EEGLAB:** `.fdt`, `.set`.
+    Other BIDS accepted formats, although not recommended by BIDS, are Biosemi: `.bdf` and EEGLAB: `.fdt`, `.set`.
 
     ### EEG conversion with Fieldtrip (Matlab based)
 
     The following code has been adapted from the example provided in the [fieldtrip page](https://www.fieldtriptoolbox.org/example/bids_eeg/) for further information read the official documentation.
     
-    - Inputs: `sub` is subject number as integer, `runs` is a vector containing the run numbers.
+    - `sub` is the subject number as integer, `runs` is a vector containing the run numbers.
     - `cfg`: It is the general `struct` used by fieldtrip to provide the information to `data2bids` that is the actual fieldtrip converter.
     there are many fields that you can fill in please check the official documentation.
     - `cfg.method`: This field defines the kind of action you want to take with the converter. In case your data type is not recommdended by BIDS, meaning is neither the BrainVision nor the Europena format, then it is set to `'convert'` and the data will be converted to the BrainVision format. Otherwise is just sufficient to set it to `'copy'`.
