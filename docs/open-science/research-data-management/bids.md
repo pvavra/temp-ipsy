@@ -372,6 +372,7 @@ Before you start converting your data we strongly recommend to go through the [B
     end
     ```
 
+    By running the previous script you should obtain the following BIDS dataset
 
     ```
     rawdata
