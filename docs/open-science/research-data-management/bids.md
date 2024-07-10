@@ -306,15 +306,100 @@ Before you start converting your data we strongly recommend to go through the [B
     Given the variety of EEG data formats, BIDS recommends two main formats (we also strongly suggest to use these two formats):
 
     - European format: `.edf`
-    - BrainVision format: `.vhdr, .vmrk, .eeg`
+    - BrainVision format: `.vhdr`, `.vmrk`, `.eeg`
 
-    Other BIDS accepted formats, although not recommended, are: Biosemi `.bdf` and EEGLAB: `.fdt .set`
+    Other BIDS accepted formats, although not recommended by BIDS, are **Biosemi:** `.bdf` and **EEGLAB:** `.fdt`, `.set`.
 
-    ### EEG conversion with Fieldtrip (Matlab)
+    ### EEG conversion with Fieldtrip (Matlab based)
+
+    The following code has been adapted from the example provided in the [fieldtrip page](https://www.fieldtriptoolbox.org/example/bids_eeg/) for further information read the official documentation.
+    
+    - Inputs: `sub` is subject number as integer, `runs` is a vector containing the run numbers.
+    - `cfg`: It is the general `struct` used by fieldtrip to provide the information to `data2bids` that is the actual fieldtrip converter.
+    there are many fields that you can fill in please check the official documentation.
+    - `cfg.method`: This field defines the kind of action you want to take with the converter. In case your data type is not recommdended by BIDS, meaning is neither BrainVision nor '.edf', then it is set to `'convert'` and the data will be converted also in BrainVision format. Otherwise is just sufficient to set it to `'copy'`.
+
+    
+    !!! note "About this script"
+        This is just an example of how a conversion script might look like, you are free to use your own script and approach. In this case the script is a function to facilitate the usage on Cecile with Slurm. Additionally it consider the case of multiple runs, which is not always the case.
+  
+    
+    ```matlab
+    function [] = eeg2bids(sub, runs, datadir, ext)
+    %EEG2BIDS bids fieldtrip convertion 
+    %   sub  = integer 
+    %   runs = vector od integers 
+    %   datadir = data directory
+    %   ext     = data extension (.bdf, .edf etc...)
+
+
+    for run = runs
+
+        cfg = [];
+        if strcmp(ext, '.vhdr') | strcmp(ext, '.edf')
+            cfg.method = 'copy';
+        else
+            cfg.method = 'convert'; % this method specify whether you want to convert data or copy and restructure them
+        end
+        cfg.datatype  = 'eeg';
+
+        % specify the input file name
+        cfg.dataset   = fullfile(datadir, join(['sub-', num2str(sub, '%02.f'), '_run_', num2str(run), ext], ''));
+
+        % specify the output directory
+        cfg.bidsroot  = 'rawdata';
+        cfg.run       = run;
+        cfg.sub       = num2str(sub, '%02.f');
+
+        % specify the information for the scans.tsv file
+        cfg.scans.acq_time = datestr(now, 'yyyy-mm-ddThh:MM:SS');
+
+        % specify some general information that will be added to the eeg.json file
+        cfg.InstitutionName             = 'OvGU';
+        cfg.InstitutionalDepartmentName = 'Intitute of Psychology';
+        cfg.InstitutionAddress          = 'Intitute of Psychology, Universitaetsplatz, Magdeburg';
+
+        % provide the task name (used in the BIDS files) and long description of the task
+        cfg.TaskName        = 'guessmeaning';
+        cfg.TaskDescription = 'Subjects were asked to derive the meaning of pseudowords from the context';
+
+        % these are EEG specific
+        cfg.eeg.PowerLineFrequency = 50;   % insert the power line frequency
+        cfg.eeg.EEGReference       = 'average';
+
+        data2bids(cfg);
+    end
+    end
+    ```
+
+
+    ```
+    rawdata
+    ├── dataset_description.json
+    ├── participants.tsv
+    ├── README
+    └── sub-20
+        ├── eeg
+        │   ├── sub-20_task-guessmeaning_run-1_channels.tsv
+        │   ├── sub-20_task-guessmeaning_run-1_eeg.eeg
+        │   ├── sub-20_task-guessmeaning_run-1_eeg.json
+        │   ├── sub-20_task-guessmeaning_run-1_eeg.vhdr
+        │   ├── sub-20_task-guessmeaning_run-1_eeg.vmrk
+        │   ├── sub-20_task-guessmeaning_run-1_events.tsv
+        │   ├── sub-20_task-guessmeaning_run-2_channels.tsv
+        │   ├── sub-20_task-guessmeaning_run-2_eeg.eeg
+        │   ├── sub-20_task-guessmeaning_run-2_eeg.json
+        │   ├── sub-20_task-guessmeaning_run-2_eeg.vhdr
+        │   ├── sub-20_task-guessmeaning_run-2_eeg.vmrk
+        │   └── sub-20_task-guessmeaning_run-2_events.tsv
+        └── sub-20_scans.tsv
+
+    ```
 
 
 
-    ### EEG conversion with MNE (python)
+
+    ### EEG conversion with MNE (Python based)
 
 === "Behavioral/Physiological"
 
