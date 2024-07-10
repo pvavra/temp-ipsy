@@ -61,7 +61,7 @@ The following parameters are not all mandatory, but we **strongly recommend** to
 
 Here it is how you turn the previous questions in parameters for slurm.
 
-```bash
+```bash title="Setting Slurm parameters"
 #!/bin/sh
 
 #### NOTE: Keep in mind that for your slurm script the # before slurm commands is not interpreted as a shell comment 
@@ -92,7 +92,7 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
     It allowes to run only a single job.</b>  
     **Use case:** It is ideal when you want to test a specific analysis and test it on one subject, or when you need to run just one analysis like a group statistical analysis.
 
-    ```bash
+    ```bash title="Slurm single job"
     #!/bin/sh
  
     #SBATCH --job-name=my_job
@@ -143,7 +143,7 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
 
     #### Single job with Matlab
 
-    ```bash
+    ```bash title="Single job Matlab"
     #!/bin/bash
     #SBATCH --job-name=matlab        # job name, you give it a name you like
     #SBATCH --nodes=1                # number of nodes
@@ -167,7 +167,7 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
 
     #### Single job with python
 
-    ```bash
+    ```bash title="Single job Python"
     #!/bin/bash
     #SBATCH --job-name=python        # job name, you give it a name you like
     #SBATCH --nodes=1                # number of nodes
@@ -197,7 +197,7 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
 
     In the array job the new crucial parameter is `--array` which specifies the number of jobs we would like to run. Usually you define the array of jobs indicating the range of the jobs, e.g. `1-5`
 
-    ```bash
+    ```bash title="Setting up Slurm parameters"
     #!/bin/sh
 
     #SBATCH --job-name=my_job
@@ -215,7 +215,7 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
     After setting up all the parameters you can simply provide the analysis script as in the example below.
     In case you need to pass some parameters to your script, you must use the slurm variable `SLURM_ARRAY_TASK_ID` which keeps track of the job number. As we do in the example, you can use `SLURM_ARRAY_TASK_ID` as an index, `idx`, to access the single parameters specified in `parameters` and then pass them to `my_script.sh`.
 
-    ```bash
+    ```bash title="Array job"
     #!/bin/sh
 
     #SBATCH --job-name=my_job
@@ -281,7 +281,7 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
 
     #### Job array with Matlab
 
-    ```bash
+    ```bash title="Array job Matlab"
     #!/bin/bash
 
     #SBATCH --job-name=matlab        # job name, you give it a name you like
@@ -311,7 +311,7 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
 
     #### Job array with python
 
-    ```bash
+    ```bash title="Array job Python"
     #!/bin/bash
     #SBATCH --job-name=python        # job name, you give it a name you like
     #SBATCH --nodes=1                # number of nodes
