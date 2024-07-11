@@ -97,10 +97,10 @@ The following schema represents how data are structured on Cecile. Please take a
 
 ## How to create a project on Cecile
 
-As mentioned in the research planning section, we adopt a specific project workflow, please follow the next steps to create a project:
+As mentioned in the research planning section, we adopt a specific project workflow, please follow carefully the next steps to create a project:
 
 As a first step, you need to fill in a **questionnaire** about your project, this needs to be done on Cecile:
-Go to your `home` on Cecile, on the command line type the following command and then press ENTER:
+Go to your `home` on Cecile, on the command line type the following command and then press enter:
    
     ```bash
     $ ./run_quest
@@ -112,8 +112,12 @@ If your questionnaire has been properly completed your project will be created.
 
 ### Project structure
 
-The project structure follows a specific BIDS structure (see examples in the tabs below). Such a structure will be generated upon project creation. According to BIDS the structure we adopt requires only `rawdata` to be BIDS compliant, however we strongly recommend that also `derivatives` are BIDS compliant. On this note, when naming sub-folders in `derivatives` you should follow the convention `<pipeline>-<variant>`, where `<pipeline>` is the name of the tool you used and `<variant>` is the step of your analysis, for example, assuming your preprocessing is done via `spm`, the sub-folder name would be `spm-preproc/`. See the official BIDS [`derivatives` section](https://bids-specification.readthedocs.io/en/stable/common-principles.html#storage-of-derived-datasets).</b>  
-Keep in mind that, the schemas below are just examples, `derivatives` and `code` are populated with potential sub-folders, the choice and the naming of such sub-folders are up to you and entirely project dependent, nonetheless keep the general structure as we suggest it.</b>  
+The project structure follows a specific BIDS structure (see examples in the tabs below). Such a structure will be generated upon project creation. According to BIDS the structure we adopt requires only `rawdata` to be BIDS compliant, however we strongly recommend that also `derivatives` are BIDS compliant. 
+
+#### How to handle derivatives and code
+
+In `derivatives`, unlike `rawdata`, you have the freedom to create sub-folders for your processed data at your discretion, but with one little caveat: When **naming your sub-folders** in `derivatives` you **must** follow the convention `<pipeline>-<variant>`, where `<pipeline>` is the name of the tool you used for that step and `<variant>` is the step of actual analysis, for example, assuming your preprocessing has been done with `spm`, the sub-folder name would be `spm-preproc/`. For further information see the official BIDS [`derivatives` section](https://bids-specification.readthedocs.io/en/stable/common-principles.html#storage-of-derived-datasets).</b>  
+ 
 
 !!! note "Mirroring derivatives and code structure"
     We **strongly recommend** to mirror the sub-folder names between `derivatives` and `code` to keep an intuitive relationship between code and data.
