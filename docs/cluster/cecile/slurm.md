@@ -33,7 +33,7 @@ There are different types of jobs in slurm, you just need to choose the most sui
         Once you have done that, run the following command to make your script exacutable:
         
         ```bash
-        $ chmod +x <script.sh>
+        chmod +x <script.sh>
         ``` 
         For python use the following shebang in the first line of your script:
         
@@ -43,7 +43,7 @@ There are different types of jobs in slurm, you just need to choose the most sui
         And then make it exacutable from the command line:
         
         ```bash
-        $ chmod +x <script.py>
+        chmod +x <script.py>
         ```
 
 4. Create a folder called `slurm_logs` (or you can give it another meaningful name), in the same directory as the scripts are. Slurm will use it to dump the logs reporting error files and outputs, if you specify it in the initial parameters (see below) 
@@ -239,13 +239,13 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
     Now that your array job script is ready you can run your jobs using the `sbatch` command as follows:
 
     ```bash
-    $ sbatch my_array_job.slurm
+    sbatch my_array_job.slurm
     ```
 
     Check whether your jobs are actually running via the command `squeue` or alternatively with `sinfo`:
 
     ```bash
-    $ squeue
+    squeue
     ```
 
     You should see a similar output:
@@ -343,7 +343,7 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
     **Use case:** It is ideal if you need to do some testing, or you just need to run some analyses interactively. Using an interactive job you avoid to work on the head node and take precious resources that are shared among all users.
 
     ```bash
-    $ srun --mem=1G --time=01:00:00 --pty bash -i
+    srun --mem=1G --time=01:00:00 --pty bash -i
     ```
     - `--mem`: memory requested (it can be specified in K|G)
     - `--time`: time requested for the interactive job
@@ -368,9 +368,9 @@ As a general rule, when your are setting up new slurm jobs, test that everything
 
 - **Trial and error:** Set up one job using a very liberal estimate for the resources (e.g. `--mem-per-cpu`, `--time`). Once the job is over, you can use the following command to see the actual resources used and implement them in your future jobs:
 
-```
+```bash
 # job-id is the id of your job
-$ seff <job-id>
+seff <job-id>
 ```
 
 If you run `seff` when your job is still ongoing, it will give you an unreliable estimate. 
@@ -411,5 +411,5 @@ scancel -U <username> # all jobs belonging to that user will be cancelled
 ```
 
 ```bash
-$ scontrol show partition compute # allows you to see partitions present and limitations 
+scontrol show partition compute # allows you to see partitions present and limitations 
 ```
