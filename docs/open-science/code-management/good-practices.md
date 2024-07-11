@@ -25,12 +25,12 @@ As a starting point, you should make sure to gain a few principles of good codin
       
 - **Avoid hard coding (at any cost)**: Hard coding is the dangerous habit of using throughout your code a plain value instead of assigning a variable name as an alias.</b>  Hard coding makes your code extremely unclear (e.g. it is difficult to identify what a numerical value means) and very unflexible (e.g. changing hard coded values throughout your code increases the chance of bugs that you might not even be aware of).
 
-      *Bad*
+      :fontawesome-thumbs-down: *Bad*
       ```python
       a = 3.14 * 5**2
       ```
 
-      *Good*
+      :fontawesome-thumbs-up:*Good*
       ```python
       pi = 3.14
       radius = 5
