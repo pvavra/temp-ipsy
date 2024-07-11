@@ -437,6 +437,15 @@ Before you start converting your data we strongly recommend to go through the [B
 === "Eye-tracking"
     Coming soon...
 
+## Validate your BIDS dataset
+
+After you have accomplished the BIDS conversion, the last step is to validate your dataset. Keep in mind that is step is very important to ensure that your dataset actually complies with BIDS.
+
+The validation can be done on Cecile by using [`bids-validator`](https://github.com/bids-standard/bids-validator).
+
+!!! Warning "Periodical validation checks"
+    In order to keep the minimal standards on Cecile, there will be periodical BIDS validation on your dataset, in case a dataset is not valid you will receive an email asking to make your dataset BIDS compliant. 
+
 ## BIDS beyond rawdata
 
 TODO: Your data are not limited to your raw data, but include also so called `derivatives`, meaning the results of data processing.
