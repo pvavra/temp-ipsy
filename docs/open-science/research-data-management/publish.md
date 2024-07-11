@@ -51,7 +51,7 @@ You can pre-register your research in the [center for open science](https://www.
 
 ## Registered reports
 
-A registered report is an alternative publishing approach adopted by a big number of journals that consists of pre-registering and submitting to peer-review a protocol of your study before data collection. This approach aims at enhancing results replicability by ensuring that more rigorous methods are followed, that experiments do not suffer from low statistical power and preventing results selection.
+A registered report is an alternative publishing approach that consists of pre-registering and submitting to peer-review a protocol of a study before data collection. This approach aims at enhancing results replicability by ensuring that more rigorous methods are followed, that experiments do not suffer from low statistical power and preventing results selection.
 
 #### General procedure for registered reports
 
