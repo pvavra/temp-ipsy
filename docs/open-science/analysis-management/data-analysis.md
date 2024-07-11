@@ -48,7 +48,7 @@ You can create a pipeline in many ways, we suggest you a few options with exampl
 
     [Nypipe](https://nipype.readthedocs.io/en/latest/index.html) is the most sophisticated and powerful tool to create a pipeline for cognitive neuroscience. It is a python library that enables you to create an analysis pipeline by combining different external tools (e.g. SPM, FSL) and/or custom scripts from different languages such as Python, Matlab and shell.
 
-    ```python
+    ```python title="Python pipeline example"
         Coming soon...
     ```
 
