@@ -6,8 +6,8 @@ At Ipsy, after a project has been concluded and published, data are then archive
 
 ## Where are data archived at Ipsy?
 
-Cecile, the computational cluster, provides a dedicated secure storage called [`archive`]. When a project is in the process of being archived, the metadata contained in the `project-metadata.json` file and generated upon project creation gets updated and the project gets cristallized in the final status. 
-[`archive`]: ../../../cluster/cecile/data/#cecile-data-structure
+Cecile, the computational cluster, provides a dedicated secure storage called [archive]. When a project is in the process of being archived, the metadata contained in the `project-metadata.json` file and generated upon project creation gets updated and the project gets cristallized in the final status. 
+[archive]: ../../../cluster/cecile/data/##cecile-data-structure
 
 ## Access to archived projects
 
