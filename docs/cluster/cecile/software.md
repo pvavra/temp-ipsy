@@ -31,13 +31,13 @@ Instead of loading every package individually, an evironment (containing only th
 === "Current stack"
 
     ```bash
-    $ . /software/current/ipsy-env/activate
+    . /software/current/ipsy-env/activate
     ```
 
     Now that the stack has been loaded, you can start each single software.
 
     ```bash
-    $ python
+    python
     ```
 
     In order to see which softwares are available in the environment type the following command:
@@ -49,13 +49,13 @@ Instead of loading every package individually, an evironment (containing only th
 === "Experimental stack"
 
     ```bash
-    $ . /software/experimental/ipsy-env/activate
+    . /software/experimental/ipsy-env/activate
     ```
     
     Now that the stack has been loaded, you can start each single software.
 
     ```bash
-    $ python
+    python
     ```
 
     In order to see which softwares are available in the environment type the following command:
@@ -69,15 +69,15 @@ Instead of loading every package individually, an evironment (containing only th
 For every installed package spack generates a module file in addition, this allows to use the `module` cammand to load specific softwares.
 
 ```bash
-$ . /software/current/spack/share/spack/setup-env.sh
+. /software/current/spack/share/spack/setup-env.sh
 ```
 
 To see what packages are installed run
 ```bash
-$ module avail
+module avail
 ```
 
 To load a package (in case a specific version is needed, load the version of the software shown by `module avail`)
 ```bash
-$ module load python
+module load python
 ```
