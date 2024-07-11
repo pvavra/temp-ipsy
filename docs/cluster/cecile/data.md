@@ -59,13 +59,13 @@ The following schema represents how data are structured on Cecile. Please take a
 
     ```bash
     # create an empty file
-    $ touch my_file.txt
+    touch my_file.txt
 
     # create a symlink of my_file.txt, we can give to the symlink the same name as the original file or a different one
-    $ ln -s my_file.txt my_file_symlink.txt
+    ln -s my_file.txt my_file_symlink.txt
 
     # now list the content of simlink_dir in the following way (use the flag -l)
-    $ ls -l
+    ls -l
     ```
     As you can see below, the symlink `my_file_symlink.txt` points to the original file `my_file.txt`
 
@@ -77,9 +77,9 @@ The following schema represents how data are structured on Cecile. Please take a
 
     ```bash
     # write something into the simlink
-    $ echo I am a symlink > my_file_symlink.txt
+    echo I am a symlink > my_file_symlink.txt
     # check the content of the symlink
-    $ cat my_file_symlink.txt
+    cat my_file_symlink.txt
     ```
     As expected, you can see the sentence inside `my_file_symlink.txt`
     ```
@@ -87,8 +87,8 @@ The following schema represents how data are structured on Cecile. Please take a
     ```
     If you check the content of the original file, you can see that also the original file contains the sentence
 
-    ```
-    $ cat file_1.txt
+    ```bash
+    cat file_1.txt
     ```
     ```
     I am a symlink
@@ -103,7 +103,7 @@ As a first step, you need to fill in a **questionnaire** about your project, thi
 Go to your `home` on Cecile, on the command line type the following command and then press enter:
    
     ```bash
-    $ ./run_quest
+    ./run_quest
     ```
 This command starts an interactive questionnaire on the terminal, if you need more information about the usage of the questionnare prompt, please refer to the [documentation](https://github.com/ipsy-md/Quest/blob/main/README.md).</b>  
 Please try to answer all the questions, even if you do not know the exact answer to some questions, for example: `Indicate the size of your raw data`, you should provide a reasonable estimate and your answer can be updated later. In case you are not able to answer some questions by yourself, try asking your PI or more expert members of your group, alternatively contact us and we will try to help you.
@@ -282,7 +282,7 @@ We recommend to use `rsync` to transfer files from/to Cecile. `rsync` is a power
     **From your computer to Cecile:**
 
     ```bash
-    $ rsync -rltoDvh --progress </my_computer/some_data> <user@cecile.ovgu.de:~/target_directory/>
+    rsync -rltoDvh --progress </my_computer/some_data> <user@cecile.ovgu.de:~/target_directory/>
 
     ```
 
@@ -290,7 +290,7 @@ We recommend to use `rsync` to transfer files from/to Cecile. `rsync` is a power
     Also in this case the following command should be typed on your machine.
 
     ```bash
-    $ rsync -rltoDvh --progress <~/some_directory_on_cecile/some_data> <~/my_computer/>
+    rsync -rltoDvh --progress <~/some_directory_on_cecile/some_data> <~/my_computer/>
     ```
 
 === "macOS"
@@ -300,14 +300,15 @@ We recommend to use `rsync` to transfer files from/to Cecile. `rsync` is a power
     **From your computer to Cecile:**
 
     ```bash
-    $ rsync -rltoDvh --progress </my_computer/some_data> <user@cecile.ovgu.de:~/target_directory/>
+    rsync -rltoDvh --progress </my_computer/some_data> <user@cecile.ovgu.de:~/target_directory/>
 
     ```
 
     **From Cecile to your computer:**
     Also in this case the following command should be typed on your machine.
+
     ```bash
-    $ rsync -rltoDvh --progress <~/some_directory_on_cecile/some_data> <~/my_computer/>
+    rsync -rltoDvh --progress <~/some_directory_on_cecile/some_data> <~/my_computer/>
     ```
 
 === "Windows"
@@ -317,7 +318,7 @@ We recommend to use `rsync` to transfer files from/to Cecile. `rsync` is a power
     **From your computer to Cecile:**
 
     ```bash
-    $ rsync -rltoDvh --progress </my_computer/some_data> <user@cecile.ovgu.de:~/target_directory/>
+    rsync -rltoDvh --progress </my_computer/some_data> <user@cecile.ovgu.de:~/target_directory/>
 
     ```
 
@@ -325,7 +326,7 @@ We recommend to use `rsync` to transfer files from/to Cecile. `rsync` is a power
     Also in this case the following command should be typed on your machine.
 
     ```bash
-    $ rsync -rltoDvh --progress <~/some_directory_on_cecile/some_data> <~/my_computer/>
+    rsync -rltoDvh --progress <~/some_directory_on_cecile/some_data> <~/my_computer/>
     ```
 
     - In case you feel more comfortable with a GUI you may use the following SFTP clients:
