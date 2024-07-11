@@ -51,4 +51,13 @@ You can pre-register your research in the [center for open science](https://www.
 
 ## Registered reports
 
-Coming soon ...
+A registered report is an alternative publishing approach adopted by a big number of journals that consists of pre-registering and submitting to peer-review a protocol of your study before data collection. This approach aims at enhancing results replicability by ensuring that more rigorous methods are followed, that experiments do not suffer from low statistical power and preventing results selection.
+
+#### General procedure for registered reports
+
+- A detailed protocol (including introduction, methods, planned analysis and pilot data) of a study you intend to conduct is submitted to a journal.
+- If the protocol meets the journal criteria, it is then submitted to a peer-review process.
+- if reviewers and editors accept your protocol, your study can actually start and it must be conducted by following rigorously the agreed protocol.
+- At this stage your study is in principle accepted for publication, as long as the approved protocol has been strictly followed.
+- The study with a complete manuscript (previous introduction, data analysis and results) plus an additional exploratory analysis section is then resubmitted and goes again through the peer-review process.
+- If the manuscripts is accepted the article is published and data and code are usually made publically available.
