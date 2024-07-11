@@ -7,7 +7,7 @@ Writing code is an essential aspect of research and data management, hence inves
 
 As a starting point, you should make sure to gain a few principles of good coding. These principles are simple and especially easy to implement, we strongly suggest you to adopt them immediately.
 
-## Good coding practices:
+## Coding tips:
 
 - **Use meaningful variables:** Assign variable names that reflect the role of a given variable. 
 
