@@ -116,6 +116,10 @@ The project structure follows a specific BIDS structure (see examples in the tab
 
 #### How to handle derivatives and code
 
+!!! Warning "Content of derivatives and code"
+    - `derivatives` must contain only processed data and no code.
+    - `code` must contain only code and no processed or unprocessed data.
+
 In `derivatives`, unlike `rawdata`, you have the freedom to create sub-folders for your processed data at your discretion, but with one little caveat: When **naming your sub-folders** in `derivatives` you **must** follow the convention `<pipeline>-<variant>`, where `<pipeline>` is the name of the tool you used for that step and `<variant>` is the step of actual analysis, for example, assuming your preprocessing has been done with `spm`, the sub-folder name would be `spm-preproc/`. For further information see the official BIDS [`derivatives` section](https://bids-specification.readthedocs.io/en/stable/common-principles.html#storage-of-derived-datasets).</b>  
  
 
