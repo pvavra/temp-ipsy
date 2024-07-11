@@ -6,5 +6,5 @@ Although archiving evokes the end of a process, for research data this is only a
 
 At Ipsy, after a project has been concluded and published, data are then archived upon request of the principal investigator. 
 Cecile, the computational cluster, provides a dedicated secure storage, [`archive`], that cristallizes the projects in the final status. Archived projects can be accessed at any time by the researches and resumed upo request.
-[`archive`]: ../../../cluster/cecile/data/#cecile-data-structure
+[archive]: ../../../cluster/cecile/data/#cecile-data-structure
 
