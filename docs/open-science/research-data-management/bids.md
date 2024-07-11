@@ -312,20 +312,17 @@ Before you start converting your data we strongly recommend to go through the [B
 
     ### EEG conversion with Fieldtrip (Matlab based)
 
-    The following code has been adapted from the example provided in the [fieldtrip page](https://www.fieldtriptoolbox.org/example/bids_eeg/) for further information read the official documentation.
+    The following code has been adapted from an example provided in the [fieldtrip page](https://www.fieldtriptoolbox.org/example/bids_eeg/), for further information read the official documentation.
     
     - `sub` is the subject number as integer, `runs` is a vector containing the run numbers.
     - `cfg`: It is the general `struct` used by fieldtrip to provide the information to `data2bids` that is the actual fieldtrip converter.
-    there are many fields that you can fill in please check the official documentation.
-    - `cfg.method`: This field defines the kind of action you want to take with the converter. In case your data type is not recommdended by BIDS, meaning is neither the BrainVision nor the Europena format, then it is set to `'convert'` and the data will be converted to the BrainVision format. Otherwise is just sufficient to set it to `'copy'`.
+    `cfg` offers the possibility to provide the information also for the metadata, please check the official documentation.
+    - `cfg.method`: This field defines the kind of action you want to take with the converter. In case your eeg data type is not recommedended by BIDS, meaning is neither the BrainVision nor the European format, it is set to `'convert'` and the data will be converted to the BrainVision format. Otherwise it is set to `'copy'` and the data will be onyl copied and restructured according to BIDS.
 
-    
-    !!! note "About this example"
-        This is just an example of how a conversion script might look like, you are free to use your own script and your own approach. In this case the script is a function to facilitate the usage with Slurm. Additionally, it considers the option with multiple runs, which is not always the case.
-  
+    This function considers eeg data split into different runs, only to exemplify a specific case. Often raw data consist of one single recording per subejct.
     
     ```matlab title="Fieldtrip bids conversion"
-    function [] = eeg2bids(sub, runs, datadir, ext)
+    function cfg = eeg2bids(sub, runs, datadir, ext)
     %EEG2BIDS bids fieldtrip convertion 
     %   sub  = integer 
     %   runs = vector od integers 
@@ -396,8 +393,6 @@ Before you start converting your data we strongly recommend to go through the [B
         └── sub-20_scans.tsv
 
     ```
-
-
 
 
     ### EEG conversion with MNE (Python based)
