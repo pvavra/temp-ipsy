@@ -27,15 +27,11 @@ As a starting point, you should make sure to gain a few principles of good codin
 
       *Bad*
       ```python
-      :fontawesome-thumbs-down:
-
       a = 3.14 * 5**2
       ```
 
       *Good*
       ```python
-      :fontawesome-thumbs-up:
-
       pi = 3.14
       radius = 5
       circle_area = pi * radius**2
