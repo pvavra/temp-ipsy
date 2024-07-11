@@ -16,10 +16,12 @@ The following are the general questions that you should ask yourself when thinki
 Concerning the legal aspects about copyrights and personal data protection, you can refer directly to the official documents:
 
 Links to the official German documents.
+
 - [Bundesdatenschutzgesetz](https://www.gesetze-im-internet.de/bdsg_2018/BJNR209710017.html)
 - [Gesetz über Urheberrecht und verwandte Schutzrechte](https://www.gesetze-im-internet.de/urhg/)
 
 Links to the official English translation.
+
 - [Act on Copyright and Related Rights](https://www.gesetze-im-internet.de/englisch_urhg/englisch_urhg.html)
 - [Federal Data Protection Act](https://www.gesetze-im-internet.de/englisch_bdsg/)
 - [European data protection law](https://gdpr-info.eu/)
