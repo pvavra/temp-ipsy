@@ -51,7 +51,7 @@ Before you start converting your data we strongly recommend to go through the [B
     You must specify such rules within a python script that is then passed to heudiconv. You do not need to create this script from scratch, you can generate a template by running the following line on the terminal:
 
     ```bash
-    $ heudiconv --files your_dicom_file -o bids_output_dir -f convertall -s number_of_the_subject -c none
+    heudiconv --files your_dicom_file -o bids_output_dir -f convertall -s number_of_the_subject -c none
     ```
 
     The previous command does **not** convert any of your data, but it creates, within the output directory, a hidden folder, `.heudiconv`, containing a template of the script `heuristic.py` and a `dicominfo.tsv` which lists all the information about the dicom files necessary for specifing the heuristics. 
@@ -249,7 +249,7 @@ Before you start converting your data we strongly recommend to go through the [B
     
 
     ```bash
-    $ heudiconv --files <file_containing_dicoms> -o <directory_for_bids/> -f <heuristic.py> -s <subject_number> -c dcm2niix -b --overwrite
+    heudiconv --files <file_containing_dicoms> -o <directory_for_bids/> -f <heuristic.py> -s <subject_number> -c dcm2niix -b --overwrite
     ```
 
     The following tree represents the result of the BIDS conversion. 
