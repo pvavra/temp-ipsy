@@ -4,7 +4,7 @@ Sharing your data with the scientific community is a milestone for your research
 
 If you have followed the previous recommendations up to now, your data should be almost ready to be shared.
 
-## Restrictions, sensitive data and legal issues
+## Restrictions, sensitive data and legal aspects
 
 The following are the general questions that you should ask yourself when thinking of the legal aspects of sharing your research.
 
@@ -12,6 +12,17 @@ The following are the general questions that you should ask yourself when thinki
 - **What do I need to consider when sharing, publishing and archiving data?**
 - **How do I handle data with sensitive information?**
 - **Under which conditions can third-party data be re-used for my research?**
+
+Concerning the legal aspects about copyrights and personal data protection, you can refer directly to the official documents:
+
+Links to the official German documents.
+- [Bundesdatenschutzgesetz](https://www.gesetze-im-internet.de/bdsg_2018/BJNR209710017.html)
+- [Gesetz über Urheberrecht und verwandte Schutzrechte](https://www.gesetze-im-internet.de/urhg/)
+
+Links to the official English translation.
+- [Act on Copyright and Related Rights](https://www.gesetze-im-internet.de/englisch_urhg/englisch_urhg.html)
+- [Federal Data Protection Act](https://www.gesetze-im-internet.de/englisch_bdsg/)
+- [European data protection law](https://gdpr-info.eu/)
 
 ## Where to share your data
 
