@@ -296,8 +296,8 @@ Before you start converting your data we strongly recommend to go through the [B
 
     ```
 
-    Note that heudiconv creates also `events.tsv`, tabular files containing the header: `onset	duration trial_type	response_time	stim_file`. Your task is to complete these files with your log file acquired during the experiement according to the bids conventions.
-    Additionally you should create `events.json` files which contain the description of each column in `events.tsv`.
+    Note that heudiconv creates also `events.tsv`, tabular files containing the header: `onset	duration trial_type	response_time	stim_file`. Your task is to complete these files with the logs acquired during the neural recording according to the bids conventions.
+    Additionally you should create `events.json` files which contain the description of each column included in `events.tsv`.
 
 === "EEG/MEG"
 
@@ -437,9 +437,13 @@ Before you start converting your data we strongly recommend to go through the [B
 === "Eye-tracking"
     Coming soon...
 
+## Populating metadata files
+
+TODO
+
 ## Validate your BIDS dataset
 
-After you have accomplished the BIDS conversion, the last step is to validate your dataset. Keep in mind that is step is very important to ensure that your dataset actually complies with BIDS.
+After you have accomplished the BIDS conversion, the last step is to validate your dataset. Keep in mind that this step is very important to ensure that your dataset actually complies with BIDS.
 
 The validation can be done on Cecile by using [`bids-validator`](https://github.com/bids-standard/bids-validator).
 
