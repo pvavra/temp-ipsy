@@ -7,7 +7,7 @@ A good starting point to start thinking about data management is to use a **Data
 
 ## What is a Data Management Plan (DMP)?
 
-A data management plan is a research document, taylored on your project, that, as the name suggests, helps you to organize your current and future data. It simply consists of a questionnaire that guides you through some of the aspects of the data life cycle.
+A data management plan is a research document, tailored to your project, that, as the name suggests, helps you to organize your current and future data. It simply consists of a questionnaire that guides you through some of the aspects of the data life cycle.
 
 Despite its name, a DMP should be considered as a living document that you can update throughout your project. Keeping your DMP up to date allows you to record essential information relative to your data, such as sparse information and metadata that you might need in a later stage of the project (e.g. when writing a paper or a report for a funding agency). 
 
