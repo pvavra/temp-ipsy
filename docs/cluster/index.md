@@ -2,7 +2,7 @@
 
 ## What is a computational cluster?
 
-A computational cluster is a collection of interconnected computers (see image below), called **compute nodes**, accessable and operable via a single computer called the **head node**. Each node offers a pool of resources such as CPUs, which in turn contain multiple cores, and volatile memory (RAM). The strength of a cluster comes from the collective interplay among resources which allows them to work as a unique entity able to perform computationally expensive parallel tasks (e.g. analyses, modelling etc.) otherwise difficult and in some case impossible to achieve by a single computer. 
+A computational cluster is a collection of interconnected computers (see image below), called **compute nodes**, accessable and operable via a single computer called the **head node**. Each node offers a pool of resources such as CPUs, which in turn contain multiple cores, and volatile memory (RAM). The strength of a cluster comes from the collective interplay among resources which allows them to work as a unique entity able to perform computationally expensive parallel tasks (e.g. analyses, modelling etc.) otherwise difficult to achieve by a single computer. 
 
 <figure markdown="span">
   ![Cluster](images/cluster.png){ width="500" }
