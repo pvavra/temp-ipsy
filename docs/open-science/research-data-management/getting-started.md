@@ -4,7 +4,7 @@ Science is an incremental process that builds on prior findings and technical ad
 
 ## What is Research Data Management?
 
-Research Data Management (RDM) is the collection of processes (e.g. organization, documentation, publication and archiving) that researchers adopt to govern their data during the data lifecycle.</b>  
+Research Data Management (RDM) is the collection of processes (e.g. organization, documentation, publication and archiving) that researchers adopt to govern their data, before data collection, during the data analysis and after data has been published.</b>  
 Although data differ significantly across disciplines, general principles for an open and transparent data management are shared among different fields and find their definition in the so called FAIR data principles.
 
 ## What are the FAIR principles?
