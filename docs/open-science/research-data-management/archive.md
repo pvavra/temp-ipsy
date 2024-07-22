@@ -1,6 +1,6 @@
 # Archive your data
 
-Although archiving evokes the end of a process, for research data this is only a further step aiming at the preservation of the physical files for a long time (at least 10 years) and at the same time aiming at the re-usal of such data.
+Although archiving evokes the end of a process, for research data this is only a further step aiming at the preservation of the physical files for a long time (at least 10 years) and at the reuse of such data.
 
 At Ipsy, after a project has been concluded and published, data are then archived upon request of the principal investigator.
 
