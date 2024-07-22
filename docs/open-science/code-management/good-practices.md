@@ -1,7 +1,7 @@
 
 Writing code is an essential aspect of research and data management, hence investing your time to acquire good coding habits is a fundamental skill to reduce mistakes and to make your research more transparent and reproducible.
 
-!!! note "Invest on learning good coding"
+!!! note "Coding for you and other users"
     You are writing code for two final users: the **future you** and **other researchers**. Make sure that both these final users are able to understand and re-use your code. Write your code with them in mind and they will be surely greatful.
 
 
