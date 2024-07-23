@@ -8,7 +8,7 @@ Ipsy docs is a work in progress collection of resources, tutorials and guideline
 
 - Provide a guide for research data management (RDM). [:material-file-document-check: RDM](open-science/research-data-management/getting-started/){ .md-button } 
 
-- Provide support and documentation for a proper and effective usage of the cluster.[:fontawesome-solid-server: Cluster](cluster){ .md-button } 
+- Provide support and documentation for a fair and effective cluster usage.[:fontawesome-solid-server: Cluster](cluster){ .md-button } 
 
 !!! note "Before starting"
     These pages require little prior knowledge from the user, but even if you are an experienced researcher, we recommend you to go through them, and especially to read carefully the sections dedicated to the cluster, data and backups.
