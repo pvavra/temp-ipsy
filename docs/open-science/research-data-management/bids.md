@@ -2,7 +2,7 @@
 
 If you are following the project workflow, by now you should have a project set up on the cluster and you might be in the process of organizing your **raw data**. The next step is to convert your data into BIDS format.
 
-[**BIDS**](https://bids.neuroimaging.io/get_started.html) is an acronym that stands for **Brain Imaging Data Structure**. It is a standardized format to organize and describe neuroscientific data (see the schema below).</b>  
+[**BIDS**](https://bids.neuroimaging.io/get_started.html) is an acronym that stands for **Brain Imaging Data Structure**. It is a standardized format for the organization and the description of neuroscientific data (see the schema below).</b>  
 In a nutshell, BIDS provides a framework for standardizing file names, folder structures and metadata for different kinds of data such as neuroimaging, behavioral, physiological etc.  
 We recommend you to go through the [BIDS specification page](https://bids-specification.readthedocs.io/en/stable/) and [BIDS Starter Kit pages](https://bids-standard.github.io/bids-starter-kit/) to understand more in depth the concepts and the phylosophy behind BIDS.
 
