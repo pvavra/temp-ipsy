@@ -212,7 +212,7 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
 
     #### Example of an array job
 
-    Assume you want to run a specific analysis on 5 subjects in parallel and you want to use a script called `my_anlysis.sh` that requires as parameter the subject ID.
+    Assume you want to run a specific analysis on 5 subjects in parallel and you want to use a script called `my_analysis.sh` that requires as parameter the subject ID.
 
     - You need to provide to slurm the number of jobs by setting up `#SBATCH --array` as we have seen before. In this case our range is `0-4`, in total 5 jobs as the number of your subjects (remember in the shell interpreter counts from 0).
     - You can then take advantage of the slurm variable `SLURM_ARRAY_TASK_ID`, which keeps track of the jobs count, by using it as an index. This means that for the first job of the array `SLURM_ARRAY_TASK_ID` will assume a value of 0 for the second job of 1 and so on until the last job. </b>  
