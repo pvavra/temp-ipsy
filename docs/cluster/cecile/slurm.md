@@ -292,7 +292,7 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
     #SBATCH --time=00:01:00          # max amount of time (D:HH:MM:SS)
     #SBATCH --output=slurm_logs/output-%A-%a.out   # printed output
     #SBATCH --error=slurm_logs/error-%A-%a.err     # errors
-    #SBATCH --array 1-4
+    #SBATCH --array 0-4
 
     ## you need to load matlab even if you have loaded already all the modules
     ## from the software stack 
@@ -305,10 +305,7 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
     ## run matlab: you pass just the name of the script without .m in my case matlab_script
     matlab -singleCompThread -nodisplay -nosplash -r "matlab_script(${subjects[idx]})"
     ```
-
-    !!! note "Matlab array jobs should start with 1"
-        As Matlab counts from 1, it is a good idea to make your array job starting with 1 as well.
-
+    
     #### Job array with python
 
     ```bash title="Array job Python"
