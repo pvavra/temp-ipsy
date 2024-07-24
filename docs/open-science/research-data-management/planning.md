@@ -43,11 +43,14 @@ In order to help you manage your data, we have implemented a basic **research pr
 
 To adopt the project workflow we suggest you to use the **cluster** for data analysis and data storage. The project workflow consists of three simple steps:
 
-1. Fill in a brief **questionnaire** that helps us to create some intial metadata for your project. Further information about the questionnaire can be found [here]. [here]: ../../../cluster/cecile/data/#how-to-create-a-project-on-cecile
+1. Fill in a brief **questionnaire** that helps us to create some intial metadata for your project. Further information about the questionnaire can be found [here]. 
+[here]: ../../../cluster/cecile/data/#how-to-create-a-project-on-cecile
 
-2. Once the questionnaire is properly filled in, we create a dedicated **project** which comes with a predefined folder structure. In order to have detailed information about the structure, please refer to the specific [project structure section]. [project structure section]: ../../../cluster/cecile/data/#project-structure
+2. Once the questionnaire is properly filled in, we create a dedicated **project** which comes with a predefined folder structure. In order to have detailed information about the structure, please refer to the specific [project structure section]. 
+[project structure section]: ../../../cluster/cecile/data/#project-structure
 
-3. Once your raw unprocessed data have been moved into the predefined structure, your data need to be converted into the **BIDS** format (see [BIDS]) by using the tools available in the cluster. [BIDS]: ../research-data-management/bids.md
+3. Once your raw unprocessed data have been moved into the predefined structure, your data need to be converted into the **BIDS** format (see [BIDS]) by using the tools available in the cluster. 
+[BIDS]: ../research-data-management/bids.md
 
 ## Data Version Control
 
