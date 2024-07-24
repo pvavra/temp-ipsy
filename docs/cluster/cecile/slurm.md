@@ -188,7 +188,7 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
 
     In case you made your python code executable you can remove the line `module load python` and call the script as follows: `./python_script ${subject}` without prepending `python -u`
 
-=== "Array job"
+=== "Array job and an alternative way"
 
     An array job allows you to run multiple jobs in parallel.</b> 
 
