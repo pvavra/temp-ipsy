@@ -225,11 +225,11 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
     #SBATCH --time=01:00:00
     #SBATCH --output=slurm_logs/output-%A-%a.out
     #SBATCH --error=slurm_logs/error-%A-%a.err
-    #SBATCH --array 0-4  ## 5 jobs
+    #SBATCH --array 0-5  ## 6 jobs
 
     idx=$((SLURM_ARRAY_TASK_ID))
 
-    parameters=(0.4 0.6 0.8 1 1.2)
+    parameters=(0.4 0.6 0.8 1 1.2 1.4)
 
     ./my_script.sh ${parameters[idx]}
 
@@ -252,13 +252,13 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
 
     ```
                 JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
-            217379_[6]       all fmriprep    user  PD       0:00      1 (Resources)
-            217379_0       all fmriprep    user   R       1:10      1 compute05
-            217379_1       all fmriprep    user   R       1:10      1 compute05
-            217379_2       all fmriprep    user   R       1:10      1 compute05
-            217379_3       all fmriprep    user   R       1:10      1 compute05
-            217379_4       all fmriprep    user   R       1:10      1 compute05
-            217379_5       all bad_job     user   IDLE    0:00      1 compute05
+            217379_[6]     all     my_job   user  PD       0:00      1 (Resources)
+            217379_0       all     my_job   user   R       1:10      1 compute05
+            217379_1       all     my_job   user   R       1:10      1 compute05
+            217379_2       all     my_job   user   R       1:10      1 compute05
+            217379_3       all     my_job   user   R       1:10      1 compute05
+            217379_4       all     my_job   user   R       1:10      1 compute05
+            217379_5       all     my_job   user   IDLE    0:00      1 compute05
 
 
     ```
@@ -305,7 +305,7 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
     ## run matlab: you pass just the name of the script without .m in my case matlab_script
     matlab -singleCompThread -nodisplay -nosplash -r "matlab_script(${subjects[idx]})"
     ```
-    
+
     #### Job array with python
 
     ```bash title="Array job Python"
