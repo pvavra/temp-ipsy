@@ -39,7 +39,7 @@ The following schema represents how data are structured on Cecile. Please take a
 - `/home/<username>`: *Your personal home folder*, this folder **must not** contain your data and your analysis. In `home` it is allowed a maximum storage space of 1GB, see the section on data storage [quotas] for further details. <br> 
 [quotas]: #data-storage-quotas
 - `/home/<username>/scratch`: *Your personal scratch folder*. `scratch` is a folder that does not get backed up, it is useful for testing and dumping temporary processed data that can be deleted. For a proper introduction on how to use `scratch` read the dedicated [paragraph]. 
-- `/software`: *Stores the software stack* To understand how the software stack works refer to the [software stack page].<br>  
+- `/software`: *Stores the software stack*. To understand how the software stack works refer to the [software stack page].<br>  
   [software stack page]: ../cecile/software
 - `/data/archive`: *Archived projects*. This folder contains archived projects.<br>  
 - `/data/groups`: *Group folders*. These folders are dedicated to each group, for example `/data/groups/biopsy`. As for `home`, there is a maximum amount of storage allowed. See the section on data storage [quotas]. <br>  
