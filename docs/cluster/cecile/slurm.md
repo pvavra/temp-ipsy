@@ -366,7 +366,7 @@ Please do not underestimate this step, your choices influence your own jobs and 
 #### One job to rule them all:
 As a general rule, when your are setting up new slurm jobs, test that everything works as intended using **only one job**. It is superfluous to say that this approach saves time for you and time and resources for other users, and importantly it reduces the amount of information to consider.
 
-#### If you are clueless about your job resource requirements, you could adopt the following approaches:
+**If you are clueless about your job resource requirements, you could adopt the following approaches:**
 
 - **Trial and error:** Set up one job using a very liberal estimate for the resources (e.g. `--mem-per-cpu`, `--time`). Once the job is over, you can use the following command to see the actual resources used and implement them in your future jobs:
 
