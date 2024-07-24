@@ -216,7 +216,7 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
 
     - You need to provide to slurm the number of jobs by setting up `#SBATCH --array` as we have seen before. In this case our range is `0-4`, in total 5 jobs as the number of your subjects (remember in the shell interpreter counts from 0).
     - You can then take advantage of the slurm variable `SLURM_ARRAY_TASK_ID`, which keeps track of the jobs count, by using it as an index. This means that for the first job of the array `SLURM_ARRAY_TASK_ID` will assume a value of 0 for the second job of 1 and so on until the last job. </b>  
-    - For sake of practicality, we can assign `SLURM_ARRAY_TASK_ID` to the variable `idx`, which can be used to extract for each job the subject ID from the variable `subjects` and then pass it to the script `my_analysis.sh`. 
+    - For the sake of practicality, we can assign `SLURM_ARRAY_TASK_ID` to the variable `idx`, which can be used to extract for each job the subject ID from the variable `subjects` and then pass it to the script `my_analysis.sh`. 
   
     In other words, for the first job `SLURM_ARRAY_TASK_ID` is going to be equal to 0 (because your array starts at 0) and so will be `idx`. Hence, the expression `${subjects[idx]}` will extract from the list `subjects` the first item, namely `01`, which is the ID of your first subject. For the second job, `SLURM_ARRAY_TASK_ID` will be equal to 1 and consequently `${subjects[idx]}` will be equal to `02` and so on until the last job.
 
