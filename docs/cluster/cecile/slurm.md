@@ -212,8 +212,13 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
 
     #### Example of an array job
 
-    After setting up all the parameters you can simply provide the analysis script as in the example below.
-    In case you need to pass some parameters to your script, you must use the slurm variable `SLURM_ARRAY_TASK_ID` which keeps track of the job number. As we do in the example, you can use `SLURM_ARRAY_TASK_ID` as an index, `idx`, to access the single parameters specified in `parameters` and then pass them to `my_script.sh`.
+    Assume you want to run a specific analysis on 5 subjects in parallel and you want to use a script called `my_anlysis.sh` that requires as parameter the subject ID.
+    
+    - You need to provide to slurm the number of jobs you need to run and you do that in the following way: `#SBATCH --array  0-4` (see example below), in this case from 0 to 4, in total 5 jobs as the number of your subjects (remember that bash counts from 0).
+    - You can then take advantage of the slurm variable `SLURM_ARRAY_TASK_ID`, which keeps track of the jobs count, by using it as an index. </b>  
+    - We can assign `SLURM_ARRAY_TASK_ID` to `idx`, which can be used to extract for each job the subject ID from the variable `subjects` and then pass it to the script `my_analysis.sh`. 
+  
+    In other words, for the first job (job 0 of the array) `SLURM_ARRAY_TASK_ID` is going to be equal to 0 (because your array starts at 0) and so will be `idx`. Hence, the expression `${subjects[idx]}` will extract the first item from the list `subjects`, namely `01`, which is the ID of your first subject. For the second job, `SLURM_ARRAY_TASK_ID` will be equal to 1 and consequently `${subjects[idx]}` will be equal to `02` and so on until the last job.
 
     ```bash title="Array job"
     #!/bin/sh
@@ -225,13 +230,13 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
     #SBATCH --time=01:00:00
     #SBATCH --output=slurm_logs/output-%A-%a.out
     #SBATCH --error=slurm_logs/error-%A-%a.err
-    #SBATCH --array 0-5  ## 6 jobs
+    #SBATCH --array 0-4  ## 5 jobs
 
     idx=$((SLURM_ARRAY_TASK_ID))
 
-    parameters=(0.4 0.6 0.8 1 1.2 1.4)
+    subjects=(01 02 03 04 05)
 
-    ./my_script.sh ${parameters[idx]}
+    ./my_analysis.sh ${subjects[idx]}
 
 
     ```
