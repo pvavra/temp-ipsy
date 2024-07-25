@@ -94,6 +94,7 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
 === "Single job"
 
     It allowes to run only a single job.</b>  
+
     **Use case:** It is ideal when you want to test a specific analysis and test it on one subject, or when you need to run just one analysis like a group statistical analysis.
 
     ```bash title="Slurm single job"
@@ -345,7 +346,8 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
 
 === "Interactive job"
 
-    This approach allows you to work interactively inside a given node.</b>   
+    This approach allows you to work interactively inside a given node.</b>  
+      
     **Use case:** It is ideal if you need to do some testing, or you just need to run some analyses interactively. Using an interactive job you avoid to work on the head node and take precious resources that are shared among all users.
 
     ```bash
