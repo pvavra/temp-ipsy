@@ -89,6 +89,8 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
 !!! note "Job ID"
     The job ID is the identification number relative to a job that can use it to acquire information about your job, or to abort your job. It might look something like this `217379_5`, where the prefix number before the underscore indicates the general job session, while the number after the underscore indicates the specific number of a job. You might have multiple jobs sharing the session number.   
 
+## Types of Slurm jobs
+
 === "Single job"
 
     It allowes to run only a single job.</b>  
