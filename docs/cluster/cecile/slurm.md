@@ -126,7 +126,7 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
             217379_0       all fmriprep    user  PD       1:10      1 compute05
     ```
 
-    **A idled job**
+    **An idled job**
     ```
                 JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
             217379_5       all bad_job     user   IDLE    0:00      1 compute05
