@@ -220,8 +220,8 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
     Assume you want to run a specific analysis on 5 subjects in parallel and you want to use a script called `my_analysis.sh` that requires as parameter the subject ID.
 
     - You need to provide to slurm the number of jobs by setting up `#SBATCH --array` as we have seen before. In this case our range is `0-4`, in total 5 jobs as the number of your subjects (remember in the shell interpreter counts from 0).
-    - Now you need to pass the subject ID paramenter to the script. To do that you can take advantage of the slurm variable `SLURM_ARRAY_TASK_ID` which keeps track of the jobs count. This means that for the first job of the array `SLURM_ARRAY_TASK_ID` will assume a value of 0 for the second job of 1 and so on until the last job. `SLURM_ARRAY_TASK_ID` can be use as an index to extract the subject ID from the variable `subjects`. </b>  
-    - For the sake of practicality, we can assign `SLURM_ARRAY_TASK_ID` to the variable `idx`, which can be used to extract for each job the subject ID, `${subjects[idx]}`, and then ca be passed it to the script `my_analysis.sh`. 
+    - Now you need to pass the subject ID paramenter to the script. To do that, you can take advantage of the slurm variable `SLURM_ARRAY_TASK_ID` which keeps track of the jobs count. This means that for the first job of the array `SLURM_ARRAY_TASK_ID` will assume a value of 0 for the second job of 1 and so on until the last job. `SLURM_ARRAY_TASK_ID` can be used as an index to extract the subject ID from the variable `subjects`. </b>  
+    - For the sake of practicality, we can assign `SLURM_ARRAY_TASK_ID` to the variable `idx`, which can be used to extract for each job the subject ID, `${subjects[idx]}`, and then it can be passed to the script `my_analysis.sh`. 
   
     In other words, for the first job `SLURM_ARRAY_TASK_ID` is going to be equal to 0 (because your array starts at 0) and so will be `idx`. Hence, the expression `${subjects[idx]}` will extract from the list `subjects` the first item, namely `01`, which is the ID of your first subject. For the second job, `SLURM_ARRAY_TASK_ID` will be equal to 1 and consequently `${subjects[idx]}` will be equal to `02` and so on until the last job.
 
@@ -347,7 +347,7 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
 === "Interactive job"
 
     This approach allows you to work interactively inside a given node.</b>  
-      
+
     **Use case:** It is ideal if you need to do some testing, or you just need to run some analyses interactively. Using an interactive job you avoid to work on the head node and take precious resources that are shared among all users.
 
     ```bash
