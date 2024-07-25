@@ -10,13 +10,12 @@ The job scheduler allows you to specify computational tasks, known as **jobs**, 
 
 If you are using Cecile, you would most likely need to run multiple similar jobs at the same time, the key to achieve that is to code your analysis with the objective of making it parallelizable.
 
-- Create scripts that process only one dataset (it could be a subject) at a time. In this way one job is going to correspond to one task on a single dataset.
-- Chunk your analysis in steps, in this way, especially if you are new to slurm, you have more control on your analysis and its outcomes and reduce the length of your jobs. This does not prevent you from running several steps at once, but if you do that, you should be sure that each step is doing exactly what you want it to do.
+- Create scripts that process only one dataset (it could be a subject) at a time. In this way one job is going to correspond to one task.
+- Chunk your analysis in steps, in this way, especially if you are new to slurm, you have more control on your analysis, its outcomes and it reduces the length of your jobs. This approach does not prevent you from running several steps at once, but if you do that, you should be sure that each step is doing exactly what you want it to do.
 
 ## How to run a job in Slurm
 
-There are different types of jobs in slurm, you just need to choose the most suitable for your case. But before running your jobs there are a few things your need to take care of:
-
+There are different types of jobs in slurm (e.g. single jobs, interactive jobs etc.), but before talking about the specific jobs there are a few things you need to take care of:
 
 1. Make sure that the code you want to use for your jobs works properly. Especially at the beginning it might difficult to identify the reason why a job is failing, thus by making sure that your scripts run as intended you can restrict your error space.
 2. Activate the [software stack] environment or load the module that you need for your code.
@@ -46,8 +45,11 @@ There are different types of jobs in slurm, you just need to choose the most sui
         chmod +x <script.py>
         ```
 
-4. Create a folder called `slurm_logs` (or you can give it another meaningful name), in the same directory as the scripts are. Slurm will use it to dump the logs reporting error files and outputs, if you specify it in the initial parameters (see below) 
-
+4. Create a folder called `slurm_logs` (or you can give it another meaningful name), in the same directory as the scripts are. Slurm will use it to dump the logs reporting error files and outputs. You can specify it in the initial parameters as follows:
+```bash
+#SBATCH --output=slurm_logs/output-%A-%a.out  # slurm_logs specifies where job printed output should be saved
+#SBATCH --error=slurm_logs/error-%A-%a.err    # slurm_logs specifies where job related errors should be saved  
+```
 In order to specify a job in Slurm, you need to make a few decisions and provide a few essential information to the system beforehand. 
 
 !!! note "Ask yourself the following questions before setting up your job"
