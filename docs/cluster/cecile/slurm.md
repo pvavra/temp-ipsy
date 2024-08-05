@@ -200,9 +200,9 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
     **Use case:** It is ideal when you need to run similar tasks multiple times. For example, the same analysis for many subjects, or you need to test different parameters for the same analysis.
 
 
-    In the array job the new crucial parameter is `#SBATCH --array` which specifies the number of jobs we would like to run. You define the array of jobs indicating the range of the jobs, e.g. `1-5` (see example below)
+    In the array job the new crucial parameter is `#SBATCH --array` which specifies the number of jobs we would like to run. You define the array of jobs indicating the range of the jobs, e.g. `1-5` (see highlighted line below)
 
-    ```bash hl_lines="6"
+    ```bash linenums="1" hl_lines="10"
     #!/bin/sh
 
     #SBATCH --job-name=my_job
@@ -225,7 +225,7 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
   
     In other words, for the first job `SLURM_ARRAY_TASK_ID` is going to be equal to 0 (because your array starts at 0) and so will be `idx`. Hence, the expression `${subjects[idx]}` will extract from the list `subjects` the first item, namely `01`, which is the ID of your first subject. For the second job, `SLURM_ARRAY_TASK_ID` will be equal to 1 and consequently `${subjects[idx]}` will be equal to `02` and so on until the last job.
 
-    ```bash title="Array job"
+    ```bash title="Array job" 
     #!/bin/sh
 
     #SBATCH --job-name=my_job
