@@ -11,7 +11,10 @@ theme:
     - content.code.select
 
 plugins:
-  - tags
+  - tags:
+      listings_map:
+            custom-id:
+              toc: true
 
 markdown_extensions:
   - abbr
