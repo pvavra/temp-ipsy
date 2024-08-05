@@ -22,7 +22,7 @@ Currently there are **two kinds of stacks** available:
 
 ## How to use the stacks
 
-There are multiple ways to access the stack depending on the how much of control you want over the versions of packages you would like to use:
+There are multiple ways to access the stack depending on the control you want over the versions of softwares you would like to use:
 
 ### Load the Ipsy environment (recommended method)
 
