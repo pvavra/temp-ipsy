@@ -87,7 +87,7 @@ Here it is how you turn the previous questions in parameters for slurm.
 - `#SBATCH --mem-per-cpu=1g`: amount of memory you request per cpu. 
 - `#SBATCH --time=01:00:00`: maximum duration you assign to a job (D-HH:MM:SS, for example `--time=00:01:00` is a one minute job).
 - `#SBATCH --output=slurm_logs/output-%A-%a.out`: here you specify where job printed output should be saved, specifically in the folder `slurm_logs`. 
-- `#SBATCH --error=slurm_logs/error-%A-%a.err`: here your specify where job related errors should be saved, again in the folder `slurm_logs`.
+- `#SBATCH --error=slurm_logs/error-%A-%a.err`: here you specify where job related errors should be saved, again in the folder `slurm_logs`.
 
 Instead of `--mem-per-cpu` you could also use `--mem`, the latter specifies the amount of RAM you request in a node.
 
