@@ -65,13 +65,13 @@ Here it is how you turn the previous questions in parameters for slurm.
 #!/bin/sh 
 
 #SBATCH --mail-user=<name.lastname>@ovgu.de  
-#SBATCH --mail-type=BEGIN,END,FAIL            # mail it is send at the beginning, end and failing of a job
-#SBATCH --cpus-per-task=1                     # number of cpu you request for a task
-#SBATCH --nodes=1                             # number of requested nodes, keep it to 1, it is fine for our kind of analyses
-#SBATCH --mem-per-cpu=1g                      # amount of memory you require per cpu
-#SBATCH --time=01:00:00                       # maximum duration you assign to a job (D-HH:MM:SS)
-#SBATCH --output=slurm_logs/output-%A-%a.out  # here you specify where job printed output should be saved
-#SBATCH --error=slurm_logs/error-%A-%a.err    # here your specify where job related errors should be saved 
+#SBATCH --mail-type=BEGIN,END,FAIL            
+#SBATCH --cpus-per-task=1                    
+#SBATCH --nodes=1                             
+#SBATCH --mem-per-cpu=1g                     
+#SBATCH --time=01:00:00                       
+#SBATCH --output=slurm_logs/output-%A-%a.out  
+#SBATCH --error=slurm_logs/error-%A-%a.err   
 
 ```
 
