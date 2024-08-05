@@ -22,7 +22,7 @@ There are different types of jobs in slurm (e.g. single jobs, interactive jobs e
    [software stack]: ../software/##how-to-use-the-stacks
 3. Make sure your scripts (e.g. in bash) are executable.
    
-    ??? note "Making file executable"
+    ??? note "Making a file executable"
 
         Add the so called **shebang** on top of your bash script, it will tell the system to use the bash interpreter to run the code:
         
