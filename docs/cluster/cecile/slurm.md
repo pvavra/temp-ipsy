@@ -8,10 +8,10 @@ The job scheduler allows you to specify computational tasks, known as **jobs**, 
 
 ## How to think about jobs
 
-If you are using Cecile, you would most likely need to run multiple similar jobs at the same time, the key to achieve that is to code your analysis with the objective of making it parallelizable.
+If you are using Cecile, you would most likely need to run multiple similar jobs at the same time, the key to achieve this goal is to code your analysis with the objective of making it parallelizable:
 
-- Create scripts that process only one dataset (it could be a subject) at a time. In this way one job is going to correspond to one task.
-- Chunk your analysis in steps, in this way, especially if you are new to slurm, you have more control on your analysis, its outcomes and it reduces the length of your jobs. This approach does not prevent you from running several steps at once, but if you do that, you should be sure that each step is doing exactly what you want it to do.
+- Create scripts that process only one dataset (it could be a subject) at a time. In this way one job is going to correspond to one task, for example the preprocessing of a single subject dataset.
+- Chunk your analysis in steps. In this way, especially if you are new to slurm, you have more control on your analysis, your outcomes and it reduces the duration of your jobs. This approach does not prevent you from running several steps at once, but if you do that, but if you do so you should be certain that each step is doing exactly what you want it to do.
 
 ## How to run a job in Slurm
 
