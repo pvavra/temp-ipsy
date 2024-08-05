@@ -45,11 +45,9 @@ There are different types of jobs in slurm (e.g. single jobs, interactive jobs e
         chmod +x <script.py>
         ```
 
-4. Create a folder called `slurm_logs` (or you can give it another meaningful name), in the same directory as the scripts are. Slurm will use it to dump the logs reporting error files and outputs. You can specify it in the initial parameters as follows:
-```bash
-#SBATCH --output=slurm_logs/output-%A-%a.out  # slurm_logs specifies where job printed output should be saved
-#SBATCH --error=slurm_logs/error-%A-%a.err    # slurm_logs specifies where job related errors should be saved  
-```
+4. Create a folder called `slurm_logs` (or you can give it another meaningful name), in the same directory as the scripts are. Slurm will use it to dump the logs reporting error files and outputs. 
+
+
 In order to specify a job in Slurm, you need to make a few decisions and provide a few essential information to the system beforehand. 
 
 !!! note "Ask yourself the following questions before setting up your job"
@@ -63,12 +61,10 @@ The following parameters are not all mandatory, but we **strongly recommend** to
 
 Here it is how you turn the previous questions in parameters for slurm.
 
-```bash title="Setting Slurm parameters"
-#!/bin/sh
+```bash title="Setting Slurm parameters" linenums="1"
+#!/bin/sh 
 
-#### NOTE: Keep in mind that for your slurm script the # before slurm commands is not interpreted as a shell comment 
-
-#SBATCH --mail-user=<name.lastname>@ovgu.de   # your email address in case you want to receive a job feedback by mail
+#SBATCH --mail-user=<name.lastname>@ovgu.de  
 #SBATCH --mail-type=BEGIN,END,FAIL            # mail it is send at the beginning, end and failing of a job
 #SBATCH --cpus-per-task=1                     # number of cpu you request for a task
 #SBATCH --nodes=1                             # number of requested nodes, keep it to 1, it is fine for our kind of analyses
@@ -79,7 +75,19 @@ Here it is how you turn the previous questions in parameters for slurm.
 
 ```
 
-Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amount of RAM you request in a node.
+!!! note "# is not a comment in SLURM"
+    Keep in mind that for your slurm script the # before any slurm command is not interpreted as a shell comment
+
+- `#SBATCH --mail-user=<name.lastname>@ovgu.de`: your email address, in case you want to receive a job feedback by email.
+- `#SBATCH --mail-type=BEGIN,END,FAIL`: get an email at the beginning of a job, end of a job and when a job fails, respectively.
+- `#SBATCH --cpus-per-task=1`: number of CPUs you request for a task
+- `#SBATCH --nodes=1`: number of requested nodes, keep it to 1, it is fine for our type of analyses.
+- `#SBATCH --mem-per-cpu=1g`: amount of memory you request per cpu. 
+- `#SBATCH --time=01:00:00`: maximum duration you assign to a job (D-HH:MM:SS, for example `--time=00:01:00` is a one minute job).
+- `#SBATCH --output=slurm_logs/output-%A-%a.out`: here you specify where job printed output should be saved, specifically in the folder `slurm_logs`. 
+- `#SBATCH --error=slurm_logs/error-%A-%a.err`: here your specify where job related errors should be saved, again in the folder `slurm_logs`.
+
+Instead of `--mem-per-cpu` you could also use `--mem`, the latter specifies the amount of RAM you request in a node.
 
 !!! Warning "Be aware of memory and time"
     - If your job exceeds the requested memory, your job will be aborted.
