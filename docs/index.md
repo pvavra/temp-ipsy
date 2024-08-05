@@ -8,7 +8,7 @@ Ipsy docs is a work in progress collection of resources, tutorials and guideline
 
 <div class="grid cards" markdown>
 
--   :material-file-document-check:  &nbsp; __Guide for [research data management]__
+-   :material-file-document-check:  &nbsp; __Guidance for [research data management]__
 
     ---
 
