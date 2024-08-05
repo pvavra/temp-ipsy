@@ -64,6 +64,7 @@ Here it is how you turn the previous questions in parameters for slurm.
 ```bash title="Setting Slurm parameters" linenums="1"
 #!/bin/sh 
 
+#SBATCH --job-name=my_job
 #SBATCH --mail-user=<name.lastname>@ovgu.de  
 #SBATCH --mail-type=BEGIN,END,FAIL            
 #SBATCH --cpus-per-task=1                    
@@ -78,6 +79,7 @@ Here it is how you turn the previous questions in parameters for slurm.
 !!! note "# is not a comment in SLURM"
     Keep in mind that for your slurm script the # before any slurm command is not interpreted as a shell comment
 
+- `#SBATCH --job-name=my_job`: the name you provide for your job
 - `#SBATCH --mail-user=<name.lastname>@ovgu.de`: your email address, in case you want to receive a job feedback by email.
 - `#SBATCH --mail-type=BEGIN,END,FAIL`: get an email at the beginning of a job, end of a job and when a job fails, respectively.
 - `#SBATCH --cpus-per-task=1`: number of CPUs you request for a task
