@@ -26,7 +26,7 @@ There are multiple ways to access the stack depending on the control you want ov
 
 ### Load the Ipsy environment (recommended method)
 
-Instead of loading every package individually, an evironment (containing only the newest version of each package) can be activated.
+Instead of loading every package individually, you can activate an evironment containing only the newest version of each package. 
 
 === "Current stack"
 
