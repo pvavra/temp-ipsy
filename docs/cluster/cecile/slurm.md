@@ -202,7 +202,7 @@ Instead of `--mem-per-cpu` you could use `--mem`, the latter specifies the amoun
 
     In the array job the new crucial parameter is `#SBATCH --array` which specifies the number of jobs we would like to run. You define the array of jobs indicating the range of the jobs, e.g. `1-5` (see example below)
 
-    ```bash title="Setting up Slurm parameters" linenums="<start>"
+    ```bash hl_lines="6"
     #!/bin/sh
 
     #SBATCH --job-name=my_job
