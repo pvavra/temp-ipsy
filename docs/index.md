@@ -8,13 +8,13 @@ Ipsy docs is a work in progress collection of resources, tutorials and guideline
 
 <div class="grid cards" markdown>
 
-- :material-file-document-check: Provide a guide for research data management ([RDM]).
+-   :material-file-document-check:  &nbsp; __Provide a guide for research data management ([RDM])__
 
----
+    ---
 
-- :fontawesome-solid-server: Provide support and documentation for a fair and effective [cluster] usage.
+-   :fontawesome-solid-server:  &nbsp; __Provide support and documentation for a fair and effective [cluster] usage__
 
----
+    ---
 
 </div>
 
