@@ -380,7 +380,7 @@ The choice of resources for a job must be decided on a case by case basis, there
 Please do not underestimate this step, your choices influence your own jobs and other users.
 
 **One job to rule them all:**
-As a general rule, when your are setting up new slurm jobs, test that everything works as intended using **only one job**. It is superfluous to say that this approach saves time for you and time and resources for other users, and importantly it reduces the amount of information to consider.
+As a general rule, when your are setting up new slurm jobs, test that everything works as intended using **only one job**. It is superfluous to say that this approach saves time for you and time and resources for other users, and importantly it reduces the amount of potential errors that might occur.
 
 **If you are clueless about your job resource requirements, you could adopt the following approaches:**
 
