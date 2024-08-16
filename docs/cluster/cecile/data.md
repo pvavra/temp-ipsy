@@ -108,11 +108,11 @@ Go to your `home` on Cecile, on the command line type the following command:
 This command starts an interactive questionnaire on the terminal, if you need more information about the usage of the questionnare prompt, please refer to the [documentation](https://github.com/ipsy-md/Quest/blob/main/README.md).</b>  
 Please try to answer all the questions, even if you do not know the exact answer to some questions, for example: `Indicate the size of your raw data`, you should provide a reasonable estimate and your answer can be updated later. In case you are not able to answer some questions by yourself, try asking your PI or more expert members of your group, alternatively contact us and we will try to help you.
 
-If your questionnaire has been properly completed your project will be created.
+If your questionnaire has been properly completed your project will be created by the cluster admin.
 
 ### Project structure
 
-The project structure follows a specific BIDS structure (see examples in the tabs below). Such a structure will be generated upon project creation. According to BIDS the structure we adopt requires only `rawdata` to be BIDS compliant, however we strongly recommend that also `derivatives` are BIDS compliant. 
+The project structure follows a specific BIDS structure (see examples in the tabs below). Such a structure will be generated upon project creation. According to BIDS, the structure we adopt requires only `rawdata` to be BIDS compliant, however we strongly recommend that also `derivatives` are BIDS compliant. 
 
 #### How to handle derivatives and code
 
