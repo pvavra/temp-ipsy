@@ -100,7 +100,7 @@ The following schema represents how data are structured on Cecile. Please take a
 As mentioned in the research planning section, we adopt a specific project workflow, please follow carefully the next steps to create a project:
 
 As a first step, you need to fill in a **questionnaire** about your project, this needs to be done on Cecile:
-Go to your `home` on Cecile, on the command line type the following command and then press enter:
+Go to your `home` on Cecile, on the command line type the following command:
    
 ```bash
 ./run_quest
