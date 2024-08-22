@@ -34,6 +34,7 @@ There are multiple platforms to make your data public, here just a few of the mo
 - [Figshare](https://figshare.com/)
 - [Zenodo](https://zenodo.org/)
 - [RDC at ZPID](https://rdc-psychology.org/)
+- [OpenNeuro](https://openneuro.org/)(Intended only for neuroscientific data)
 
 If you expect and whish other people to have a more interactive and collaborative approach to your code
 consider to share it also in other platforms such as Github, Gitlab or Bitbucket. Refer to the section about [code sharing].
