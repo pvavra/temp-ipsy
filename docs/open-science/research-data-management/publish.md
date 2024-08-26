@@ -63,3 +63,27 @@ A registered report is an alternative publishing approach that consists of pre-r
 - At this stage your study is in principle accepted for publication, as long as the approved protocol has been strictly followed.
 - The study with a complete manuscript (previous introduction, data analysis and results) plus an additional exploratory analysis section is then resubmitted and goes again through the peer-review process.
 - If the manuscripts is accepted the article is published and data and code are usually made publically available.
+
+## Preprints
+
+Preprints are papers that are made publicly available by the authors on dedicated platforms before being peer-reviewed and being published on a scientific journal.
+
+### Scope of preprints
+
+Preprints facilitate, broaden and accelerate the dissemination of your research with no costs. A paper can be easily read by everyone, given that preprint platforms are freely accessable, it can be commented, shared and scrutinized by the scientific community and not necessarily by a close circle of researchers interested in your topic, but also by reserchers with different scientific interests and backgrounds. The obvious benefit for the community is the broader circulation of new findings and ideas, the open discussion and for the authors, the opportunity to discuss with directly with the community and the chance to identify weak points or mistakes in their paper.
+
+### What you need to know about preprints
+
+- Preprints are not peer-reviewed.
+- Preprints are not edited or typeset before being published on a platform. It is your duty to make sure that the manuscript is in a well edited before submission.
+- Although not peer-reviewed, preprints can be cited by using the digital object identifier (DOI).
+- Revised version of preprints can be uploaded.
+- An article can be posted as a preprint before or during the submission to a scientific journal. It cannot be posted once it has been accepted for publication by a journal. Keep in mind, that these are general rules it is always advised to read the policy about preprints of scientific journals.
+
+### Preprint repositories:
+
+- [PsyArxiv:](https://osf.io/preprints/psyarxiv) Dedicated to psychological research (hosted by OSF). 
+- [BioArxiv:](https://www.biorxiv.org/) Dedicated to biological research (numerous cogntive neuroscience preprints are published on BioArxiv)
+- [ArXiv:](https://arxiv.org/) Dedicated mainly to mathematics, physics, computer-science, but it can be used in case of methodological papers.
+- [f1000:](https://www.f1000.com/) Dedicated to life science research, it allows a public peer-review.
+- [Zenodo:](https://zenodo.org/) Dedicated to multiple disciplines.
