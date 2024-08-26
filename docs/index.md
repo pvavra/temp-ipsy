@@ -25,6 +25,6 @@ Ipsy docs is a work in progress collection of resources, tutorials and guideline
 [Computational cluster]: cluster
 
 !!! note "Before starting"
-    These pages require little prior knowledge from the user, but even if you are an experienced researcher, we recommend you to go through them, and especially to read carefully the sections dedicated to the cluster, data and backups.
+    These pages require little prior knowledge, even if you are an experienced researcher, we recommend you to go through them and to read carefully the sections dedicated to the cluster usage, data and backups.
 
 
