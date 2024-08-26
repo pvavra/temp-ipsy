@@ -33,12 +33,13 @@ There are multiple platforms to make your data public, here just a few of the mo
 - [Open Science Framework](https://osf.io/)
 - [Figshare](https://figshare.com/)
 - [Zenodo](https://zenodo.org/)
-- [RDC at ZPID](https://rdc-psychology.org/)
-- [OpenNeuro](https://openneuro.org/)(Intended only for neuroscientific data)
+- [RDC at ZPID](https://rdc-psychology.org/) (Intended only for psychogy/neuroscience data)
+- [OpenNeuro](https://openneuro.org/) (Intended only for neuroscientific data)
 
-If you expect and whish other people to have a more interactive and collaborative approach to your code
-consider to share it also in other platforms such as Github, Gitlab or Bitbucket. Refer to the section about [code sharing].
-[code sharing]: ../../code-management/sharing
+!!! note "Sharing code for your publication"
+    If you expect and whish other people to have a more interactive and collaborative approach to the code of your paper,
+    consider to share it also on other platforms such as Github, Gitlab or Bitbucket. Refer to the section about [code sharing].
+    [code sharing]: ../../code-management/sharing
  
 ## Pre-registration
 
