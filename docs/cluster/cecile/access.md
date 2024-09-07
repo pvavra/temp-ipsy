@@ -1,6 +1,6 @@
 # Accessing Cecile
 
-!!! note "Accessing Cecile outside the OvGU network"
+!!! Warning "Accessing Cecile outside the OvGU network"
     To access Cecile outside the OvGU network, you need do it via the OvGU [VPN](https://en.wikipedia.org/wiki/Virtual_private_network), please follow the URZ instructions in [here](https://www.urz.ovgu.de/en/vpn-path-204,616.html) 
 
 === "Linux"
