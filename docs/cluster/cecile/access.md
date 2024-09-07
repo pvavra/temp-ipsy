@@ -32,7 +32,7 @@
     If you want to use any software with a Graphical User Interface (GUI) in Cecile (e.g. Matlab), you need to use the so-called **X fowarding**. Keep in mind that this usage mode is very sensitive to latency, thus outside the OvGU network you will likely experience a poor performance in softwares with GUI. 
 
     !!! Warning "Issues with macOS"
-        X fowarding does not currently work on macOS, you need to install [XQuartz](https://www.xquartz.org/)        
+        X fowarding does not currently work natively on macOS, in order to be able to use it, you need to install [XQuartz](https://www.xquartz.org/)        
 
 
     ```bash
@@ -56,7 +56,7 @@
     If you want to use any software with a Graphical User Interface (GUI) in Cecile (e.g. Matlab), you need to use the so-called **X fowarding**. Keep in mind that this usage mode is very sensitive to latency, thus outside the OvGU network you will likely experience a poor performance in softwares with GUI.
 
     !!! Warning "Issues with Windows"
-        X fowarding does not currently work on Windows, you need to install [VcXsrv](https://github.com/marchaesen/vcxsrv)
+        X fowarding does not currently work natively on Windows, in order to be able to use it, you need to install [VcXsrv](https://github.com/marchaesen/vcxsrv)
 
     ```bash
     ssh -X <username>@cecile.ovgu.de
