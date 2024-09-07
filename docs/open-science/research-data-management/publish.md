@@ -70,7 +70,7 @@ Preprints are papers that are made publicly available by the authors on dedicate
 
 ### Scope of preprints
 
-Preprints facilitate, broaden and accelerate the dissemination of your research with no costs. A paper can be easily read by everyone, given that preprint platforms are freely accessable, it can be commented, shared and scrutinized by the scientific community and not necessarily by a close circle of researchers interested in your topic, but also by reserchers with different scientific interests and backgrounds. The obvious benefit for the community is the broader circulation of new findings and ideas, the open discussion and for the authors, the opportunity to discuss with directly with the community and the chance to identify weak points or mistakes in their paper.
+Preprints facilitate, broaden and accelerate the dissemination of your research with no costs. A paper can be easily read by everyone, given that preprint platforms are freely accessable, it can be commented, shared and scrutinized by the scientific community and not necessarily by a close circle of researchers interested in your topic, but also by reserchers with different scientific interests and backgrounds. The obvious benefit for the community is the broader circulation of new findings and ideas, the open discussion and for the authors, the opportunity to discuss directly with the community and the chance to identify weak points or mistakes in their paper.
 
 ### What you need to know about preprints
 
@@ -78,7 +78,7 @@ Preprints facilitate, broaden and accelerate the dissemination of your research 
 - Preprints are not edited or typeset before being published on a platform. It is your duty to make sure that the manuscript is in a well edited before submission.
 - Although not peer-reviewed, preprints can be cited by using the digital object identifier (DOI).
 - Revised version of preprints can be uploaded.
-- An article can be posted as a preprint before or during the submission to a scientific journal. It cannot be posted once it has been accepted for publication by a journal. Keep in mind, that these are general rules it is always advised to read the policy about preprints of scientific journals.
+- An article can be posted as a preprint before or during the submission to a scientific journal. It cannot be posted once it has been already accepted for publication by a journal. Keep in mind, that these are general rules, it is advisable to read the journal policy about preprints.
 
 ### Preprint repositories:
 
