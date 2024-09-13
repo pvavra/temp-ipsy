@@ -69,7 +69,7 @@ Instead of loading every package individually, you can activate an evironment co
 For every installed package spack generates a module file in addition, this allows to use the `module` cammand to load specific softwares.
 
 ```bash
-. /software/current/spack/share/spack/setup-env.sh
+. /software/experimental/spack/share/spack/setup-env.sh
 ```
 
 To see what packages are installed run
