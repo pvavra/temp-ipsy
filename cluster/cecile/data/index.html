@@ -1,0 +1,1641 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mydomain.org/mysite/cluster/cecile/data/">
+      
+      
+        <link rel="prev" href="../access/">
+      
+      
+        <link rel="next" href="../slurm/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Data organization - Ipsy Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#data-organization" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Ipsy Docs" class="md-header__button md-logo" aria-label="Ipsy Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ipsy Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Data organization
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../open-science/research-data-management/getting-started/" class="md-tabs__link">
+          
+  
+  Open Science
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Cluster
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../qanda/" class="md-tabs__link">
+        
+  
+    
+  
+  Q&A
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Ipsy Docs" class="md-nav__button md-logo" aria-label="Ipsy Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Ipsy Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Open Science
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Open Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Research Data Management
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Research Data Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open-science/research-data-management/getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open-science/research-data-management/planning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plan you data management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open-science/research-data-management/bids/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BIDS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open-science/research-data-management/publish/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish your data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open-science/research-data-management/archive/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Archive your data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Code Management
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Code Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open-science/code-management/good-practices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Good Coding practices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open-science/code-management/sharing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sharing code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Analysis Management
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Data Analysis Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open-science/analysis-management/data-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Cluster
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cluster
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cecile
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cecile
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accessing Cecile
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Data organization
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Data organization
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cecile-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cecile data structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-cecile-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Cecile data structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-create-a-project-on-cecile" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to create a project on Cecile
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to create a project on Cecile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-handle-derivatives-and-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to handle derivatives and code
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-related-projects-are-handled" class="md-nav__link">
+    <span class="md-ellipsis">
+      How related projects are handled
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-transfer-data-fromto-cecile" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to transfer data from/to Cecile
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-retrieve-lost-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to retrieve lost data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-storage-quotas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data storage quotas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scratch-what-it-is-and-how-to-use-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scratch: What it is and how to use it
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../slurm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Slurm
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Medusa
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Medusa
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../medusa/access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accessing Medusa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../medusa/data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data organization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../medusa/condor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Condor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../medusa/software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qanda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Q&A
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#cecile-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Cecile data structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#understanding-cecile-data-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Understanding Cecile data structure
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-create-a-project-on-cecile" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to create a project on Cecile
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="How to create a project on Cecile">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#project-structure" class="md-nav__link">
+    <span class="md-ellipsis">
+      Project structure
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Project structure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-handle-derivatives-and-code" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to handle derivatives and code
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-related-projects-are-handled" class="md-nav__link">
+    <span class="md-ellipsis">
+      How related projects are handled
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-transfer-data-fromto-cecile" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to transfer data from/to Cecile
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-retrieve-lost-data" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to retrieve lost data
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#data-storage-quotas" class="md-nav__link">
+    <span class="md-ellipsis">
+      Data storage quotas
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scratch-what-it-is-and-how-to-use-it" class="md-nav__link">
+    <span class="md-ellipsis">
+      Scratch: What it is and how to use it
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="data-organization">Data organization</h1>
+<h2 id="cecile-data-structure">Cecile data structure</h2>
+<p>The following schema represents how data are structured on Cecile. Please take a moment to look at it and read the explanation below, it will give you an overview of the cluster organization.  </p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>/
+<a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>├── data/
+<a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>│   ├── archive/
+<a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>│   │   └── projects/
+<a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>│   │       ├── project_1/
+<a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>│   │       └── project_n/
+<a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>│   ├── groups/
+<a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>│   │   ├── biopsy/
+<a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>│   │   │   ├── archive/
+<a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>|   |   │   - symlink /data/archive/project_1
+<a id="__codelineno-0-11" name="__codelineno-0-11" href="#__codelineno-0-11"></a>│   │   │   └── projects/
+<a id="__codelineno-0-12" name="__codelineno-0-12" href="#__codelineno-0-12"></a>│   │   |   - symlink /data/projects/project_1
+<a id="__codelineno-0-13" name="__codelineno-0-13" href="#__codelineno-0-13"></a>│   │   ├── exppsy/
+<a id="__codelineno-0-14" name="__codelineno-0-14" href="#__codelineno-0-14"></a>│   │   ├── methpsy1/
+<a id="__codelineno-0-15" name="__codelineno-0-15" href="#__codelineno-0-15"></a>│   │   └── neuropsy/
+<a id="__codelineno-0-16" name="__codelineno-0-16" href="#__codelineno-0-16"></a>│   └── projects/
+<a id="__codelineno-0-17" name="__codelineno-0-17" href="#__codelineno-0-17"></a>│       ├── project_1/
+<a id="__codelineno-0-18" name="__codelineno-0-18" href="#__codelineno-0-18"></a>|       |   └── scratch/
+<a id="__codelineno-0-19" name="__codelineno-0-19" href="#__codelineno-0-19"></a>|       ├── ...
+<a id="__codelineno-0-20" name="__codelineno-0-20" href="#__codelineno-0-20"></a>│       └── project_n/
+<a id="__codelineno-0-21" name="__codelineno-0-21" href="#__codelineno-0-21"></a>│           └── scratch/
+<a id="__codelineno-0-22" name="__codelineno-0-22" href="#__codelineno-0-22"></a>├── home/
+<a id="__codelineno-0-23" name="__codelineno-0-23" href="#__codelineno-0-23"></a>│   └── user/
+<a id="__codelineno-0-24" name="__codelineno-0-24" href="#__codelineno-0-24"></a>│       └── scratch/
+<a id="__codelineno-0-25" name="__codelineno-0-25" href="#__codelineno-0-25"></a>└── software/
+</code></pre></div>
+<h2 id="understanding-cecile-data-structure">Understanding Cecile data structure</h2>
+<ul>
+<li><code>/home/&lt;username&gt;</code>: <em>Your personal home folder</em>, this folder <strong>must not</strong> contain your data and your analysis. In <code>home</code> it is allowed a maximum storage space of 1GB, see the section on data storage <a href="#data-storage-quotas">quotas</a> for further details. <br> </li>
+<li><code>/home/&lt;username&gt;/scratch</code>: <em>Your personal scratch folder</em>. <code>scratch</code> is a folder that does not get backed up, it is useful for testing and dumping temporary processed data that can be deleted. For a proper introduction on how to use <code>scratch</code> read the dedicated <a href="#scratch-what-it-is-and-how-to-use-it">paragraph</a>. </li>
+<li><code>/software</code>: <em>Stores the software stack</em>. To understand how the software stack works refer to the <a href="../cecile/software">software stack page</a>.<br>  </li>
+<li><code>/data/archive</code>: <em>Archived projects</em>. This folder contains archived projects.<br>  </li>
+<li><code>/data/groups</code>: <em>Group folders</em>. These folders are dedicated to each group, for example <code>/data/groups/biopsy</code>. As for <code>home</code>, there is a maximum amount of storage allowed. See the section on data storage <a href="#data-storage-quotas">quotas</a>. <br>  </li>
+<li><code>/data/groups/archive</code>: This folder contains <strong>symlinks</strong> (see the tab below), that allow you to access archived projects directly from the group folder<br></li>
+<li><code>/data/groups/projects</code>: As for the <code>data/groups/archive</code>, this folder contains symlinks to access the projects from the group folder. </br>  </li>
+<li><code>/data/projects</code>: <em>Projects folder</em>. The actual storage of all ongoing projects, which can be comfortably accessed and worked on from the <code>data/groups/projects</code> folder<br></li>
+<li><code>/data/projects/scratch</code>: <em>Project scratch folder</em>. A <code>scratch</code> folder is also available in each single <code>project</code>, please refer to the dedicated <a href="#scratch-what-it-is-and-how-to-use-it">paragraph</a>. </li>
+</ul>
+<details class="note">
+<summary>What is a symlink?</summary>
+<p>In a nutshell, a symbolic link, also known as symlink, is a file or a folder that points to another file or folder, known as target.
+Once a symlink is in place, you can work on it as if it was the original file or folder. The deletion of a symlink does not affect the target, however if a target is deleted, moved to a different location or renamed, the symbolic link does not get updated, it continues to point to the original file, but it is now broken.
+An example of how a symbolic link works:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a><span class="c1"># create an empty file</span>
+<a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>touch<span class="w"> </span>my_file.txt
+<a id="__codelineno-1-3" name="__codelineno-1-3" href="#__codelineno-1-3"></a>
+<a id="__codelineno-1-4" name="__codelineno-1-4" href="#__codelineno-1-4"></a><span class="c1"># create a symlink of my_file.txt, we can give to the symlink the same name as the original file or a different one</span>
+<a id="__codelineno-1-5" name="__codelineno-1-5" href="#__codelineno-1-5"></a>ln<span class="w"> </span>-s<span class="w"> </span>my_file.txt<span class="w"> </span>my_file_symlink.txt
+<a id="__codelineno-1-6" name="__codelineno-1-6" href="#__codelineno-1-6"></a>
+<a id="__codelineno-1-7" name="__codelineno-1-7" href="#__codelineno-1-7"></a><span class="c1"># now list the content of simlink_dir in the following way (use the flag -l)</span>
+<a id="__codelineno-1-8" name="__codelineno-1-8" href="#__codelineno-1-8"></a>ls<span class="w"> </span>-l
+</code></pre></div>
+As you can see below, the symlink <code>my_file_symlink.txt</code> points to the original file <code>my_file.txt</code></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>lrwxrwxrwx 1 user 11 Jun 12 09:16 my_file_symlink.txt -&gt; my_file.txt
+</code></pre></div>
+<p>Now if you modify the symlink file, you can see that this change affects the original file </p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a><span class="c1"># write something into the simlink</span>
+<a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a><span class="nb">echo</span><span class="w"> </span>I<span class="w"> </span>am<span class="w"> </span>a<span class="w"> </span>symlink<span class="w"> </span>&gt;<span class="w"> </span>my_file_symlink.txt
+<a id="__codelineno-3-3" name="__codelineno-3-3" href="#__codelineno-3-3"></a><span class="c1"># check the content of the symlink</span>
+<a id="__codelineno-3-4" name="__codelineno-3-4" href="#__codelineno-3-4"></a>cat<span class="w"> </span>my_file_symlink.txt
+</code></pre></div>
+As expected, you can see the sentence inside <code>my_file_symlink.txt</code>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>I am a symlink
+</code></pre></div>
+If you check the content of the original file, you can see that also the original file contains the sentence</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>cat<span class="w"> </span>file_1.txt
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>I am a symlink
+</code></pre></div></p>
+</details>
+<h2 id="how-to-create-a-project-on-cecile">How to create a project on Cecile</h2>
+<p>As mentioned in the research planning section, we adopt a specific project workflow, please follow carefully the next steps to create a project:</p>
+<p>As a first step, you need to fill in a <strong>questionnaire</strong> about your project, this needs to be done on Cecile:
+Go to your <code>home</code> on Cecile, on the command line type the following command:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>./run_quest
+</code></pre></div>
+This command starts an interactive questionnaire on the terminal, if you need more information about the usage of the questionnare prompt, please refer to the <a href="https://github.com/ipsy-md/Quest/blob/main/README.md">documentation</a>.</b><br />
+Please try to answer all the questions, even if you do not know the exact answer to some questions, for example: <code>Indicate the size of your raw data</code>, you should provide a reasonable estimate and your answer can be updated later. In case you are not able to answer some questions by yourself, try asking your PI or more expert members of your group, alternatively contact us and we will try to help you.</p>
+<p>If your questionnaire has been properly completed your project will be created by the cluster admin.</p>
+<h3 id="project-structure">Project structure</h3>
+<p>The project structure follows a specific BIDS structure (see examples in the tabs below). Such a structure will be generated upon project creation. According to BIDS, the structure we adopt requires only <code>rawdata</code> to be BIDS compliant, however we strongly recommend that also <code>derivatives</code> are BIDS compliant. </p>
+<h4 id="how-to-handle-derivatives-and-code">How to handle derivatives and code</h4>
+<div class="admonition warning">
+<p class="admonition-title">Content of derivatives and code</p>
+<ul>
+<li><code>derivatives</code> must contain only processed data and no code.</li>
+<li><code>code</code> must contain only code and no processed or unprocessed data.</li>
+</ul>
+</div>
+<p>In <code>derivatives</code>, unlike <code>rawdata</code>, you have the freedom to create sub-folders for your processed data at your discretion, but with one little caveat: When <strong>naming your sub-folders</strong> in <code>derivatives</code> you <strong>must</strong> follow the convention <code>&lt;pipeline&gt;-&lt;variant&gt;</code>, where <code>&lt;pipeline&gt;</code> is the name of the tool you used for that step and <code>&lt;variant&gt;</code> is the step of actual analysis, for example, assuming your preprocessing has been done with <code>spm</code>, the sub-folder name would be <code>spm-preproc/</code>. For further information see the official BIDS <a href="https://bids-specification.readthedocs.io/en/stable/common-principles.html#storage-of-derived-datasets"><code>derivatives</code> section</a>.</b>  </p>
+<div class="admonition note">
+<p class="admonition-title">Mirroring derivatives and code structure</p>
+<p>We <strong>strongly recommend</strong> to mirror the sub-folder names between <code>derivatives</code> and <code>code</code> to keep an intuitive relationship between code and data.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Good naming practices</p>
+<p>As you know files and folders naming is an essential aspect of BIDS and the FAIR principles, we suggest you to look into this very helpful <a href="https://book.the-turing-way.org/project-design/filenaming">page</a> to learn about good naming practices and machine readable names.  </p>
+</div>
+<p>For modalities, such as <strong>eye-tracking</strong>, for which there is not yet a consensus for BIDS, we recommend to use the same structure as for the other modalities and to convert the data into BIDS format anyway. <a href="https://github.com/bids-standard/bids-specification/pull/1128">Here</a> you can follow the discussion around BIDS for eye-tracking.</p>
+<div class="admonition danger">
+<p class="admonition-title">Sides effects of using a different structure</p>
+<p>Failing to mantain this structure might create future issues for assigning less canonical permissions. Not adopting BIDS would make your dataset not easily interoperable and ultimately it would not be following the FAIR principles.</p>
+</div>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">fMRI project</label><label for="__tabbed_1_2">EEG/MEG project</label><label for="__tabbed_1_3">Behavioral project</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>A prototypical fMRI dataset:</p>
+<ul>
+<li><code>project-metadata.json</code>: This file is created by the cluster admin, it contains general metadata about the project.</b>  </li>
+<li><code>sourcedata</code>: It comprises the raw data (unprocessed data), in this case raw dicom files.</b>  </li>
+<li><code>rawdata</code>: It comprises the BIDS converted niftis, the relative <code>.json</code> files and <code>.tsv</code> files.</b>  </li>
+<li><code>derivatives</code>: It comprises different sub-folders which represent the macro-steps of you analysis, e.g. <code>spm-preproc</code>, <code>spm-first_level</code> etc. These folders should follow the BIDS convention as well, and <strong>must contain only data and no code</strong>.</b>  </li>
+<li><code>code</code>: It includes sub-folders that <strong>mirror</strong> the <code>derivatives</code> sub-folder names. They <strong>must contain only the code relative to each step, and no data at all</strong>. It must also include a sub-folder containing the code for the BIDS convertion.</b>   </li>
+<li><code>stimuli</code>: It includes a subfolder for the experimental code and the stimuli (e.g. images), if any.</b>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>/data/project_name/
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>
+<a id="__codelineno-8-3" name="__codelineno-8-3" href="#__codelineno-8-3"></a>└── dataset-1/
+<a id="__codelineno-8-4" name="__codelineno-8-4" href="#__codelineno-8-4"></a>    ├── project-metadata.json
+<a id="__codelineno-8-5" name="__codelineno-8-5" href="#__codelineno-8-5"></a>    ├── sourcedata
+<a id="__codelineno-8-6" name="__codelineno-8-6" href="#__codelineno-8-6"></a>    ├── rawdata/
+<a id="__codelineno-8-7" name="__codelineno-8-7" href="#__codelineno-8-7"></a>    │   ├── dataset_description.json
+<a id="__codelineno-8-8" name="__codelineno-8-8" href="#__codelineno-8-8"></a>    │   ├── participants.tsv
+<a id="__codelineno-8-9" name="__codelineno-8-9" href="#__codelineno-8-9"></a>    │   ├── sub-01/
+<a id="__codelineno-8-10" name="__codelineno-8-10" href="#__codelineno-8-10"></a>    │   ├── sub-02/
+<a id="__codelineno-8-11" name="__codelineno-8-11" href="#__codelineno-8-11"></a>    │   └── ...
+<a id="__codelineno-8-12" name="__codelineno-8-12" href="#__codelineno-8-12"></a>    ├── derivatives/
+<a id="__codelineno-8-13" name="__codelineno-8-13" href="#__codelineno-8-13"></a>    │   ├── spm-preproc/
+<a id="__codelineno-8-14" name="__codelineno-8-14" href="#__codelineno-8-14"></a>    │   ├── spm-first_level/
+<a id="__codelineno-8-15" name="__codelineno-8-15" href="#__codelineno-8-15"></a>    │   ├── nilearn-decoding/
+<a id="__codelineno-8-16" name="__codelineno-8-16" href="#__codelineno-8-16"></a>    │   └── ...
+<a id="__codelineno-8-17" name="__codelineno-8-17" href="#__codelineno-8-17"></a>    ├── code/
+<a id="__codelineno-8-18" name="__codelineno-8-18" href="#__codelineno-8-18"></a>    |   ├── bids-convertion/
+<a id="__codelineno-8-19" name="__codelineno-8-19" href="#__codelineno-8-19"></a>    │   ├── spm-preproc/
+<a id="__codelineno-8-20" name="__codelineno-8-20" href="#__codelineno-8-20"></a>    │   ├── spm-first_level/
+<a id="__codelineno-8-21" name="__codelineno-8-21" href="#__codelineno-8-21"></a>    │   ├── nilearn-decoding/
+<a id="__codelineno-8-22" name="__codelineno-8-22" href="#__codelineno-8-22"></a>    │   └── ...
+<a id="__codelineno-8-23" name="__codelineno-8-23" href="#__codelineno-8-23"></a>    └── stimuli/
+<a id="__codelineno-8-24" name="__codelineno-8-24" href="#__codelineno-8-24"></a>        ├── experiment
+<a id="__codelineno-8-25" name="__codelineno-8-25" href="#__codelineno-8-25"></a>        └── ...
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>A prototypical EEG/MEG dataset:</p>
+<ul>
+<li><code>project-metadata.json</code>: This file is created by the cluster admin, it contains general metadata about the project.</b></li>
+<li><code>sourcedata</code>: It comprises the raw data (unprocessed data), for example .bdf files.</b>  </li>
+<li><code>rawdata</code>: It comprises the BIDS converted data, the relative <code>.json</code> files and <code>.tsv</code> files.</b>  </li>
+<li><code>derivatives</code>: It comprises different sub-folders which represent the macro-steps of you analysis, e.g. eeglab-preproc, eeglab-erp etc. These folders should follow the BIDS convention as well, and <strong>must contain only processed data and no code</strong>.</b>  </li>
+<li><code>code</code>: It includes sub-folders that <strong>mirror</strong> the <code>derivatives</code> sub-folder names. They <strong>must contain only the code relative to each step, and no data at all</strong>. It must also include a sub-folder containing the code for the BIDS convertion.</b>   </li>
+<li><code>stimuli</code>: It includes a subfolder for the experimental code and the stimuli (e.g. images), if any.</b>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>/data/project_name/
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a>└── dataset-1/
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a>    ├── project-metadata.json
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a>    ├── sourcedata
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a>    ├── rawdata/
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a>    │   ├── dataset_description.json
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a>    │   ├── participants.tsv
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a>    │   ├── sub-01/
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>    │   ├── sub-02/
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a>    │   └── ...
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>    ├── derivatives/
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>    │   ├── eeglab-preproc/
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>    │   ├── eeglab-erp/
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>    │   ├── fieldtrip-time_frequency/
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>    │   └── ...
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>    ├── code/
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>    |   ├── bids-convertion/
+<a id="__codelineno-9-19" name="__codelineno-9-19" href="#__codelineno-9-19"></a>    │   ├── eeglab-preproc/
+<a id="__codelineno-9-20" name="__codelineno-9-20" href="#__codelineno-9-20"></a>    │   ├── eeglab-erp/
+<a id="__codelineno-9-21" name="__codelineno-9-21" href="#__codelineno-9-21"></a>    │   ├── fieldtrip-time_frequency/
+<a id="__codelineno-9-22" name="__codelineno-9-22" href="#__codelineno-9-22"></a>    │   └── ...
+<a id="__codelineno-9-23" name="__codelineno-9-23" href="#__codelineno-9-23"></a>    └── stimuli/
+<a id="__codelineno-9-24" name="__codelineno-9-24" href="#__codelineno-9-24"></a>        └── experiment
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>A prototypical behavioral dataset:</p>
+<ul>
+<li><code>project-metadata.json</code>: This file is created by the cluster admin, it contains general metadata about the project.</b></li>
+<li><code>sourcedata</code>: It comprises the raw data (unprocessed data) in whatever file type you have acquired them.</b>  </li>
+<li><code>rawdata</code>: It comprises the BIDS converted data, the relative <code>.json</code> files.</b>  </li>
+<li><code>derivatives</code>: It comprises different sub-folders which represent the macro-steps of you analysis, e.g. reaction_times, curve_fitting etc. These folders should follow the BIDS convention as well, and <strong>must contain only processed data and no code</strong>.</b></li>
+<li><code>code</code>: It includes sub-folders that <strong>mirror</strong> the <code>derivatives</code> sub-folder names. They <strong>must contain only the code relative to each step, and no data at all</strong>. It must also include a sub-folder containing the code for the BIDS convertion.</b>   </li>
+<li><code>stimuli</code>: It includes a sub-folder for the experimental code and the stimuli (e.g. images), if any.</b>  </li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>/data/project_name/
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>└── dataset-1/
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a>    ├── project-metadata.json
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a>    ├── sourcedata
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a>    ├── rawdata/
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a>    │   ├── dataset_description.json
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a>    │   ├── participants.tsv
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a>    │   ├── sub-01/
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>    │   ├── sub-02/
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a>    │   └── ...
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a>    ├── derivatives/
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>    │   ├── reaction_times/
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a>    │   ├── curve_fitting/
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>    │   └── ...
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>    ├── code/
+<a id="__codelineno-10-17" name="__codelineno-10-17" href="#__codelineno-10-17"></a>    |   ├── bids_convertion/
+<a id="__codelineno-10-18" name="__codelineno-10-18" href="#__codelineno-10-18"></a>    │   ├── reaction_times/
+<a id="__codelineno-10-19" name="__codelineno-10-19" href="#__codelineno-10-19"></a>    │   ├── curve_fitting/
+<a id="__codelineno-10-20" name="__codelineno-10-20" href="#__codelineno-10-20"></a>    │   └── ...
+<a id="__codelineno-10-21" name="__codelineno-10-21" href="#__codelineno-10-21"></a>    └── stimuli/
+<a id="__codelineno-10-22" name="__codelineno-10-22" href="#__codelineno-10-22"></a>        └── experiment
+</code></pre></div>
+</div>
+</div>
+</div>
+<h2 id="how-related-projects-are-handled">How related projects are handled</h2>
+<p>In case you want to create a project that is related to an existing one, for example projects that are part of the same grant, project names will share a <strong>common prefix</strong> decided by the project owner upon project creation.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>data/
+<a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>├── dfg_eeg_exp/
+<a id="__codelineno-11-3" name="__codelineno-11-3" href="#__codelineno-11-3"></a>└── dfg_fMRI_exp/
+</code></pre></div>
+<p>If two experiments are part of the same project and need to be together in the same project folder, two sub-directories containing the project structures, previously discussed, will be created:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>data/
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>└── project_name/
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>    ├── eeg/
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>    └── fMRI/
+</code></pre></div>
+<h2 id="how-to-transfer-data-fromto-cecile">How to transfer data from/to Cecile</h2>
+<p>We recommend to use <code>rsync</code> to transfer files from/to Cecile. <code>rsync</code> is a powerful tool for data synchronization, it minimizes the data transfer by copying only data that have changed, meaning that if the files you want to transfer already exist in the new location, <code>rsync</code> will only copy files that have been modified or that are not present in the new location. In order to work, <code>rsync</code> must be installed in both machines, the source machine and the destination machine. Please refer to the <code>rsync -man</code> or <code>rsync --help</code> for further usage infomation.</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="2:3"><input checked="checked" id="__tabbed_2_1" name="__tabbed_2" type="radio" /><input id="__tabbed_2_2" name="__tabbed_2" type="radio" /><input id="__tabbed_2_3" name="__tabbed_2" type="radio" /><div class="tabbed-labels"><label for="__tabbed_2_1">Linux</label><label for="__tabbed_2_2">macOS</label><label for="__tabbed_2_3">Windows</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p><strong>From your computer to Cecile:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>rsync<span class="w"> </span>-rltoDvh<span class="w"> </span>--progress<span class="w"> </span>&lt;/my_computer/some_data&gt;<span class="w"> </span>&lt;user@cecile.ovgu.de:~/target_directory/&gt;
+</code></pre></div>
+<p><strong>From Cecile to your computer:</strong>
+Also in this case the following command should be typed on your machine.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>rsync<span class="w"> </span>-rltoDvh<span class="w"> </span>--progress<span class="w"> </span>&lt;~/some_directory_on_cecile/some_data&gt;<span class="w"> </span>&lt;~/my_computer/&gt;
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<p>If you want to use a gui based application, you may use <a href="https://cyberduck.io/">cyberduck</a>, if you are comfortable with the terminal use <code>rsync</code></p>
+<p><strong>From your computer to Cecile:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>rsync<span class="w"> </span>-rltoDvh<span class="w"> </span>--progress<span class="w"> </span>&lt;/my_computer/some_data&gt;<span class="w"> </span>&lt;user@cecile.ovgu.de:~/target_directory/&gt;
+</code></pre></div>
+<p><strong>From Cecile to your computer:</strong>
+Also in this case the following command should be typed on your machine.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>rsync<span class="w"> </span>-rltoDvh<span class="w"> </span>--progress<span class="w"> </span>&lt;~/some_directory_on_cecile/some_data&gt;<span class="w"> </span>&lt;~/my_computer/&gt;
+</code></pre></div>
+</div>
+<div class="tabbed-block">
+<ul>
+<li>If you are using a <a href="/cluster/cecile/accessing-cecile/#windows-subsystem-for-linux-wsl-option&quot;">WSL</a> on your Windows machine you can simply transfer data by using <code>rsync</code>:</li>
+</ul>
+<p><strong>From your computer to Cecile:</strong></p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>rsync<span class="w"> </span>-rltoDvh<span class="w"> </span>--progress<span class="w"> </span>&lt;/my_computer/some_data&gt;<span class="w"> </span>&lt;user@cecile.ovgu.de:~/target_directory/&gt;
+</code></pre></div>
+<p><strong>From Cecile to your computer:</strong>
+Also in this case the following command should be typed on your machine.</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>rsync<span class="w"> </span>-rltoDvh<span class="w"> </span>--progress<span class="w"> </span>&lt;~/some_directory_on_cecile/some_data&gt;<span class="w"> </span>&lt;~/my_computer/&gt;
+</code></pre></div>
+<ul>
+<li>In case you feel more comfortable with a GUI you may use the following SFTP clients:
+    <a href="https://winscp.net/eng/index.php">Winscp</a> and <a href="https://cyberduck.io/">cyberduck</a> are GUI based applications, please refer to their documentation for proper usage. </li>
+</ul>
+</div>
+</div>
+</div>
+<h2 id="how-to-retrieve-lost-data">How to retrieve lost data</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="3:3"><input checked="checked" id="__tabbed_3_1" name="__tabbed_3" type="radio" /><input id="__tabbed_3_2" name="__tabbed_3" type="radio" /><input id="__tabbed_3_3" name="__tabbed_3" type="radio" /><div class="tabbed-labels"><label for="__tabbed_3_1">Data lost in the last 7 days</label><label for="__tabbed_3_2">Data lost more than 7 days ago</label><label for="__tabbed_3_3">How backups work</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>In case you have lost data within the last seven days, you can retrieve them by yourself. It is sufficient to go the following folder called <code>.zfs/snapshot</code> within the folder in which your data were previously hosted and transfer the data back to their previous location. Data transfer can be easily done using <code>rsync</code>.</p>
+</div>
+<div class="tabbed-block">
+<p>You cannot retrieve such data by yourself, please contact <code>manuela.khun at ovgu.de</code></p>
+</div>
+<div class="tabbed-block">
+<p>Backups of <code>home</code>, <code>group</code>, <code>project</code> and <code>archive</code> are done daily by moving the <code>snapsthots</code> to the backup storage. The only folder that is never backed up is <code>scratch</code>.</p>
+</div>
+</div>
+</div>
+<h2 id="data-storage-quotas">Data storage quotas</h2>
+<p>Cecile is a shared resource, as such users are subjected to certain restrictions to guarantee a fair access to resources for everybody.</p>
+<p><strong>Data storage quotas set the maximum amount of storage space that can be utilized in a given folder (e.g. your home folder)</strong></p>
+<p>Such restrictions are enforced to ensure that users adopt a reasoned and parsimonious choice when storing data, thus avoiding that unnecessary data pollute the cluster. 
+As a byproduct, quotas help you to keep your project much more tidy and force you to keep organized folders.</p>
+<table>
+<thead>
+<tr>
+<th>Folder</th>
+<th>Quota</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>home</code></td>
+<td><strong>1GB</strong></td>
+</tr>
+<tr>
+<td><code>group</code></td>
+<td><strong>?GB</strong></td>
+</tr>
+<tr>
+<td><code>scratch</code></td>
+<td><strong>1TB</strong></td>
+</tr>
+<tr>
+<td><code>project</code></td>
+<td><strong>500GB</strong></td>
+</tr>
+</tbody>
+</table>
+<h2 id="scratch-what-it-is-and-how-to-use-it">Scratch: What it is and how to use it</h2>
+<p><code>Scratch</code> is a particular folder that is never backed up. For this reason is meant to be used for temporary data, for example intermediate outputs, that can be deleted with no consequences or code that you are testing. </p>
+<p><strong>How to decide which data should go into scratch:</strong></b><br />
+The following are not absolute rules, please use your common sense and domain knowledge when applying them.</p>
+<ul>
+<li>It is an intermediate output.</li>
+<li>It is easily reproducible, meaning that such an output is not generated by long lasting jobs.</li>
+<li>It is an accessory output from a specific software that you are not going to use and that is not essential for your dataset.</li>
+<li>It is not code essential for your project.</li>
+</ul>
+<div class="admonition danger">
+<p class="admonition-title">No important data on scratch</p>
+<p>Do not store important data and code in scratch. Clean your scratch periodically. </p>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "content.tooltips", "content.tabs.link", "navigation.top", "content.code.copy", "content.code.select"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+    
+  </body>
+</html>

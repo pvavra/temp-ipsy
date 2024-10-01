@@ -1,0 +1,1702 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://mydomain.org/mysite/cluster/cecile/slurm/">
+      
+      
+        <link rel="prev" href="../data/">
+      
+      
+        <link rel="next" href="../software/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.5.39">
+    
+    
+      
+        <title>Slurm - Ipsy Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.8c3ca2c6.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#what-is-slurm" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Ipsy Docs" class="md-header__button md-logo" aria-label="Ipsy Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Ipsy Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Slurm
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+    
+      
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../open-science/research-data-management/getting-started/" class="md-tabs__link">
+          
+  
+  Open Science
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  Cluster
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../qanda/" class="md-tabs__link">
+        
+  
+    
+  
+  Q&A
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Ipsy Docs" class="md-nav__button md-logo" aria-label="Ipsy Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Ipsy Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Home
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Open Science
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Open Science
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Research Data Management
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            Research Data Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open-science/research-data-management/getting-started/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open-science/research-data-management/planning/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Plan you data management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open-science/research-data-management/bids/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    BIDS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open-science/research-data-management/publish/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Publish your data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open-science/research-data-management/archive/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Archive your data
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Code Management
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            Code Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open-science/code-management/good-practices/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Good Coding practices
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open-science/code-management/sharing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Sharing code
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Data Analysis Management
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            Data Analysis Management
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../open-science/analysis-management/data-analysis/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data analysis
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  <span class="md-ellipsis">
+    Cluster
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cluster
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Getting started
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cecile
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            Cecile
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accessing Cecile
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data organization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Slurm
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Slurm
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-slurm" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Slurm?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-think-about-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to think about jobs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-run-a-job-in-slurm" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to run a job in Slurm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-slurm-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Slurm jobs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Slurm jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-job-with-matlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single job with Matlab
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-job-with-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single job with python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-an-array-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of an array job
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#job-array-with-matlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job array with Matlab
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#job-array-with-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job array with python
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-define-the-amount-of-resources-and-time-for-your-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to define the amount of resources and time for your jobs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-restrictions-and-defaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job restrictions and defaults
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slurm-basic-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slurm basic commands
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Medusa
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Medusa
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../medusa/access/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Accessing Medusa
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../medusa/data/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Data organization
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../medusa/condor/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Condor
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../medusa/software/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Software stack
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../qanda/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Q&A
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-slurm" class="md-nav__link">
+    <span class="md-ellipsis">
+      What is Slurm?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-think-about-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to think about jobs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-run-a-job-in-slurm" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to run a job in Slurm
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#types-of-slurm-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      Types of Slurm jobs
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Types of Slurm jobs">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#single-job-with-matlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single job with Matlab
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#single-job-with-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Single job with python
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-of-an-array-job" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of an array job
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#job-array-with-matlab" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job array with Matlab
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#job-array-with-python" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job array with python
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-define-the-amount-of-resources-and-time-for-your-jobs" class="md-nav__link">
+    <span class="md-ellipsis">
+      How to define the amount of resources and time for your jobs
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#job-restrictions-and-defaults" class="md-nav__link">
+    <span class="md-ellipsis">
+      Job restrictions and defaults
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slurm-basic-commands" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slurm basic commands
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  <h1>Slurm</h1>
+
+<h2 id="what-is-slurm">What is Slurm?</h2>
+<p>A computational cluster is made up of multiple resources which can be exploited to run several tasks at the same time. In order to achieve this goal, you need to use a so called job scheduler, in our case is <a href="https://slurm.schedmd.com/quickstart.html">Slurm</a>, an open source cluster management and job scheduler system.</p>
+<p>The job scheduler allows you to specify computational tasks, known as <strong>jobs</strong>, that are going to be automatically distributed across the available and most suitable resources. A job can be any computational task as long as it respects specific <a href="#job-restrictions-and-defaults">restrictions</a>, for example it could be a specific section of your preprocessing analysis, or the whole analysis of a single subject.</p>
+<h2 id="how-to-think-about-jobs">How to think about jobs</h2>
+<p>If you are using Cecile, you would most likely need to run multiple similar jobs at the same time, the key to achieve this goal is to code your analysis with the objective of making it parallelizable:</p>
+<ul>
+<li>Create scripts that process only one dataset (it could be a subject) at a time. In this way one job is going to correspond to one task, for example the preprocessing of a single subject dataset.</li>
+<li>Chunk your analysis in steps. In this way, especially if you are new to slurm, you have more control on your analysis, your outcomes and it reduces the duration of your jobs. This approach does not prevent you from running several steps at once, but if you do that, but if you do so you should be certain that each step is doing exactly what you want it to do.</li>
+</ul>
+<h2 id="how-to-run-a-job-in-slurm">How to run a job in Slurm</h2>
+<p>There are different types of jobs in slurm (e.g. single jobs, interactive jobs etc.), but before talking about the specific jobs there are a few things you need to take care of:</p>
+<ol>
+<li>Make sure that the code you want to use for your jobs works properly. Especially at the beginning it might difficult to identify the reason why a job is failing, thus by making sure that your scripts run as intended you can restrict your error space.</li>
+<li>Activate the <a href="../software/##how-to-use-the-stacks">software stack</a> environment or load the module that you need for your code.</li>
+<li>
+<p>Make sure your scripts (e.g. in bash) are executable.</p>
+<details class="note">
+<summary>Making a file executable</summary>
+<p>Add the so called <strong>shebang</strong> on top of your bash script, it will tell the system to use the bash interpreter to run the code:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a><span class="ch">#!/bin/bash</span>
+</code></pre></div>
+Once you have done that, run the following command to make your script exacutable:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>chmod<span class="w"> </span>+x<span class="w"> </span>&lt;script.sh&gt;
+</code></pre></div>
+For python use the following shebang in the first line of your script:</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a><span class="ch">#!/usr/bin/env python3</span>
+</code></pre></div>
+And then make it exacutable from the command line:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>chmod<span class="w"> </span>+x<span class="w"> </span>&lt;script.py&gt;
+</code></pre></div>
+</details>
+</li>
+<li>
+<p>Create a folder called <code>slurm_logs</code> (or you can give it another meaningful name), in the same directory as the scripts are. Slurm will use it to dump the logs reporting error files and outputs. </p>
+</li>
+</ol>
+<p>In order to specify a job in Slurm, you need to make a few decisions and provide a few essential information to the system beforehand. </p>
+<div class="admonition note">
+<p class="admonition-title">Ask yourself the following questions before setting up your job</p>
+<ol>
+<li>How long does your job need to run?</b>  </li>
+<li>How many CPUs does your job need?</b>  </li>
+<li>How much memory does your job need?</b>  </li>
+<li>Does your job require any special hardware feature?</li>
+</ol>
+</div>
+<p>The following parameters are not all mandatory, but we <strong>strongly recommend</strong> to define all of them. If you do not define them properly your job might not run as expected, might stop or even fail and you might involuntarily take resources away from other users.</p>
+<p>Here it is how you turn the previous questions in parameters for slurm.</p>
+<div class="highlight"><table class="highlighttable"><tr><th colspan="2" class="filename"><span class="filename">Setting Slurm parameters</span></th></tr><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-4-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-4-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-4-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-4-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-4-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-4-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-4-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-4-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-4-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-4-10">10</a></span>
+<span class="normal"><a href="#__codelineno-4-11">11</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-4-1" name="__codelineno-4-1"></a><span class="ch">#!/bin/sh </span>
+<a id="__codelineno-4-2" name="__codelineno-4-2"></a>
+<a id="__codelineno-4-3" name="__codelineno-4-3"></a><span class="c1">#SBATCH --job-name=my_job</span>
+<a id="__codelineno-4-4" name="__codelineno-4-4"></a><span class="c1">#SBATCH --mail-user=&lt;name.lastname&gt;@ovgu.de  </span>
+<a id="__codelineno-4-5" name="__codelineno-4-5"></a><span class="c1">#SBATCH --mail-type=BEGIN,END,FAIL            </span>
+<a id="__codelineno-4-6" name="__codelineno-4-6"></a><span class="c1">#SBATCH --cpus-per-task=1                    </span>
+<a id="__codelineno-4-7" name="__codelineno-4-7"></a><span class="c1">#SBATCH --nodes=1                             </span>
+<a id="__codelineno-4-8" name="__codelineno-4-8"></a><span class="c1">#SBATCH --mem-per-cpu=1g                     </span>
+<a id="__codelineno-4-9" name="__codelineno-4-9"></a><span class="c1">#SBATCH --time=01:00:00                       </span>
+<a id="__codelineno-4-10" name="__codelineno-4-10"></a><span class="c1">#SBATCH --output=slurm_logs/output-%A-%a.out  </span>
+<a id="__codelineno-4-11" name="__codelineno-4-11"></a><span class="c1">#SBATCH --error=slurm_logs/error-%A-%a.err   </span>
+</code></pre></div></td></tr></table></div>
+<div class="admonition note">
+<p class="admonition-title"># is not a comment in SLURM</p>
+<p>Keep in mind that for your slurm script the # before any slurm command is not interpreted as a shell comment</p>
+</div>
+<ul>
+<li><code>#SBATCH --job-name=my_job</code>: the name you provide for your job</li>
+<li><code>#SBATCH --mail-user=&lt;name.lastname&gt;@ovgu.de</code>: your email address, in case you want to receive a job feedback by email.</li>
+<li><code>#SBATCH --mail-type=BEGIN,END,FAIL</code>: get an email at the beginning of a job, end of a job and when a job fails, respectively.</li>
+<li><code>#SBATCH --cpus-per-task=1</code>: number of CPUs you request for a task</li>
+<li><code>#SBATCH --nodes=1</code>: number of requested nodes, keep it to 1, it is fine for our type of analyses.</li>
+<li><code>#SBATCH --mem-per-cpu=1g</code>: amount of memory you request per cpu. </li>
+<li><code>#SBATCH --time=01:00:00</code>: maximum duration you assign to a job (D-HH:MM:SS, for example <code>--time=00:01:00</code> is a one minute job).</li>
+<li><code>#SBATCH --output=slurm_logs/output-%A-%a.out</code>: here you specify where job printed output should be saved, specifically in the folder <code>slurm_logs</code>. </li>
+<li><code>#SBATCH --error=slurm_logs/error-%A-%a.err</code>: here you specify where job related errors should be saved, again in the folder <code>slurm_logs</code>.</li>
+</ul>
+<p>Instead of <code>--mem-per-cpu</code> you could also use <code>--mem</code>, the latter specifies the amount of RAM you request in a node.</p>
+<div class="admonition warning">
+<p class="admonition-title">Be aware of memory and time</p>
+<ul>
+<li>If your job exceeds the requested memory, your job will be aborted.</li>
+<li>If your job exceeds the requested time, your job will be aborted.</li>
+</ul>
+</div>
+<div class="admonition note">
+<p class="admonition-title">Job ID</p>
+<p>The job ID is the identification number relative to a job that can use it to acquire information about your job, or to abort your job. It might look something like this <code>217379_5</code>, where the prefix number before the underscore indicates the general job session, while the number after the underscore indicates the specific number of a job. You might have multiple jobs sharing the session number.   </p>
+</div>
+<h2 id="types-of-slurm-jobs">Types of Slurm jobs</h2>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:3"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><input id="__tabbed_1_3" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Single job</label><label for="__tabbed_1_2">Array job</label><label for="__tabbed_1_3">Interactive job</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>It allowes to run only a single job.</b>  </p>
+<p><strong>Use case:</strong> It is ideal when you want to test a specific analysis and test it on one subject, or when you need to run just one analysis like a group statistical analysis.</p>
+<div class="highlight"><span class="filename">Slurm single job</span><pre><span></span><code><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a><span class="ch">#!/bin/sh</span>
+<a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>
+<a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a><span class="c1">#SBATCH --job-name=my_job</span>
+<a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="c1">#SBATCH --cpus-per-task=1</span>
+<a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="c1">#SBATCH --nodes=1</span>
+<a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="c1">#SBATCH --mem-per-cpu=1g</span>
+<a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="c1">#SBATCH --time=01:00:00</span>
+<a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="c1">#SBATCH --output=slurm_logs/output-%A-%a.out</span>
+<a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="c1">#SBATCH --error=slurm_logs/error-%A-%a.err</span>
+<a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a>
+<a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a>./my_script.sh<span class="w"> </span>
+</code></pre></div>
+<p>You can now run <code>squeue</code> to see the status of your job, let's understand the output:</p>
+<p><strong>A running job</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>            JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+<a id="__codelineno-6-2" name="__codelineno-6-2" href="#__codelineno-6-2"></a>        217379_0       all fmriprep    user   R       1:10      1 compute05
+</code></pre></div></p>
+<p><strong>A pending job</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>            JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+<a id="__codelineno-7-2" name="__codelineno-7-2" href="#__codelineno-7-2"></a>        217379_0       all fmriprep    user  PD       1:10      1 compute05
+</code></pre></div></p>
+<p><strong>An idled job</strong>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a>            JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+<a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>        217379_5       all bad_job     user   IDLE    0:00      1 compute05
+</code></pre></div></p>
+<ul>
+<li><code>JOBID</code>: Indentification number of your job</li>
+<li><code>PARTITION</code>: Name of partition your jobs are currently using </li>
+<li><code>NAME</code>: Name you gave to your job</li>
+<li><code>USER</code>: Your username</li>
+<li><code>ST</code>: Status of your job:</li>
+<li><code>R</code>: running job</li>
+<li><code>PD</code>: pending job, it is waiting for resources to be freed</li>
+<li><code>IDLE</code>: idled job, there might be multiple reasons for an idled job, check the error logs and your slurm scripts.</li>
+<li><code>TIME</code>: Time since the job started running</li>
+<li><code>NODES</code>: Number of nodes</li>
+<li><code>NODELIST</code> : Nodes name </li>
+</ul>
+<h4 id="single-job-with-matlab">Single job with Matlab</h4>
+<div class="highlight"><span class="filename">Single job Matlab</span><pre><span></span><code><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a><span class="c1">#SBATCH --job-name=matlab        # job name, you give it a name you like</span>
+<a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="c1">#SBATCH --nodes=1                # number of nodes</span>
+<a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="c1">#SBATCH --ntasks=1               # number of tasks</span>
+<a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="c1">#SBATCH --cpus-per-task=1        # cpu per task</span>
+<a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="c1">#SBATCH --mem-per-cpu=1G         # memory per cpu</span>
+<a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="c1">#SBATCH --time=00:01:00          # max amount of time (D:HH:MM:SS)</span>
+<a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="c1">#SBATCH --output=slurm_logs/output-%A-%a.out   # printed output</span>
+<a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="c1">#SBATCH --error=slurm_logs/error-%A-%a.err     # errors</span>
+<a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a>
+<a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="c1">## you need to load matlab even if you have loaded already all the modules</span>
+<a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a><span class="c1">## from the software stack </span>
+<a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>module<span class="w"> </span>load<span class="w"> </span>matlab
+<a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>
+<a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a><span class="nv">subject</span><span class="o">=</span><span class="m">01</span>
+<a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>
+<a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a><span class="c1">## run matlab: you pass just the name of the script without .m in my case matlab_script</span>
+<a id="__codelineno-9-18" name="__codelineno-9-18" href="#__codelineno-9-18"></a>matlab<span class="w"> </span>-singleCompThread<span class="w"> </span>-nodisplay<span class="w"> </span>-nosplash<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;matlab_script(</span><span class="si">${</span><span class="nv">subject</span><span class="si">}</span><span class="s2">)&quot;</span>
+</code></pre></div>
+<h4 id="single-job-with-python">Single job with python</h4>
+<div class="highlight"><span class="filename">Single job Python</span><pre><span></span><code><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="c1">#SBATCH --job-name=python        # job name, you give it a name you like</span>
+<a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a><span class="c1">#SBATCH --nodes=1                # number of nodes</span>
+<a id="__codelineno-10-4" name="__codelineno-10-4" href="#__codelineno-10-4"></a><span class="c1">#SBATCH --ntasks=1               # number of tasks</span>
+<a id="__codelineno-10-5" name="__codelineno-10-5" href="#__codelineno-10-5"></a><span class="c1">#SBATCH --cpus-per-task=1        # cpu per task</span>
+<a id="__codelineno-10-6" name="__codelineno-10-6" href="#__codelineno-10-6"></a><span class="c1">#SBATCH --mem-per-cpu=1G         # memory per cpu</span>
+<a id="__codelineno-10-7" name="__codelineno-10-7" href="#__codelineno-10-7"></a><span class="c1">#SBATCH --time=00:01:00          # max amount of time (D:HH:MM:SS)</span>
+<a id="__codelineno-10-8" name="__codelineno-10-8" href="#__codelineno-10-8"></a><span class="c1">#SBATCH --output=slurm_logs/output-%A-%a.out   # printed output</span>
+<a id="__codelineno-10-9" name="__codelineno-10-9" href="#__codelineno-10-9"></a><span class="c1">#SBATCH --error=slurm_logs/error-%A-%a.err     # errors</span>
+<a id="__codelineno-10-10" name="__codelineno-10-10" href="#__codelineno-10-10"></a>
+<a id="__codelineno-10-11" name="__codelineno-10-11" href="#__codelineno-10-11"></a><span class="c1">## you need to load python even if you have loaded already all the modules</span>
+<a id="__codelineno-10-12" name="__codelineno-10-12" href="#__codelineno-10-12"></a><span class="c1">## from the software stack </span>
+<a id="__codelineno-10-13" name="__codelineno-10-13" href="#__codelineno-10-13"></a>module<span class="w"> </span>load<span class="w"> </span>python3
+<a id="__codelineno-10-14" name="__codelineno-10-14" href="#__codelineno-10-14"></a><span class="nv">subject</span><span class="o">=</span><span class="m">01</span>
+<a id="__codelineno-10-15" name="__codelineno-10-15" href="#__codelineno-10-15"></a>
+<a id="__codelineno-10-16" name="__codelineno-10-16" href="#__codelineno-10-16"></a>python<span class="w"> </span>-u<span class="w"> </span>python_script<span class="w"> </span><span class="si">${</span><span class="nv">subject</span><span class="si">}</span>
+</code></pre></div>
+<p>In case you made your python code executable you can remove the line <code>module load python</code> and call the script as follows: <code>./python_script ${subject}</code> without prepending <code>python -u</code></p>
+</div>
+<div class="tabbed-block">
+<p>An array job allows you to run multiple jobs in parallel.</b> </p>
+<p><strong>Use case:</strong> It is ideal when you need to run similar tasks multiple times. For example, the same analysis for many subjects, or you need to test different parameters for the same analysis.</p>
+<p>In the array job the new crucial parameter is <code>#SBATCH --array</code> which specifies the number of jobs we would like to run. You define the array of jobs indicating the range of the jobs, e.g. <code>1-5</code> (see highlighted line below)</p>
+<div class="highlight"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span></span><span class="normal"><a href="#__codelineno-11-1"> 1</a></span>
+<span class="normal"><a href="#__codelineno-11-2"> 2</a></span>
+<span class="normal"><a href="#__codelineno-11-3"> 3</a></span>
+<span class="normal"><a href="#__codelineno-11-4"> 4</a></span>
+<span class="normal"><a href="#__codelineno-11-5"> 5</a></span>
+<span class="normal"><a href="#__codelineno-11-6"> 6</a></span>
+<span class="normal"><a href="#__codelineno-11-7"> 7</a></span>
+<span class="normal"><a href="#__codelineno-11-8"> 8</a></span>
+<span class="normal"><a href="#__codelineno-11-9"> 9</a></span>
+<span class="normal"><a href="#__codelineno-11-10">10</a></span></pre></div></td><td class="code"><div><pre><span></span><code><a id="__codelineno-11-1" name="__codelineno-11-1"></a><span class="ch">#!/bin/sh</span>
+<a id="__codelineno-11-2" name="__codelineno-11-2"></a>
+<a id="__codelineno-11-3" name="__codelineno-11-3"></a><span class="c1">#SBATCH --job-name=my_job</span>
+<a id="__codelineno-11-4" name="__codelineno-11-4"></a><span class="c1">#SBATCH --cpus-per-task=1</span>
+<a id="__codelineno-11-5" name="__codelineno-11-5"></a><span class="c1">#SBATCH --nodes=1</span>
+<a id="__codelineno-11-6" name="__codelineno-11-6"></a><span class="c1">#SBATCH --mem-per-cpu=1g</span>
+<a id="__codelineno-11-7" name="__codelineno-11-7"></a><span class="c1">#SBATCH --time=01:00:00</span>
+<a id="__codelineno-11-8" name="__codelineno-11-8"></a><span class="c1">#SBATCH --output=slurm_logs/output-%A-%a.out</span>
+<a id="__codelineno-11-9" name="__codelineno-11-9"></a><span class="c1">#SBATCH --error=slurm_logs/error-%A-%a.err</span>
+<a id="__codelineno-11-10" name="__codelineno-11-10"></a><span class="hll"><span class="c1">#SBATCH --array 1-5</span>
+</span></code></pre></div></td></tr></table></div>
+<h4 id="example-of-an-array-job">Example of an array job</h4>
+<p>Assume you want to run a specific analysis on 5 subjects in parallel and you want to use a script called <code>my_analysis.sh</code> that requires as unique parameter the subject ID. In order to set up a job array you can follow the next steps:</p>
+<ul>
+<li>You need to provide to slurm the number of jobs by setting up <code>#SBATCH --array</code> as we have seen before. In this case our range is <code>0-4</code>, in total 5 jobs as the number of your subjects (remember that the shell interpreter counts starting from 0).</li>
+<li>Now you need to pass the subject ID parameter to the script. To do that, you can take advantage of the slurm variable <code>SLURM_ARRAY_TASK_ID</code> which keeps track of the jobs count. This means that for the first job of the array <code>SLURM_ARRAY_TASK_ID</code> will assume a value of 0 for the second job of 1 and so on until the last job, for which it will assume the value 4. <code>SLURM_ARRAY_TASK_ID</code> can be used as an index to extract the subject ID from the variable <code>subjects</code>. </b>  </li>
+<li>For the sake of practicality, we can assign <code>SLURM_ARRAY_TASK_ID</code> to the variable <code>idx</code>, which can be used to extract for each job the subject ID, <code>${subjects[idx]}</code>, and then it can be passed to the script <code>my_analysis.sh</code>. </li>
+</ul>
+<p>In other words, for the first job <code>SLURM_ARRAY_TASK_ID</code> is going to be equal to 0 (because your array starts at 0) and so will be <code>idx</code>. Hence, the expression <code>${subjects[idx]}</code> will extract from the list <code>subjects</code> the first item, namely <code>01</code>, which is the ID of your first subject. For the second job, <code>SLURM_ARRAY_TASK_ID</code> will be equal to 1 and consequently <code>${subjects[idx]}</code> will be equal to <code>02</code> and so on until the last job.</p>
+<div class="highlight"><span class="filename">Array job</span><pre><span></span><code><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a><span class="ch">#!/bin/sh</span>
+<a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>
+<a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a><span class="c1">#SBATCH --job-name=my_job</span>
+<a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a><span class="c1">#SBATCH --cpus-per-task=1</span>
+<a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a><span class="c1">#SBATCH --nodes=1</span>
+<a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a><span class="c1">#SBATCH --mem-per-cpu=1g</span>
+<a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a><span class="c1">#SBATCH --time=01:00:00</span>
+<a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a><span class="c1">#SBATCH --output=slurm_logs/output-%A-%a.out</span>
+<a id="__codelineno-12-9" name="__codelineno-12-9" href="#__codelineno-12-9"></a><span class="c1">#SBATCH --error=slurm_logs/error-%A-%a.err</span>
+<a id="__codelineno-12-10" name="__codelineno-12-10" href="#__codelineno-12-10"></a><span class="c1">#SBATCH --array 0-4  ## 5 jobs</span>
+<a id="__codelineno-12-11" name="__codelineno-12-11" href="#__codelineno-12-11"></a>
+<a id="__codelineno-12-12" name="__codelineno-12-12" href="#__codelineno-12-12"></a><span class="nv">idx</span><span class="o">=</span><span class="k">$((</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="k">))</span>
+<a id="__codelineno-12-13" name="__codelineno-12-13" href="#__codelineno-12-13"></a>
+<a id="__codelineno-12-14" name="__codelineno-12-14" href="#__codelineno-12-14"></a><span class="nv">subjects</span><span class="o">=(</span><span class="m">01</span><span class="w"> </span><span class="m">02</span><span class="w"> </span><span class="m">03</span><span class="w"> </span><span class="m">04</span><span class="w"> </span><span class="m">05</span><span class="o">)</span>
+<a id="__codelineno-12-15" name="__codelineno-12-15" href="#__codelineno-12-15"></a>
+<a id="__codelineno-12-16" name="__codelineno-12-16" href="#__codelineno-12-16"></a>./my_analysis.sh<span class="w"> </span><span class="si">${</span><span class="nv">subjects</span><span class="p">[idx]</span><span class="si">}</span>
+</code></pre></div>
+<p>Now that your array job script is ready you can run your jobs using the <code>sbatch</code> command as follows:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>sbatch<span class="w"> </span>my_array_job.slurm
+</code></pre></div>
+<p>Check whether your jobs are actually running via the command <code>squeue</code> or alternatively with <code>sinfo</code>:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>squeue
+</code></pre></div>
+<p>You should see a similar output:</p>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>            JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
+<a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>        217379_[6]     all     my_job   user  PD       0:00      1 (Resources)
+<a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>        217379_0       all     my_job   user   R       1:10      1 compute05
+<a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>        217379_1       all     my_job   user   R       1:10      1 compute05
+<a id="__codelineno-15-5" name="__codelineno-15-5" href="#__codelineno-15-5"></a>        217379_2       all     my_job   user   R       1:10      1 compute05
+<a id="__codelineno-15-6" name="__codelineno-15-6" href="#__codelineno-15-6"></a>        217379_3       all     my_job   user   R       1:10      1 compute05
+<a id="__codelineno-15-7" name="__codelineno-15-7" href="#__codelineno-15-7"></a>        217379_4       all     my_job   user   R       1:10      1 compute05
+<a id="__codelineno-15-8" name="__codelineno-15-8" href="#__codelineno-15-8"></a>        217379_5       all     my_job   user   IDLE    0:00      1 compute05
+</code></pre></div>
+<p>Let's understand <code>squeue</code> output:</p>
+<ul>
+<li><code>JOBID</code>: Indentification number of your job</li>
+<li><code>PARTITION</code>: Name of partition your jobs are currently using </li>
+<li><code>NAME</code>: Name you gave to your job</li>
+<li><code>USER</code>: Your username</li>
+<li><code>ST</code>: Status of your job:</li>
+<li><code>R</code>: running job</li>
+<li><code>PD</code>: pending job, it is waiting for resources to be freed</li>
+<li><code>IDLE</code>: idled job, something might be wrong with your scripts or your in the scirpt for submitting jobs check the error logs.</li>
+<li><code>TIME</code>: Time since the job started running</li>
+<li><code>NODES</code>: Number of nodes</li>
+<li><code>NODELIST</code> : Nodes name </li>
+</ul>
+<h4 id="job-array-with-matlab">Job array with Matlab</h4>
+<div class="highlight"><span class="filename">Array job Matlab</span><pre><span></span><code><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>
+<a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a><span class="c1">#SBATCH --job-name=matlab        # job name, you give it a name you like</span>
+<a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a><span class="c1">#SBATCH --nodes=1                # number of nodes</span>
+<a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a><span class="c1">#SBATCH --ntasks=1               # number of tasks</span>
+<a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a><span class="c1">#SBATCH --cpus-per-task=1        # cpu per task</span>
+<a id="__codelineno-16-7" name="__codelineno-16-7" href="#__codelineno-16-7"></a><span class="c1">#SBATCH --mem-per-cpu=1G         # memory per cpu</span>
+<a id="__codelineno-16-8" name="__codelineno-16-8" href="#__codelineno-16-8"></a><span class="c1">#SBATCH --time=00:01:00          # max amount of time (D:HH:MM:SS)</span>
+<a id="__codelineno-16-9" name="__codelineno-16-9" href="#__codelineno-16-9"></a><span class="c1">#SBATCH --output=slurm_logs/output-%A-%a.out   # printed output</span>
+<a id="__codelineno-16-10" name="__codelineno-16-10" href="#__codelineno-16-10"></a><span class="c1">#SBATCH --error=slurm_logs/error-%A-%a.err     # errors</span>
+<a id="__codelineno-16-11" name="__codelineno-16-11" href="#__codelineno-16-11"></a><span class="c1">#SBATCH --array 0-4</span>
+<a id="__codelineno-16-12" name="__codelineno-16-12" href="#__codelineno-16-12"></a>
+<a id="__codelineno-16-13" name="__codelineno-16-13" href="#__codelineno-16-13"></a><span class="c1">## you need to load matlab even if you have loaded already all the modules</span>
+<a id="__codelineno-16-14" name="__codelineno-16-14" href="#__codelineno-16-14"></a><span class="c1">## from the software stack </span>
+<a id="__codelineno-16-15" name="__codelineno-16-15" href="#__codelineno-16-15"></a>module<span class="w"> </span>load<span class="w"> </span>matlab
+<a id="__codelineno-16-16" name="__codelineno-16-16" href="#__codelineno-16-16"></a>
+<a id="__codelineno-16-17" name="__codelineno-16-17" href="#__codelineno-16-17"></a><span class="nv">idx</span><span class="o">=</span><span class="k">$((</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="k">))</span>
+<a id="__codelineno-16-18" name="__codelineno-16-18" href="#__codelineno-16-18"></a>
+<a id="__codelineno-16-19" name="__codelineno-16-19" href="#__codelineno-16-19"></a><span class="nv">subjects</span><span class="o">=(</span><span class="m">01</span><span class="w"> </span><span class="m">02</span><span class="w"> </span><span class="m">03</span><span class="w"> </span><span class="m">04</span><span class="w"> </span><span class="m">05</span><span class="o">)</span>
+<a id="__codelineno-16-20" name="__codelineno-16-20" href="#__codelineno-16-20"></a>
+<a id="__codelineno-16-21" name="__codelineno-16-21" href="#__codelineno-16-21"></a><span class="c1">## run matlab: you pass just the name of the script without .m in my case matlab_script</span>
+<a id="__codelineno-16-22" name="__codelineno-16-22" href="#__codelineno-16-22"></a>matlab<span class="w"> </span>-singleCompThread<span class="w"> </span>-nodisplay<span class="w"> </span>-nosplash<span class="w"> </span>-r<span class="w"> </span><span class="s2">&quot;matlab_script(</span><span class="si">${</span><span class="nv">subjects</span><span class="p">[idx]</span><span class="si">}</span><span class="s2">)&quot;</span>
+</code></pre></div>
+<h4 id="job-array-with-python">Job array with python</h4>
+<div class="highlight"><span class="filename">Array job Python</span><pre><span></span><code><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a><span class="ch">#!/bin/bash</span>
+<a id="__codelineno-17-2" name="__codelineno-17-2" href="#__codelineno-17-2"></a><span class="c1">#SBATCH --job-name=python        # job name, you give it a name you like</span>
+<a id="__codelineno-17-3" name="__codelineno-17-3" href="#__codelineno-17-3"></a><span class="c1">#SBATCH --nodes=1                # number of nodes</span>
+<a id="__codelineno-17-4" name="__codelineno-17-4" href="#__codelineno-17-4"></a><span class="c1">#SBATCH --ntasks=1               # number of tasks</span>
+<a id="__codelineno-17-5" name="__codelineno-17-5" href="#__codelineno-17-5"></a><span class="c1">#SBATCH --cpus-per-task=1        # cpu per task</span>
+<a id="__codelineno-17-6" name="__codelineno-17-6" href="#__codelineno-17-6"></a><span class="c1">#SBATCH --mem-per-cpu=1G         # memory per cpu</span>
+<a id="__codelineno-17-7" name="__codelineno-17-7" href="#__codelineno-17-7"></a><span class="c1">#SBATCH --time=00:01:00          # max amount of time (D:HH:MM:SS)</span>
+<a id="__codelineno-17-8" name="__codelineno-17-8" href="#__codelineno-17-8"></a><span class="c1">#SBATCH --output=slurm_logs/output-%A-%a.out   # printed output</span>
+<a id="__codelineno-17-9" name="__codelineno-17-9" href="#__codelineno-17-9"></a><span class="c1">#SBATCH --error=slurm_logs/error-%A-%a.err     # errors</span>
+<a id="__codelineno-17-10" name="__codelineno-17-10" href="#__codelineno-17-10"></a><span class="c1">#SBATCH --array 0-4</span>
+<a id="__codelineno-17-11" name="__codelineno-17-11" href="#__codelineno-17-11"></a>
+<a id="__codelineno-17-12" name="__codelineno-17-12" href="#__codelineno-17-12"></a><span class="c1">## you need to load python even if you have loaded already all the modules</span>
+<a id="__codelineno-17-13" name="__codelineno-17-13" href="#__codelineno-17-13"></a><span class="c1">## from the software stack </span>
+<a id="__codelineno-17-14" name="__codelineno-17-14" href="#__codelineno-17-14"></a>module<span class="w"> </span>load<span class="w"> </span>python3
+<a id="__codelineno-17-15" name="__codelineno-17-15" href="#__codelineno-17-15"></a>
+<a id="__codelineno-17-16" name="__codelineno-17-16" href="#__codelineno-17-16"></a><span class="nv">idx</span><span class="o">=</span><span class="k">$((</span><span class="nv">SLURM_ARRAY_TASK_ID</span><span class="k">))</span>
+<a id="__codelineno-17-17" name="__codelineno-17-17" href="#__codelineno-17-17"></a>
+<a id="__codelineno-17-18" name="__codelineno-17-18" href="#__codelineno-17-18"></a><span class="nv">subjects</span><span class="o">=(</span><span class="m">01</span><span class="w"> </span><span class="m">02</span><span class="w"> </span><span class="m">03</span><span class="w"> </span><span class="m">04</span><span class="w"> </span><span class="m">05</span><span class="o">)</span>
+<a id="__codelineno-17-19" name="__codelineno-17-19" href="#__codelineno-17-19"></a>
+<a id="__codelineno-17-20" name="__codelineno-17-20" href="#__codelineno-17-20"></a>python<span class="w"> </span>-u<span class="w"> </span>python_script<span class="w"> </span><span class="si">${</span><span class="nv">subjects</span><span class="p">[idx]</span><span class="si">}</span>
+</code></pre></div>
+<p>In case you made your python code executable you can remove the line <code>module load python</code> and call the script as follows: <code>./python_script ${subjects[idx]}</code> without prepending <code>python -u</code></p>
+</div>
+<div class="tabbed-block">
+<p>This approach allows you to work interactively inside a given node.</b>  </p>
+<p><strong>Use case:</strong> It is ideal if you need to do some testing, or you just need to run some analyses interactively. Using an interactive job you avoid to work on the head node and take precious resources that are shared among all users.</p>
+<p><div class="highlight"><pre><span></span><code><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>srun<span class="w"> </span>--mem<span class="o">=</span>1G<span class="w"> </span>--time<span class="o">=</span><span class="m">01</span>:00:00<span class="w"> </span>--pty<span class="w"> </span>bash<span class="w"> </span>-i
+</code></pre></div>
+- <code>--mem</code>: memory requested (it can be specified in K|G)
+- <code>--time</code>: time requested for the interactive job
+- <code>--pty</code>: <code>bash -i</code> allows you use the terminal</p>
+<p>In case you do not specify time and memory requirements, by default the time will be <strong>24 hours</strong> and the <strong>memory 4G</strong></p>
+<div class="admonition warning">
+<p class="admonition-title">Closing a session</p>
+<p>If you close your session on the cluster the interactive job will be ended as well</p>
+</div>
+</div>
+</div>
+</div>
+<h2 id="how-to-define-the-amount-of-resources-and-time-for-your-jobs">How to define the amount of resources and time for your jobs</h2>
+<p>The choice of resources for a job must be decided on a case by case basis, there is no precise rule for choosing them given that too many variables can influence the resources and time required. We will give you a few general principles which should work well anough in many instances. </p>
+<p>Please do not underestimate this step, your choices influence your own jobs and other users.</p>
+<p><strong>One job to rule them all:</strong>
+As a general rule, when your are setting up new slurm jobs, test that everything works as intended using <strong>only one job</strong>. It is superfluous to say that this approach saves time for you and time and resources for other users, and importantly it reduces the amount of potential errors that might occur.</p>
+<p><strong>If you are clueless about your job resource requirements, you could adopt the following approaches:</strong></p>
+<ul>
+<li><strong>Trial and error:</strong> Set up one job using a very liberal estimate for the resources (e.g. <code>--mem-per-cpu</code>, <code>--time</code>). Once the job is over, you can use the following command to see the actual resources used and implement them in your future jobs:</li>
+</ul>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a><span class="c1"># job-id is the id of your job</span>
+<a id="__codelineno-19-2" name="__codelineno-19-2" href="#__codelineno-19-2"></a>seff<span class="w"> </span>&lt;job-id&gt;
+</code></pre></div>
+<p>If you run <code>seff</code> when your job is still ongoing, it will give you an unreliable estimate. </p>
+<ul>
+<li>
+<p><strong>Hunt for information:</strong> In case you are using a standard tool (e.g. library, toolbox) you might find in the documentation some indications about minimal resource requirements, alternatively you could ask a more expert member of your group or other users (on Mattermost) who might have used a similar tool or pipeline. Both these approaches could be good starting estimates for your jobs. Online resources like <a href="https://neurostars.org/">Neurostars</a> might be very helpful as well</p>
+</li>
+<li>
+<p><strong>Run your computation without slurm:</strong> If possible, run your computation (e.g. analysis, simulation) on your local machine and check the resources usage. If you assume that your computation is not particularly heavy you could run it on your <code>home</code> on Cecile and check the resource requirements using <code>htop</code>. Keep in mind that this process, if computationally heavy, might create issues for other users.</p>
+</li>
+</ul>
+<h2 id="job-restrictions-and-defaults">Job restrictions and defaults</h2>
+<p>As for data storage, also jobs need some restrictions in order to guarantee a fair usage for everybody.</p>
+<ul>
+<li>
+<p><strong>Time requested:</strong> One job can have a <strong>miximum duration of 24 hours</strong>. This time duration could be extended by the clutser administrator upon reasonable request. Keep in mind that slurm will stop your job as soon as it exceeds the maximum time duration requested.</p>
+</li>
+<li>
+<p><strong>Maximum number of array jobs:</strong> The maximum number of array jobs you can set are <strong>10000</strong></p>
+</li>
+</ul>
+<h2 id="slurm-basic-commands">Slurm basic commands</h2>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>sinfo<span class="w"> </span><span class="c1"># shows you current information about the system</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>squeue<span class="w"> </span><span class="c1"># shows the current jobs status</span>
+<a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>
+<a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>squeue<span class="w"> </span>-U<span class="w"> </span>&lt;username&gt;<span class="w"> </span><span class="c1"># it provides job status for a given user</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-22-1" name="__codelineno-22-1" href="#__codelineno-22-1"></a>sbatch<span class="w"> </span>&lt;job_script&gt;#<span class="w"> </span>launch<span class="w"> </span>a<span class="w"> </span>job<span class="w"> </span>or<span class="w"> </span>an<span class="w"> </span>array<span class="w"> </span>job<span class="w"> </span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-23-1" name="__codelineno-23-1" href="#__codelineno-23-1"></a>scancel<span class="w"> </span>&lt;job_ID&gt;<span class="w"> </span><span class="c1"># it cancels jobs</span>
+<a id="__codelineno-23-2" name="__codelineno-23-2" href="#__codelineno-23-2"></a>
+<a id="__codelineno-23-3" name="__codelineno-23-3" href="#__codelineno-23-3"></a>scancel<span class="w"> </span>-U<span class="w"> </span>&lt;username&gt;<span class="w"> </span><span class="c1"># all jobs belonging to that user will be cancelled</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><a id="__codelineno-24-1" name="__codelineno-24-1" href="#__codelineno-24-1"></a>scontrol<span class="w"> </span>show<span class="w"> </span>partition<span class="w"> </span>compute<span class="w"> </span><span class="c1"># allows you to see partitions present and limitations </span>
+</code></pre></div>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.tabs", "content.tooltips", "content.tabs.link", "navigation.top", "content.code.copy", "content.code.select"], "search": "../../../assets/javascripts/workers/search.6ce7567c.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+    
+  </body>
+</html>
